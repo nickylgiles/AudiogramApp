@@ -8,7 +8,17 @@
       <FILE id="yRLOBH" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
       <FILE id="Zx0RZL" name="MainComponent.cpp" compile="1" resource="0"
             file="Source/MainComponent.cpp"/>
-      <GROUP id="{CFFB6F90-01DA-0095-CAE6-9A96FB1489E2}" name="Audio"/>
+      <GROUP id="{CFFB6F90-01DA-0095-CAE6-9A96FB1489E2}" name="Audio">
+        <FILE id="s9g8lY" name="NoiseGenerator.cpp" compile="1" resource="0"
+              file="Source/NoiseGenerator.cpp"/>
+        <FILE id="qhYYsi" name="NoiseGenerator.h" compile="0" resource="0"
+              file="Source/NoiseGenerator.h"/>
+        <FILE id="dBQGNW" name="SoundEngine.cpp" compile="1" resource="0" file="Source/SoundEngine.cpp"/>
+        <FILE id="vaiynz" name="SoundEngine.h" compile="0" resource="0" file="Source/SoundEngine.h"/>
+        <FILE id="NE47E5" name="ToneGenerator.cpp" compile="1" resource="0"
+              file="Source/ToneGenerator.cpp"/>
+        <FILE id="UYoSCs" name="ToneGenerator.h" compile="0" resource="0" file="Source/ToneGenerator.h"/>
+      </GROUP>
       <GROUP id="{8F5E5A1D-8BFE-3270-DA73-9A53E2F30F6B}" name="GUI"/>
       <GROUP id="{7E4C7854-C52A-8E8F-A1C7-D2FCF346D5A2}" name="Database"/>
     </GROUP>
