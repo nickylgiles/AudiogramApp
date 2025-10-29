@@ -23,8 +23,8 @@ MainComponent::MainComponent()
     addAndMakeVisible(playButton);
 
     playButton.onClick = [this] {
-        soundEngine.playToneMasked(4000.0f, 0.5f, 1.0f, 0);
-        };
+        soundEngine.playToneMasked(5000.0f, 0.5f, 1.0f, 0);
+    };
 
 }
 

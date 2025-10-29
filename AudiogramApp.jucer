@@ -9,6 +9,8 @@
       <FILE id="Zx0RZL" name="MainComponent.cpp" compile="1" resource="0"
             file="Source/MainComponent.cpp"/>
       <GROUP id="{CFFB6F90-01DA-0095-CAE6-9A96FB1489E2}" name="Audio">
+        <FILE id="z35qnm" name="Envelope.cpp" compile="1" resource="0" file="Source/Envelope.cpp"/>
+        <FILE id="ZUtqhf" name="Envelope.h" compile="0" resource="0" file="Source/Envelope.h"/>
         <FILE id="s9g8lY" name="NoiseGenerator.cpp" compile="1" resource="0"
               file="Source/NoiseGenerator.cpp"/>
         <FILE id="qhYYsi" name="NoiseGenerator.h" compile="0" resource="0"

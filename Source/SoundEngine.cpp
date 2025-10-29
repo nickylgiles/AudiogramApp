@@ -12,6 +12,7 @@
 
 SoundEngine::SoundEngine() {
     toneGenerator.setSampleRate(sampleRate);
+    noiseGenerator.setSampleRate(sampleRate);
     toneChannel = 0;
     noiseChannel = 0;
 }
@@ -27,7 +28,10 @@ void SoundEngine::playTone(float frequency, float amplitude, float duration, int
     toneGenerator.setFrequency(frequency);
     toneChannel = channel;
 
-    remainingSamples = duration * sampleRate;
+    samplesToPlay = duration * sampleRate;
+    remainingSamples = samplesToPlay;
+
+    envelope.start(samplesToPlay);
 }
 
 void SoundEngine::playToneMasked(float frequency, float amplitude, float duration, int channel) {
@@ -54,19 +58,27 @@ void SoundEngine::setSampleRate(double newSampleRate) {
     sampleRate = newSampleRate;
     toneGenerator.setSampleRate(newSampleRate);
     noiseGenerator.setSampleRate(newSampleRate);
+
+    envelope.setFallTime(newSampleRate * 0.1);
+    envelope.setRiseTime(newSampleRate * 0.1);
 }
 
 std::array<float, 2> SoundEngine::nextSample() {
+
     std::array<float, 2> sample = {0.0f, 0.0f};
 
     if (!playing) {
         return sample;
     }
 
+    float envelopeAmplitude = envelope.nextSample();
+
     if(tonePlaying)
-        sample[toneChannel] = toneGenerator.nextSample();
+        sample[toneChannel] = toneGenerator.nextSample() * envelopeAmplitude;
+
     if(noisePlaying)
-        sample[noiseChannel] = noiseGenerator.nextSample();
+        sample[noiseChannel] = noiseGenerator.nextSample() * envelopeAmplitude;
+
     remainingSamples--;
     if (remainingSamples <= 0) {
         stop();

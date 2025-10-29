@@ -12,6 +12,7 @@
 
 #include "ToneGenerator.h"
 #include "NoiseGenerator.h"
+#include "Envelope.h"
 
 
 class SoundEngine {
@@ -26,6 +27,8 @@ public:
 private:
     ToneGenerator toneGenerator;
     NoiseGenerator noiseGenerator;
+    Envelope envelope;
+
     double sampleRate = 44100.0;
     int toneChannel = 0;
     int noiseChannel = 1;
@@ -34,4 +37,6 @@ private:
     bool tonePlaying = false;
 
     int remainingSamples = 0;
+    int samplesToPlay = 0;
 };
+
