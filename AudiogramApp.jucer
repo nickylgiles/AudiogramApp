@@ -41,7 +41,7 @@
   </MODULES>
   <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1"/>
   <EXPORTFORMATS>
-    <ANDROIDSTUDIO targetFolder="Builds/Android">
+    <ANDROIDSTUDIO targetFolder="Builds/Android" androidMinimumSDK="23" androidTargetSDK="29">
       <CONFIGURATIONS>
         <CONFIGURATION isDebug="1" name="Debug" targetName="AudiogramApp"/>
         <CONFIGURATION isDebug="0" name="Release" targetName="AudiogramApp"/>
