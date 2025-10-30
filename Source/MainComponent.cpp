@@ -23,7 +23,15 @@ MainComponent::MainComponent()
     addAndMakeVisible(playButton);
 
     playButton.onClick = [this] {
-        soundEngine.playToneMasked(5000.0f, 0.5f, 1.0f, 0);
+        float pitchToPlay = tonePitches[currentPitch];
+        soundEngine.playToneMasked(pitchToPlay, 0.5f, 1.0f, 0);
+        
+
+        currentPitch++;
+        if (currentPitch >= tonePitches.size())
+            currentPitch = 0;
+
+        playButton.setButtonText(std::to_string(static_cast<int>(tonePitches[currentPitch])) + " Hz");
     };
 
 }

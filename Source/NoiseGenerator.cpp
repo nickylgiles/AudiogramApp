@@ -16,11 +16,7 @@ NoiseGenerator::NoiseGenerator()
     centreFrequency = 0.0f;
     sampleRate = 44100.0;
 
-    juce::dsp::ProcessSpec spec;
-    spec.sampleRate = sampleRate;
-    spec.maximumBlockSize = 1;
-    spec.numChannels = 1;
-    bandPassFilter.prepare(spec);
+    prepareFilter();
 }
 
 float NoiseGenerator::nextSample()
@@ -47,6 +43,11 @@ void NoiseGenerator::setSampleRate(double newSampleRate)
 {
     sampleRate = newSampleRate;
 
+    prepareFilter();
+}
+
+void NoiseGenerator::prepareFilter()
+{
     juce::dsp::ProcessSpec spec;
     spec.sampleRate = sampleRate;
     spec.maximumBlockSize = 1;

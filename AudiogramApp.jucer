@@ -4,6 +4,10 @@
               addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1">
   <MAINGROUP id="lnMh6c" name="AudiogramApp">
     <GROUP id="{8ACD6052-F8FD-9BBA-B215-8096667E1970}" name="Source">
+      <FILE id="T5fwGl" name="TestController.cpp" compile="1" resource="0"
+            file="Source/TestController.cpp"/>
+      <FILE id="xR0lwZ" name="TestController.h" compile="0" resource="0"
+            file="Source/TestController.h"/>
       <FILE id="NYP5A5" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
       <FILE id="yRLOBH" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
       <FILE id="Zx0RZL" name="MainComponent.cpp" compile="1" resource="0"

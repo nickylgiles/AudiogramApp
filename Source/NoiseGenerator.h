@@ -20,6 +20,8 @@ public:
     void setAmplitude(float newAmplitude);
     void setSampleRate(double newSampleRate);
 
+    void prepareFilter();
+
 private:
     float centreFrequency;
     float amplitude;
