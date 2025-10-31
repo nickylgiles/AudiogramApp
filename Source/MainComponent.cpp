@@ -3,6 +3,18 @@
 //==============================================================================
 MainComponent::MainComponent()
 {
+
+
+    soundEngine = std::make_unique<SoundEngine>();
+
+    testController = std::make_unique<TestController>(soundEngine.get());
+
+    addAndMakeVisible(playButton);
+
+    playButton.onClick = [this] {
+        testController->startTest();
+    };
+
     // Make sure you set the size of the component after
     // you add any child components.
     setSize (800, 600);
@@ -19,20 +31,6 @@ MainComponent::MainComponent()
         // Specify the number of input and output channels that we want to open
         setAudioChannels (0, 2);
     }
-
-    addAndMakeVisible(playButton);
-
-    playButton.onClick = [this] {
-        float pitchToPlay = tonePitches[currentPitch];
-        soundEngine.playToneMasked(pitchToPlay, 0.5f, 1.0f, 0);
-        
-
-        currentPitch++;
-        if (currentPitch >= tonePitches.size())
-            currentPitch = 0;
-
-        playButton.setButtonText(std::to_string(static_cast<int>(tonePitches[currentPitch])) + " Hz");
-    };
 
 }
 
@@ -52,7 +50,7 @@ void MainComponent::prepareToPlay (int samplesPerBlockExpected, double sampleRat
     // but be careful - it will be called on the audio thread, not the GUI thread.
 
     // For more details, see the help for AudioProcessor::prepareToPlay()
-    soundEngine.setSampleRate(sampleRate);
+    soundEngine->setSampleRate(sampleRate);
 }
 
 void MainComponent::getNextAudioBlock (const juce::AudioSourceChannelInfo& bufferToFill)
@@ -70,7 +68,7 @@ void MainComponent::getNextAudioBlock (const juce::AudioSourceChannelInfo& buffe
 
     for (int i = 0; i < bufferToFill.numSamples; ++i)
     {
-        auto stereoSample = soundEngine.nextSample();
+        auto stereoSample = soundEngine->nextSample();
 
         leftChannel[i] = stereoSample[0];
         rightChannel[i] = stereoSample[1];

@@ -1,7 +1,7 @@
 #pragma once
 
 #include <JuceHeader.h>
-#include "SoundEngine.h"
+#include "TestController.h"
 
 //==============================================================================
 /*
@@ -29,8 +29,8 @@ private:
     // Your private member variables go here...
     juce::TextButton playButton{ "Play Tone" };
 
-    SoundEngine soundEngine;
-    std::vector<float> tonePitches = { 125.0f, 250.0f, 500.0f, 1000.0f, 2000.0f, 4000.0f, 8000.0f, 16000.0f };
-    int currentPitch = 0;
+    std::unique_ptr<TestController> testController;
+    std::unique_ptr<SoundEngine> soundEngine;
+
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
 };

@@ -15,7 +15,7 @@
 
 class TestController {
 public:
-    TestController();
+    TestController(SoundEngine* soundEnginePointer);
     void startTest();
     
 private:
@@ -23,16 +23,18 @@ private:
 
     std::vector<float> testTones = { 125.0f, 250.0f, 500.0f, 1000.0f, 2000.0f, 4000.0f, 8000.0f, 16000.0f };
 
-    float dbLevelMin = -100.0f;
+    float dbLevelMin = -20.0f;
     float dbLevelMax = 0.0f;
-    float dbIncrementAscending = 20.0f;
-    float dbIncrementDescending = 10.0f;
+    float dbIncrementAscending = 4.0f;
+    float dbIncrementDescending = 2.0f;
 
     std::map<float, float> toneThresholds;
 
-    int currrentTone = 0;
+    int currentTone = 0;
     int currentEar = 0;
-    float currentThreshold = -100.0f;
+    float currentThreshold = -20.0f;
     bool thresholdIncreasing = true;
+
+    static float dbToAmplitude(float db);
 
 };

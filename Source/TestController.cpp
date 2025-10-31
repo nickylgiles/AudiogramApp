@@ -10,11 +10,25 @@
 
 #include "TestController.h"
 
-TestController::TestController() {
+TestController::TestController(SoundEngine* soundEnginePointer) {
+
+    soundEngine = soundEnginePointer;
 
     for (auto tone : testTones) {
         toneThresholds[tone] = dbLevelMax;
     }
 }
 
+void TestController::startTest() {
+    currentTone = 0;
+    currentEar = 0;
+    currentThreshold = 0.0f;
+    thresholdIncreasing = true;
 
+    soundEngine->playToneMasked(testTones[currentTone], dbToAmplitude(currentThreshold), 1.0f, currentEar);
+}
+
+/*static*/ float TestController::dbToAmplitude(float db) {
+    float amplitude = std::pow(10.0, db / 20.0);
+    return amplitude;
+}
