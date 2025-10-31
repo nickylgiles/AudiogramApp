@@ -9,10 +9,12 @@
 */
 
 #include "TestController.h"
+#include "MainComponent.h"
 
-TestController::TestController(SoundEngine* soundEnginePointer) {
+TestController::TestController(MainComponent* mainComponentPtr, SoundEngine* soundEnginePtr) {
 
-    soundEngine = soundEnginePointer;
+    mainComponent = mainComponentPtr;
+    soundEngine = soundEnginePtr;
 
     for (auto tone : testTones) {
         toneThresholds[0][tone] = dbLevelMax;
@@ -34,6 +36,11 @@ void TestController::startTest() {
 
 void TestController::buttonPress() {
     currentToneDetected = true;
+}
+
+void TestController::cancelTest() {
+    stopTimer();
+    soundEngine->stop();
 }
 
 /*static*/ float TestController::dbToAmplitude(float db) {
@@ -62,9 +69,7 @@ void TestController::playNextTone() {
 
         currentToneDetected = false;
 
-        juce::Timer::callAfterDelay(2000, [this] {
-            playNextTone();
-            });
+        scheduleNextTone(2000);
     }
     else {
         if (currentEar < 1) {
@@ -78,6 +83,7 @@ void TestController::playNextTone() {
         else {
             // Test finished
             DBG("Test finished.");
+            mainComponent->testEnd();
         }
     }
 }
@@ -88,9 +94,7 @@ void TestController::playFirstTone() {
 
     currentToneDetected = false;
 
-    juce::Timer::callAfterDelay(2000, [this] {
-        playNextTone();
-        });
+    scheduleNextTone(2000);
 }
 
 /*static*/ constexpr bool TestController::floatsEqual(float a, float b) {
@@ -99,4 +103,14 @@ void TestController::playFirstTone() {
 
 std::array<std::map<float, float>, 2> const TestController::getResults() {
     return toneThresholds;
+}
+
+void TestController::scheduleNextTone(int delayMs) {
+    stopTimer();
+    startTimer(delayMs);
+}
+
+void TestController::timerCallback() {
+    stopTimer();
+    playNextTone();
 }

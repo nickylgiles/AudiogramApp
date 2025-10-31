@@ -26,6 +26,8 @@ public:
 
     void paintOverChildren(juce::Graphics& g) override;
 
+    void testEnd();
+
 private:
     //==============================================================================
     // Your private member variables go here...

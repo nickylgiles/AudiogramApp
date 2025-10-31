@@ -7,14 +7,20 @@ MainComponent::MainComponent()
 
     soundEngine = std::make_unique<SoundEngine>();
 
-    testController = std::make_unique<TestController>(soundEngine.get());
+    testController = std::make_unique<TestController>(this, soundEngine.get());
 
     addAndMakeVisible(startButton);
 
     startButton.onClick = [this] {
         if (!testStarted) {
             testStarted = true;
+            startButton.setButtonText("Stop Test");
             testController->startTest();
+        }
+        else {
+            testStarted = false;
+            startButton.setButtonText("Restart Test");
+            testController->cancelTest();
         }
     };
 
@@ -120,6 +126,10 @@ void MainComponent::paintOverChildren(juce::Graphics& g) {
             y += lineHeight;
         }
     }
+}
+void MainComponent::testEnd() {
+    testStarted = false;
+    startButton.setButtonText("Restart Test");
 }
 void MainComponent::resized()
 {

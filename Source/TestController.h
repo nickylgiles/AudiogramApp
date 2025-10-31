@@ -13,20 +13,29 @@
 #include <JuceHeader.h>
 #include "SoundEngine.h"
 
-class TestController {
+class MainComponent;
+
+class TestController : private juce::Timer {
 public:
-    TestController(SoundEngine* soundEnginePointer);
+    TestController(MainComponent* mainComponentPtr, SoundEngine* soundEnginePtr);
     void startTest();
     void buttonPress();
+    void cancelTest();
 
-    const std::array<std::map<float, float>, 2> const getResults();
+    const std::array<std::map<float, float>, 2> getResults();
     
 private:
+    void timerCallback() override;
+
     SoundEngine* soundEngine;
+
+    MainComponent* mainComponent;
 
     static float dbToAmplitude(float db);
     void playFirstTone();
     void playNextTone();
+
+    void scheduleNextTone(int delayMs);
 
     std::vector<float> testTones = { 125.0f, 250.0f, 500.0f, 1000.0f, 2000.0f, 4000.0f, 8000.0f, 16000.0f };
 
