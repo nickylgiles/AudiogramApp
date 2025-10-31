@@ -35,5 +35,7 @@ private:
     std::unique_ptr<TestController> testController;
     std::unique_ptr<SoundEngine> soundEngine;
 
+    bool testStarted = false;
+
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
 };

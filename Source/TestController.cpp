@@ -42,8 +42,6 @@ void TestController::buttonPress() {
 }
 
 void TestController::playNextTone() {
-
-    // Process last tone played & update scores
     if (currentToneDetected) {
         toneThresholds[currentEar][testTones[currentTone]] = currentThreshold;
         currentThreshold = dbLevelMin;
@@ -59,7 +57,6 @@ void TestController::playNextTone() {
         }
     }
 
-
     if (currentTone < testTones.size()) {
         soundEngine->playToneMasked(testTones[currentTone], dbToAmplitude(currentThreshold), 1.0f, currentEar);
 
@@ -69,8 +66,20 @@ void TestController::playNextTone() {
             playNextTone();
             });
     }
-
-
+    else {
+        if (currentEar < 1) {
+            // Test other ear
+            currentEar = 1;
+            currentThreshold = dbLevelMin;
+            thresholdIncreasing = true;
+            currentTone = 0;
+            playFirstTone();
+        }
+        else {
+            // Test finished
+            DBG("Test finished.");
+        }
+    }
 }
 
 void TestController::playFirstTone() {

@@ -12,8 +12,11 @@ MainComponent::MainComponent()
     addAndMakeVisible(startButton);
 
     startButton.onClick = [this] {
-        testController->startTest();
-        };
+        if (!testStarted) {
+            testStarted = true;
+            testController->startTest();
+        }
+    };
 
     addAndMakeVisible(hearToneButton);
 
@@ -102,16 +105,20 @@ void MainComponent::paintOverChildren(juce::Graphics& g) {
     g.setColour(juce::Colours::black);
     int y = 20;
     int lineHeight = 20;
+    juce::String ears[2] = { "Left", "Right" };
 
     auto results = testController->getResults();
-
-    for (const auto& pair : results[0]) {
-        float freq = pair.first;
-        float threshold = pair.second;
-
-        juce::String text = juce::String(freq) + " Hz: " + juce::String(threshold, 1) + " dB";
-        g.drawText(text, 40, y, 300, lineHeight, juce::Justification::left);
+    for (int i = 0; i < 2; ++i) {
+        g.drawText(ears[i], 40, y, 300, lineHeight, juce::Justification::left);
         y += lineHeight;
+        for (const auto& pair : results[i]) {
+            float freq = pair.first;
+            float threshold = pair.second;
+
+            juce::String text = juce::String(freq) + " Hz: " + juce::String(threshold, 1) + " dB";
+            g.drawText(text, 40, y, 300, lineHeight, juce::Justification::left);
+            y += lineHeight;
+        }
     }
 }
 void MainComponent::resized()
