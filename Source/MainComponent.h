@@ -24,10 +24,13 @@ public:
     void paint (juce::Graphics& g) override;
     void resized() override;
 
+    void paintOverChildren(juce::Graphics& g) override;
+
 private:
     //==============================================================================
     // Your private member variables go here...
-    juce::TextButton playButton{ "Play Tone" };
+    juce::TextButton startButton{ "Start Test" };
+    juce::TextButton hearToneButton{ "Tone Heard" };
 
     std::unique_ptr<TestController> testController;
     std::unique_ptr<SoundEngine> soundEngine;

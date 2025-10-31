@@ -15,20 +15,25 @@ TestController::TestController(SoundEngine* soundEnginePointer) {
     soundEngine = soundEnginePointer;
 
     for (auto tone : testTones) {
-        toneThresholds[tone] = dbLevelMax;
+        toneThresholds[0][tone] = dbLevelMax;
+        toneThresholds[1][tone] = dbLevelMax;
     }
 }
 
 void TestController::startTest() {
     currentTone = 0;
     currentEar = 0;
-    currentThreshold = 0.0f;
+    currentThreshold = dbLevelMin;
     thresholdIncreasing = true;
 
     currentToneDetected = false;
 
-    playNextTone();
+    playFirstTone();
    
+}
+
+void TestController::buttonPress() {
+    currentToneDetected = true;
 }
 
 /*static*/ float TestController::dbToAmplitude(float db) {
@@ -37,13 +42,52 @@ void TestController::startTest() {
 }
 
 void TestController::playNextTone() {
-    if (currentTone < testTones.size()) {
 
-        soundEngine->playToneMasked(testTones[currentTone], dbToAmplitude(currentThreshold), 1.0f, currentEar);
+    // Process last tone played & update scores
+    if (currentToneDetected) {
+        toneThresholds[currentEar][testTones[currentTone]] = currentThreshold;
+        currentThreshold = dbLevelMin;
         currentTone++;
+    }
+    else {
+        if (floatsEqual(currentThreshold, dbLevelMax) || currentThreshold > dbLevelMax) {
+            currentThreshold = dbLevelMin;
+            currentTone++;
+        }
+        else {
+            currentThreshold += dbIncrementAscending;
+        }
+    }
+
+
+    if (currentTone < testTones.size()) {
+        soundEngine->playToneMasked(testTones[currentTone], dbToAmplitude(currentThreshold), 1.0f, currentEar);
+
+        currentToneDetected = false;
 
         juce::Timer::callAfterDelay(2000, [this] {
             playNextTone();
             });
     }
+
+
+}
+
+void TestController::playFirstTone() {
+
+    soundEngine->playToneMasked(testTones[currentTone], dbToAmplitude(currentThreshold), 1.0f, currentEar);
+
+    currentToneDetected = false;
+
+    juce::Timer::callAfterDelay(2000, [this] {
+        playNextTone();
+        });
+}
+
+/*static*/ constexpr bool TestController::floatsEqual(float a, float b) {
+    return (a - b < 0.01f && a - b > -0.01f);
+}
+
+std::array<std::map<float, float>, 2> const TestController::getResults() {
+    return toneThresholds;
 }

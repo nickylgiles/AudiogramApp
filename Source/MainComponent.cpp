@@ -9,11 +9,17 @@ MainComponent::MainComponent()
 
     testController = std::make_unique<TestController>(soundEngine.get());
 
-    addAndMakeVisible(playButton);
+    addAndMakeVisible(startButton);
 
-    playButton.onClick = [this] {
+    startButton.onClick = [this] {
         testController->startTest();
-    };
+        };
+
+    addAndMakeVisible(hearToneButton);
+
+    hearToneButton.onClick = [this] {
+        testController->buttonPress();
+        };
 
     // Make sure you set the size of the component after
     // you add any child components.
@@ -90,13 +96,33 @@ void MainComponent::paint (juce::Graphics& g)
     g.fillAll (getLookAndFeel().findColour (juce::ResizableWindow::backgroundColourId));
 
     // You can add your drawing code here!
+   
 }
+void MainComponent::paintOverChildren(juce::Graphics& g) {
+    g.setColour(juce::Colours::black);
+    int y = 20;
+    int lineHeight = 20;
 
+    auto results = testController->getResults();
+
+    for (const auto& pair : results[0]) {
+        float freq = pair.first;
+        float threshold = pair.second;
+
+        juce::String text = juce::String(freq) + " Hz: " + juce::String(threshold, 1) + " dB";
+        g.drawText(text, 40, y, 300, lineHeight, juce::Justification::left);
+        y += lineHeight;
+    }
+}
 void MainComponent::resized()
 {
     // This is called when the MainContentComponent is resized.
     // If you add any child components, this is where you should
     // update their positions.
 
-    playButton.setBounds(getLocalBounds().reduced(40));
+    auto area = getLocalBounds().reduced(40);
+    auto buttonHeight = area.getHeight() / 2;
+
+    startButton.setBounds(area.removeFromTop(buttonHeight).reduced(10));
+    hearToneButton.setBounds(area.reduced(10));
 }
