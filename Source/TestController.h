@@ -21,6 +21,9 @@ public:
 private:
     SoundEngine* soundEngine;
 
+    static float dbToAmplitude(float db);
+    void playNextTone();
+
     std::vector<float> testTones = { 125.0f, 250.0f, 500.0f, 1000.0f, 2000.0f, 4000.0f, 8000.0f, 16000.0f };
 
     float dbLevelMin = -20.0f;
@@ -35,6 +38,8 @@ private:
     float currentThreshold = -20.0f;
     bool thresholdIncreasing = true;
 
-    static float dbToAmplitude(float db);
+    
+
+    bool currentToneDetected = false;
 
 };
