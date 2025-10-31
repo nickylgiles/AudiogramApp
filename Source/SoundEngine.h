@@ -21,7 +21,7 @@ public:
     void playTone(float frequency, float amplitude, float duration, int channel);
     void playToneMasked(float frequency, float amplitude, float duration, int channel);
     void stop();
-    bool isPlaying();
+    bool isPlaying() const;
     void setSampleRate(double newSampleRate);
     std::array<float, 2> nextSample();
 private:

@@ -39,10 +39,10 @@ private:
 
     std::vector<float> testTones = { 125.0f, 250.0f, 500.0f, 1000.0f, 2000.0f, 4000.0f, 8000.0f, 16000.0f };
 
-    float dbLevelMin = -20.0f;
+    float dbLevelMin = -50.0f;
     float dbLevelMax = 0.0f;
-    float dbIncrementAscending = 5.0f;
-    float dbIncrementDescending = 2.5f;
+    float dbIncrementAscending = 10.0f;
+    float dbIncrementDescending = 5.0f;
 
     static constexpr bool floatsEqual(float a, float b);
 

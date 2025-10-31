@@ -49,7 +49,7 @@ void SoundEngine::stop()
     tonePlaying = false;
 }
 
-bool SoundEngine::isPlaying()
+bool SoundEngine::isPlaying() const
 {
     return playing;
 }

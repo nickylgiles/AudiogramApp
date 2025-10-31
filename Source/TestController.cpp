@@ -51,8 +51,28 @@ void TestController::cancelTest() {
 void TestController::playNextTone() {
     if (currentToneDetected) {
         toneThresholds[currentEar][testTones[currentTone]] = currentThreshold;
-        currentThreshold = dbLevelMin;
-        currentTone++;
+        if (thresholdIncreasing) {
+            if (currentThreshold > dbLevelMin) {
+                currentThreshold -= dbIncrementDescending;
+                thresholdIncreasing = false;
+            }
+            else {
+                currentThreshold = dbLevelMin;
+                currentTone++;
+                thresholdIncreasing = true;
+            }
+        }
+        else {
+            if (currentThreshold <= dbLevelMin || floatsEqual(currentThreshold, dbLevelMin)) {
+                currentThreshold = dbLevelMin;
+                currentTone++;
+                thresholdIncreasing = true;
+            }
+            else {
+                currentThreshold -= dbIncrementDescending;
+            }
+        }
+
     }
     else {
         if (floatsEqual(currentThreshold, dbLevelMax) || currentThreshold > dbLevelMax) {
@@ -60,7 +80,14 @@ void TestController::playNextTone() {
             currentTone++;
         }
         else {
-            currentThreshold += dbIncrementAscending;
+            if (thresholdIncreasing) {
+                currentThreshold += dbIncrementAscending;
+            }
+            else {
+                currentThreshold = dbLevelMin;
+                currentTone++;
+                thresholdIncreasing = true;
+            }
         }
     }
 
