@@ -21,6 +21,10 @@
               file="Source/NoiseGenerator.h"/>
         <FILE id="dBQGNW" name="SoundEngine.cpp" compile="1" resource="0" file="Source/SoundEngine.cpp"/>
         <FILE id="vaiynz" name="SoundEngine.h" compile="0" resource="0" file="Source/SoundEngine.h"/>
+        <FILE id="pRrawv" name="SoundFilePlayer.cpp" compile="1" resource="0"
+              file="Source/SoundFilePlayer.cpp"/>
+        <FILE id="F2UmOw" name="SoundFilePlayer.h" compile="0" resource="0"
+              file="Source/SoundFilePlayer.h"/>
         <FILE id="NE47E5" name="ToneGenerator.cpp" compile="1" resource="0"
               file="Source/ToneGenerator.cpp"/>
         <FILE id="UYoSCs" name="ToneGenerator.h" compile="0" resource="0" file="Source/ToneGenerator.h"/>
@@ -28,6 +32,7 @@
       <GROUP id="{8F5E5A1D-8BFE-3270-DA73-9A53E2F30F6B}" name="GUI"/>
       <GROUP id="{7E4C7854-C52A-8E8F-A1C7-D2FCF346D5A2}" name="Database"/>
     </GROUP>
+    <FILE id="JgJTIV" name="snd.wav" compile="0" resource="1" file="../../../../Desktop/snd.wav"/>
   </MAINGROUP>
   <MODULES>
     <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>

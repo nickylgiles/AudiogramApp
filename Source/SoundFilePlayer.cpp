@@ -1,0 +1,112 @@
+/*
+  ==============================================================================
+
+    SoundFilePlayer.cpp
+    Created: 1 Nov 2025 9:05:31am
+    Author:  nicky_hgjk9m6
+
+  ==============================================================================
+*/
+
+#include "SoundFilePlayer.h"
+
+SoundFilePlayer::SoundFilePlayer() {
+    currentSample = 0;
+    totalSamples = 0;
+    sampleRate = 44100.0;
+    fileLoaded = false;
+    soundPlaying = false;
+}
+
+bool SoundFilePlayer::loadFile(const juce::File& file) {
+    juce::AudioFormatManager audioFormatManager;
+    audioFormatManager.registerBasicFormats();
+
+    std::unique_ptr<juce::AudioFormatReader> reader(audioFormatManager.createReaderFor(file));
+
+    if (reader.get() == nullptr) {
+        fileLoaded = false;
+        DBG("Failed to load file");
+        return false;
+    }
+
+    totalSamples = reader->lengthInSamples;
+    buffer.setSize((int)reader->numChannels, totalSamples);
+    reader->read(&buffer, 0, totalSamples, 0, true, true);
+
+    currentSample = 0;
+    fileLoaded = true;
+    soundPlaying = false;
+    DBG("File loaded.  Length = " << totalSamples << " samples");
+
+    return true;
+}
+
+bool SoundFilePlayer::loadBinaryData(const void* data, size_t size) {
+    juce::AudioFormatManager audioFormatManager;
+    audioFormatManager.registerBasicFormats();
+    auto inputStream = std::make_unique<juce::MemoryInputStream>(data, size, false);
+
+    std::unique_ptr<juce::AudioFormatReader> reader(
+        audioFormatManager.createReaderFor(std::move(inputStream)));
+
+    if (reader == nullptr) {
+        DBG("Failed to load binary resource");
+        return false;
+    }
+    
+    totalSamples = reader->lengthInSamples;
+    buffer.setSize((int)reader->numChannels, totalSamples);
+    reader->read(&buffer, 0, totalSamples, 0, true, true);
+    currentSample = 0;
+    fileLoaded = true;
+    soundPlaying = false;
+    DBG("Binary resource loaded. Length = " << totalSamples << " samples");
+    return true;
+
+}
+
+void SoundFilePlayer::setSampleRate(double newSampleRate) {
+    sampleRate = newSampleRate;
+}
+
+void SoundFilePlayer::reset() {
+    currentSample = 0;
+    soundPlaying = false;
+}
+
+float SoundFilePlayer::nextSample() {
+    if (!fileLoaded || totalSamples == 0 || !soundPlaying) {
+        return 0.0f;
+    }
+
+    float sample = buffer.getSample(0, currentSample);
+
+    currentSample++;
+    if (currentSample >= totalSamples) {
+        reset();
+    }
+
+    return sample;
+}
+
+bool SoundFilePlayer::fileIsLoaded() const {
+    return fileLoaded;
+}
+
+bool SoundFilePlayer::soundIsPlaying() const {
+    return soundPlaying;
+}
+
+void SoundFilePlayer::startPlaying() {
+    if (!fileLoaded) return;
+    soundPlaying = true;
+    currentSample = 0;
+}
+
+int SoundFilePlayer::getLength()
+{
+    if (!fileLoaded)
+        return 0;
+    return totalSamples;
+}

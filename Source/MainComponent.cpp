@@ -22,6 +22,8 @@ MainComponent::MainComponent()
             startButton.setButtonText("Restart Test");
             testController->cancelTest();
         }
+        
+        //soundEngine->playSample(BinaryData::snd_wav, BinaryData::snd_wavSize);
     };
 
     addAndMakeVisible(hearToneButton);

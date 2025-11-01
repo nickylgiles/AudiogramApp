@@ -13,6 +13,7 @@
 SoundEngine::SoundEngine() {
     toneGenerator.setSampleRate(sampleRate);
     noiseGenerator.setSampleRate(sampleRate);
+    soundFilePlayer.setSampleRate(sampleRate);
     toneChannel = 0;
     noiseChannel = 0;
 }
@@ -42,11 +43,27 @@ void SoundEngine::playToneMasked(float frequency, float amplitude, float duratio
     noiseGenerator.setFrequency(frequency, 0.5f);
 }
 
+void SoundEngine::playSample(const void* data, size_t size) {
+    bool fileLoaded = soundFilePlayer.loadBinaryData(data, size);
+    if (fileLoaded) {
+        soundFilePlayer.startPlaying();
+        soundFilePlaying = true;
+        samplesToPlay = soundFilePlayer.getLength();
+        remainingSamples = samplesToPlay;
+        playing = true;
+    }
+    else {
+        soundFilePlaying = false;
+        return;
+    }
+}
+
 void SoundEngine::stop()
 {
     playing = false;
     noisePlaying = false;
     tonePlaying = false;
+    soundFilePlaying = false;
 }
 
 bool SoundEngine::isPlaying() const
@@ -78,6 +95,11 @@ std::array<float, 2> SoundEngine::nextSample() {
 
     if(noisePlaying)
         sample[noiseChannel] = noiseGenerator.nextSample() * envelopeAmplitude;
+
+    if (soundFilePlaying) {
+        sample[0] = soundFilePlayer.nextSample();
+        sample[1] = sample[0];
+    }
 
     remainingSamples--;
     if (remainingSamples <= 0) {

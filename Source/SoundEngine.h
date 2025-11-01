@@ -13,6 +13,7 @@
 #include "ToneGenerator.h"
 #include "NoiseGenerator.h"
 #include "Envelope.h"
+#include "SoundFilePlayer.h"
 
 
 class SoundEngine {
@@ -20,6 +21,9 @@ public:
     SoundEngine();
     void playTone(float frequency, float amplitude, float duration, int channel);
     void playToneMasked(float frequency, float amplitude, float duration, int channel);
+
+    void playSample(const void* data, size_t size);
+
     void stop();
     bool isPlaying() const;
     void setSampleRate(double newSampleRate);
@@ -28,6 +32,7 @@ private:
     ToneGenerator toneGenerator;
     NoiseGenerator noiseGenerator;
     Envelope envelope;
+    SoundFilePlayer soundFilePlayer;
 
     double sampleRate = 44100.0;
     int toneChannel = 0;
@@ -35,7 +40,7 @@ private:
     bool playing = false;
     bool noisePlaying = false;
     bool tonePlaying = false;
-
+    bool soundFilePlaying = false;
     int remainingSamples = 0;
     int samplesToPlay = 0;
 };
