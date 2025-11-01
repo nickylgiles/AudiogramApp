@@ -27,6 +27,7 @@ public:
 
 private:
     juce::AudioBuffer<float> buffer;
+    juce::AudioFormatManager audioFormatManager;
     int currentSample;
     int totalSamples;
     double sampleRate;

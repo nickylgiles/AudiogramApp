@@ -16,12 +16,10 @@ SoundFilePlayer::SoundFilePlayer() {
     sampleRate = 44100.0;
     fileLoaded = false;
     soundPlaying = false;
+    audioFormatManager.registerBasicFormats();
 }
 
 bool SoundFilePlayer::loadFile(const juce::File& file) {
-    juce::AudioFormatManager audioFormatManager;
-    audioFormatManager.registerBasicFormats();
-
     std::unique_ptr<juce::AudioFormatReader> reader(audioFormatManager.createReaderFor(file));
 
     if (reader.get() == nullptr) {
@@ -43,8 +41,6 @@ bool SoundFilePlayer::loadFile(const juce::File& file) {
 }
 
 bool SoundFilePlayer::loadBinaryData(const void* data, size_t size) {
-    juce::AudioFormatManager audioFormatManager;
-    audioFormatManager.registerBasicFormats();
     auto inputStream = std::make_unique<juce::MemoryInputStream>(data, size, false);
 
     std::unique_ptr<juce::AudioFormatReader> reader(

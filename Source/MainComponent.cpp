@@ -12,6 +12,7 @@ MainComponent::MainComponent()
     addAndMakeVisible(startButton);
 
     startButton.onClick = [this] {
+        
         if (!testStarted) {
             testStarted = true;
             startButton.setButtonText("Stop Test");
@@ -23,7 +24,7 @@ MainComponent::MainComponent()
             testController->cancelTest();
         }
         
-        //soundEngine->playSample(BinaryData::snd_wav, BinaryData::snd_wavSize);
+        soundEngine->playSample(BinaryData::snd_wav, BinaryData::snd_wavSize);
     };
 
     addAndMakeVisible(hearToneButton);
