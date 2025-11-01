@@ -25,6 +25,8 @@
               file="Source/SoundFilePlayer.cpp"/>
         <FILE id="F2UmOw" name="SoundFilePlayer.h" compile="0" resource="0"
               file="Source/SoundFilePlayer.h"/>
+        <FILE id="cI4Lqd" name="Spatialiser.cpp" compile="1" resource="0" file="Source/Spatialiser.cpp"/>
+        <FILE id="r5bEjm" name="Spatialiser.h" compile="0" resource="0" file="Source/Spatialiser.h"/>
         <FILE id="NE47E5" name="ToneGenerator.cpp" compile="1" resource="0"
               file="Source/ToneGenerator.cpp"/>
         <FILE id="UYoSCs" name="ToneGenerator.h" compile="0" resource="0" file="Source/ToneGenerator.h"/>
