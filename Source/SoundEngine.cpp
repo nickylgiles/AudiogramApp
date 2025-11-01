@@ -56,12 +56,12 @@ void SoundEngine::playSample(const void* data, size_t size) {
         soundFilePlaying = false;
         return;
     }
-    sampleAzimuth = 0.0f;
+    spatialiser.setAzimuth(0.0f);
 }
 
 void SoundEngine::playSampleSpatial(const void* data, size_t size, float azimuth) {
     playSample(data, size);
-    sampleAzimuth = azimuth;
+    spatialiser.setAzimuth(azimuth);
 }
 
 void SoundEngine::stop()
@@ -136,14 +136,16 @@ void SoundEngine::processBlock(float* outputL, float* outputR, int numSamples) {
     }
 
     if (soundFilePlaying) {
+        juce::AudioBuffer<float> soundBuffer(1, numSamples);
+        float* soundBufferWritePointer = soundBuffer.getWritePointer(0);
         for (int i = 0; i < numSamples; ++i) {
-            outputL[i] = soundFilePlayer.nextSample();
+            soundBufferWritePointer[i] = soundFilePlayer.nextSample();
             remainingSamples--;
             if (remainingSamples <= 0) {
                 stop();
             }
         }
-        spatialiser.processBlock(outputL, outputL, outputR, numSamples);
+        spatialiser.processBlock(soundBuffer.getReadPointer(0), outputL, outputR, numSamples);
     }
 
 }

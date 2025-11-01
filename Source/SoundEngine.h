@@ -48,8 +48,6 @@ private:
     bool noisePlaying = false;
     bool tonePlaying = false;
     bool soundFilePlaying = false;
-    
-    float sampleAzimuth = 0.0f;
 
     int remainingSamples = 0;
     int samplesToPlay = 0;

@@ -17,14 +17,16 @@ MainComponent::MainComponent()
             testStarted = true;
             startButton.setButtonText("Stop Test");
             testController->startTest();
+            soundEngine->playSampleSpatial(BinaryData::snd_wav, BinaryData::snd_wavSize, -90.0f);
         }
         else {
             testStarted = false;
             startButton.setButtonText("Restart Test");
             testController->cancelTest();
+            soundEngine->playSampleSpatial(BinaryData::snd_wav, BinaryData::snd_wavSize, 80.0f);
         }
         
-        soundEngine->playSample(BinaryData::snd_wav, BinaryData::snd_wavSize);
+        
     };
 
     addAndMakeVisible(hearToneButton);
