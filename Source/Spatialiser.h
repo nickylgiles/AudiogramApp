@@ -21,5 +21,6 @@ public:
 
     void processBlock(const float* input, float* outputL, float* outputR, int numSamples);
 private:
-
+    float azimuth;
+    double sampleRate;
 };
