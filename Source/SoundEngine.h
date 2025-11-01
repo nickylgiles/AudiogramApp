@@ -14,6 +14,7 @@
 #include "NoiseGenerator.h"
 #include "Envelope.h"
 #include "SoundFilePlayer.h"
+#include "Spatialiser.h"
 
 
 class SoundEngine {
@@ -23,24 +24,33 @@ public:
     void playToneMasked(float frequency, float amplitude, float duration, int channel);
 
     void playSample(const void* data, size_t size);
+    void playSampleSpatial(const void* data, size_t size, float azimuth);
 
     void stop();
     bool isPlaying() const;
     void setSampleRate(double newSampleRate);
+
     std::array<float, 2> nextSample();
+    void processBlock(float* outputL, float* outputR, int numSamples);
+
 private:
     ToneGenerator toneGenerator;
     NoiseGenerator noiseGenerator;
     Envelope envelope;
     SoundFilePlayer soundFilePlayer;
+    Spatialiser spatialiser;
 
     double sampleRate = 44100.0;
     int toneChannel = 0;
     int noiseChannel = 1;
+
     bool playing = false;
     bool noisePlaying = false;
     bool tonePlaying = false;
     bool soundFilePlaying = false;
+    
+    float sampleAzimuth = 0.0f;
+
     int remainingSamples = 0;
     int samplesToPlay = 0;
 };

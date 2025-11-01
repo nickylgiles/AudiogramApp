@@ -56,6 +56,12 @@ void SoundEngine::playSample(const void* data, size_t size) {
         soundFilePlaying = false;
         return;
     }
+    sampleAzimuth = 0.0f;
+}
+
+void SoundEngine::playSampleSpatial(const void* data, size_t size, float azimuth) {
+    playSample(data, size);
+    sampleAzimuth = azimuth;
 }
 
 void SoundEngine::stop()
@@ -108,3 +114,37 @@ std::array<float, 2> SoundEngine::nextSample() {
 
     return sample;
 }
+
+void SoundEngine::processBlock(float* outputL, float* outputR, int numSamples) {
+    if (!playing) {
+        return;
+    }
+
+    if (tonePlaying) {
+        float* toneBuffer = (toneChannel == 0 ? outputL : outputR);
+        float* noiseBuffer = (toneChannel == 0 ? outputR : outputL);
+
+        for (int i = 0; i < numSamples; ++i) {
+            float env = envelope.nextSample();
+            toneBuffer[i] = toneGenerator.nextSample() * env;
+            noiseBuffer[i] = noiseGenerator.nextSample() * env;
+            remainingSamples--;
+            if (remainingSamples <= 0) {
+                stop();
+            }
+        }
+    }
+
+    if (soundFilePlaying) {
+        for (int i = 0; i < numSamples; ++i) {
+            outputL[i] = soundFilePlayer.nextSample();
+            remainingSamples--;
+            if (remainingSamples <= 0) {
+                stop();
+            }
+        }
+        spatialiser.processBlock(outputL, outputL, outputR, numSamples);
+    }
+
+}
+

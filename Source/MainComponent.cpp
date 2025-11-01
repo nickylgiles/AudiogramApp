@@ -83,7 +83,7 @@ void MainComponent::getNextAudioBlock (const juce::AudioSourceChannelInfo& buffe
 
     auto* leftChannel = bufferToFill.buffer->getWritePointer(0, bufferToFill.startSample);
     auto* rightChannel = bufferToFill.buffer->getWritePointer(1, bufferToFill.startSample);
-
+    /*
     for (int i = 0; i < bufferToFill.numSamples; ++i)
     {
         auto stereoSample = soundEngine->nextSample();
@@ -91,6 +91,9 @@ void MainComponent::getNextAudioBlock (const juce::AudioSourceChannelInfo& buffe
         leftChannel[i] = stereoSample[0];
         rightChannel[i] = stereoSample[1];
     }
+    */
+
+    soundEngine->processBlock(leftChannel, rightChannel, bufferToFill.numSamples);
 }
 
 void MainComponent::releaseResources()
