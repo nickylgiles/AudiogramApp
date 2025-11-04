@@ -7,32 +7,6 @@ MainComponent::MainComponent()
     soundEngine = std::make_unique<SoundEngine>();
 
     testController = std::make_unique<TestController>(this, soundEngine.get());
-    /*
-    addAndMakeVisible(startButton);
-
-    startButton.onClick = [this] {
-        
-        if (!testStarted) {
-            testStarted = true;
-            startButton.setButtonText("Stop Test");
-            testController->startTest();
-            soundEngine->playSampleSpatial(BinaryData::snd_wav, BinaryData::snd_wavSize, -90.0f);
-        }
-        else {
-            testStarted = false;
-            startButton.setButtonText("Restart Test");
-            testController->cancelTest();
-            soundEngine->playSampleSpatial(BinaryData::snd_wav, BinaryData::snd_wavSize, 80.0f);
-        }
-
-    };
-
-    addAndMakeVisible(hearToneButton);
-
-    hearToneButton.onClick = [this] {
-        testController->buttonPress();
-        };
-    */
 
     showMenuScreen();
     // Make sure you set the size of the component after
@@ -85,15 +59,6 @@ void MainComponent::getNextAudioBlock (const juce::AudioSourceChannelInfo& buffe
 
     auto* leftChannel = bufferToFill.buffer->getWritePointer(0, bufferToFill.startSample);
     auto* rightChannel = bufferToFill.buffer->getWritePointer(1, bufferToFill.startSample);
-    /*
-    for (int i = 0; i < bufferToFill.numSamples; ++i)
-    {
-        auto stereoSample = soundEngine->nextSample();
-
-        leftChannel[i] = stereoSample[0];
-        rightChannel[i] = stereoSample[1];
-    }
-    */
 
     soundEngine->processBlock(leftChannel, rightChannel, bufferToFill.numSamples);
 }
@@ -137,7 +102,7 @@ void MainComponent::paintOverChildren(juce::Graphics& g) {
 }
 void MainComponent::testEnd() {
     testStarted = false;
-    startButton.setButtonText("Restart Test");
+    showPureToneResultsScreen();
 }
 void MainComponent::showMenuScreen() {
     currentScreen.reset(new MenuScreen());
@@ -150,8 +115,23 @@ void MainComponent::showMenuScreen() {
     resized();
 }
 
-void MainComponent::showPureToneTestScreen()
-{
+void MainComponent::showPureToneTestScreen() {
+    testStarted = true;
+    testController->startTest();
+    currentScreen.reset(new PureToneTestScreen());
+    addAndMakeVisible(currentScreen.get());
+
+    auto test = dynamic_cast<PureToneTestScreen*>(currentScreen.get());
+    test->onHearClicked = [this] {
+        testController->buttonPress();
+        };
+    test->onStopClicked = [this] {
+        testStarted = false;
+        testController->cancelTest();
+        showMenuScreen();
+        };
+
+    resized();
 }
 
 void MainComponent::showSpatialTestScreen()
@@ -168,13 +148,6 @@ void MainComponent::resized()
     // If you add any child components, this is where you should
     // update their positions.
 
-    /*
-    auto area = getLocalBounds().reduced(40);
-    auto buttonHeight = area.getHeight() / 2;
-
-    startButton.setBounds(area.removeFromTop(buttonHeight).reduced(10));
-    hearToneButton.setBounds(area.reduced(10));
-    */
     if (currentScreen)
         currentScreen->setBounds(getLocalBounds());
 }

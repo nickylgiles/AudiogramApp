@@ -15,7 +15,7 @@ MenuScreen::MenuScreen() {
     pureToneButton.onClick = [this] {if (onPureToneClicked) onPureToneClicked(); };
 
     addAndMakeVisible(spatialButton);
-    pureToneButton.onClick = [this] {if (onSpatialClicked) onSpatialClicked(); };
+    spatialButton.onClick = [this] {if (onSpatialClicked) onSpatialClicked(); };
 }
 
 void MenuScreen::resized() {
