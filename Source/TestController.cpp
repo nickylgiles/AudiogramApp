@@ -128,7 +128,7 @@ void TestController::playFirstTone() {
     return (a - b < 0.01f && a - b > -0.01f);
 }
 
-std::array<std::map<float, float>, 2> const TestController::getResults() {
+PureToneTestResults const TestController::getResults() {
     return toneThresholds;
 }
 

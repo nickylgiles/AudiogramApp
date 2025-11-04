@@ -108,9 +108,9 @@ void MainComponent::showMenuScreen() {
     currentScreen.reset(new MenuScreen());
     addAndMakeVisible(currentScreen.get());
 
-    auto menu = dynamic_cast<MenuScreen*>(currentScreen.get());
-    menu->onPureToneClicked = [this] {showPureToneTestScreen();};
-    menu->onSpatialClicked = [this] {showSpatialTestScreen();};
+    auto screen = dynamic_cast<MenuScreen*>(currentScreen.get());
+    screen->onPureToneClicked = [this] {showPureToneTestScreen();};
+    screen->onSpatialClicked = [this] {showSpatialTestScreen();};
 
     resized();
 }
@@ -121,11 +121,11 @@ void MainComponent::showPureToneTestScreen() {
     currentScreen.reset(new PureToneTestScreen());
     addAndMakeVisible(currentScreen.get());
 
-    auto test = dynamic_cast<PureToneTestScreen*>(currentScreen.get());
-    test->onHearClicked = [this] {
+    auto screen = dynamic_cast<PureToneTestScreen*>(currentScreen.get());
+    screen->onHearClicked = [this] {
         testController->buttonPress();
         };
-    test->onStopClicked = [this] {
+    screen->onStopClicked = [this] {
         testStarted = false;
         testController->cancelTest();
         showMenuScreen();
@@ -138,8 +138,19 @@ void MainComponent::showSpatialTestScreen()
 {
 }
 
-void MainComponent::showPureToneResultsScreen()
-{
+void MainComponent::showPureToneResultsScreen() {
+    currentScreen.reset(new PureToneResultsScreen());
+    addAndMakeVisible(currentScreen.get());
+
+    auto screen = dynamic_cast<PureToneResultsScreen*>(currentScreen.get());
+    screen->onExportClicked = [this] {
+        // code to export results
+        };
+    screen->onMenuClicked = [this] {
+        showMenuScreen();
+        };
+
+    resized();
 }
 
 void MainComponent::resized()

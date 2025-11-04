@@ -15,6 +15,16 @@
 
 class MainComponent;
 
+struct PureToneTestResults {
+    std::map<float, float> left;
+    std::map<float, float> right;
+
+    std::map<float, float>& operator[](size_t index) {
+        if (index == 0) return left;
+        if (index == 1) return right;
+    }
+};
+
 class TestController : private juce::Timer {
 public:
     TestController(MainComponent* mainComponentPtr, SoundEngine* soundEnginePtr);
@@ -22,7 +32,7 @@ public:
     void buttonPress();
     void cancelTest();
 
-    const std::array<std::map<float, float>, 2> getResults();
+    const PureToneTestResults getResults();
     
 private:
     void timerCallback() override;
@@ -46,8 +56,7 @@ private:
 
     static constexpr bool floatsEqual(float a, float b);
 
-    std::array<std::map<float, float>, 2> toneThresholds;
-
+    PureToneTestResults toneThresholds;
 
 
     int currentTone = 0;
@@ -60,3 +69,4 @@ private:
     bool currentToneDetected = false;
 
 };
+
