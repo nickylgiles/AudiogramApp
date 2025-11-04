@@ -22,6 +22,13 @@ struct PureToneTestResults {
     std::map<float, float>& operator[](size_t index) {
         if (index == 0) return left;
         if (index == 1) return right;
+        throw std::out_of_range("Index must be 0 or 1");
+    }
+
+    const std::map<float, float>& operator[](size_t index) const {
+        if (index == 0) return left;
+        if (index == 1) return right;
+        throw std::out_of_range("Index must be 0 or 1");
     }
 };
 
