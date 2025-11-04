@@ -12,11 +12,14 @@
 
 #include <JuceHeader.h>
 
+#include "../TestController.h" // for PureToneTestResults type
+
 class PureToneResultsScreen : public juce::Component {
 public:
     PureToneResultsScreen();
     ~PureToneResultsScreen() override = default;
 
+    void setResults(const PureToneTestResults& newResults);
 
     // Callbacks set in MainComponent
     std::function<void()> onExportClicked;
@@ -28,6 +31,8 @@ public:
 private:
     juce::TextButton exportButton{ "Export Results" };
     juce::TextButton menuButton{ "Back to menu" };
+
+    PureToneTestResults results;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(PureToneResultsScreen)
 };

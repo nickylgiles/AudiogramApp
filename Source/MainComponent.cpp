@@ -81,7 +81,7 @@ void MainComponent::paint (juce::Graphics& g)
    
 }
 void MainComponent::paintOverChildren(juce::Graphics& g) {
-    g.setColour(juce::Colours::black);
+    /*g.setColour(juce::Colours::black);
     int y = 20;
     int lineHeight = 20;
     juce::String ears[2] = { "Left", "Right" };
@@ -98,7 +98,7 @@ void MainComponent::paintOverChildren(juce::Graphics& g) {
             g.drawText(text, 40, y, 300, lineHeight, juce::Justification::left);
             y += lineHeight;
         }
-    }
+    }*/
 }
 void MainComponent::testEnd() {
     testStarted = false;
@@ -142,7 +142,10 @@ void MainComponent::showPureToneResultsScreen() {
     currentScreen.reset(new PureToneResultsScreen());
     addAndMakeVisible(currentScreen.get());
 
+    PureToneTestResults results = testController->getResults();
     auto screen = dynamic_cast<PureToneResultsScreen*>(currentScreen.get());
+
+    screen->setResults(results);
     screen->onExportClicked = [this] {
         // code to export results
         };
