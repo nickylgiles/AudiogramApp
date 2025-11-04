@@ -11,7 +11,7 @@
 #pragma once
 
 #include <JuceHeader.h>
-#include "SoundEngine.h"
+#include "Audio/SoundEngine.h"
 
 class MainComponent;
 

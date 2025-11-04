@@ -40,7 +40,7 @@ private:
     SoundFilePlayer soundFilePlayer;
     Spatialiser spatialiser;
 
-    double sampleRate = 44100.0;
+    double sampleRate;
     int toneChannel = 0;
     int noiseChannel = 1;
 
