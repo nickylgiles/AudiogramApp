@@ -28,9 +28,12 @@ public:
 private:
     juce::AudioBuffer<float> buffer;
     juce::AudioFormatManager audioFormatManager;
-    int currentSample;
+    double currentSample;
     int totalSamples;
     double sampleRate;
     bool fileLoaded;
     bool soundPlaying;
+
+    double fileSampleRate;
+    double playbackIncrement;
 };

@@ -37,6 +37,9 @@ bool SoundFilePlayer::loadFile(const juce::File& file) {
     soundPlaying = false;
     DBG("File loaded.  Length = " << totalSamples << " samples");
 
+    fileSampleRate = reader->sampleRate;
+    playbackIncrement = fileSampleRate / sampleRate;
+
     return true;
 }
 
@@ -54,34 +57,47 @@ bool SoundFilePlayer::loadBinaryData(const void* data, size_t size) {
     totalSamples = reader->lengthInSamples;
     buffer.setSize((int)reader->numChannels, totalSamples);
     reader->read(&buffer, 0, totalSamples, 0, true, true);
-    currentSample = 0;
+    currentSample = 0.0;
     fileLoaded = true;
     soundPlaying = false;
     DBG("Binary resource loaded. Length = " << totalSamples << " samples");
+
+
+    fileSampleRate = reader->sampleRate;
+    playbackIncrement = fileSampleRate / sampleRate;
+
     return true;
 
 }
 
 void SoundFilePlayer::setSampleRate(double newSampleRate) {
     sampleRate = newSampleRate;
+    if (fileLoaded)
+        playbackIncrement = fileSampleRate / sampleRate;
 }
 
 void SoundFilePlayer::reset() {
-    currentSample = 0;
+    currentSample = 0.0;
     soundPlaying = false;
 }
 
 float SoundFilePlayer::nextSample() {
-    if (!fileLoaded || totalSamples == 0 || !soundPlaying) {
+    if (!fileLoaded || totalSamples == 0 || !soundPlaying)
+        return 0.0f;
+
+    if (currentSample >= totalSamples - 1) {
+        reset();
         return 0.0f;
     }
 
-    float sample = buffer.getSample(0, currentSample);
+    int index = static_cast<int>(currentSample);
+    float frac = static_cast<float>(currentSample - index);
 
-    currentSample++;
-    if (currentSample >= totalSamples) {
-        reset();
-    }
+    float s1 = buffer.getSample(0, index);
+    float s2 = buffer.getSample(0, index + 1);
+    float sample = s1 + frac * (s2 - s1);
+
+    currentSample += playbackIncrement;
 
     return sample;
 }

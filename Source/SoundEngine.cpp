@@ -81,6 +81,7 @@ void SoundEngine::setSampleRate(double newSampleRate) {
     sampleRate = newSampleRate;
     toneGenerator.setSampleRate(newSampleRate);
     noiseGenerator.setSampleRate(newSampleRate);
+    soundFilePlayer.setSampleRate(newSampleRate);
 
     envelope.setFallTime(newSampleRate * 0.1);
     envelope.setRiseTime(newSampleRate * 0.1);
