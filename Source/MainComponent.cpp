@@ -4,11 +4,10 @@
 MainComponent::MainComponent()
 {
 
-
     soundEngine = std::make_unique<SoundEngine>();
 
     testController = std::make_unique<TestController>(this, soundEngine.get());
-
+    /*
     addAndMakeVisible(startButton);
 
     startButton.onClick = [this] {
@@ -25,8 +24,7 @@ MainComponent::MainComponent()
             testController->cancelTest();
             soundEngine->playSampleSpatial(BinaryData::snd_wav, BinaryData::snd_wavSize, 80.0f);
         }
-        
-        
+
     };
 
     addAndMakeVisible(hearToneButton);
@@ -34,7 +32,9 @@ MainComponent::MainComponent()
     hearToneButton.onClick = [this] {
         testController->buttonPress();
         };
+    */
 
+    showMenuScreen();
     // Make sure you set the size of the component after
     // you add any child components.
     setSize (800, 600);
@@ -139,15 +139,42 @@ void MainComponent::testEnd() {
     testStarted = false;
     startButton.setButtonText("Restart Test");
 }
+void MainComponent::showMenuScreen() {
+    currentScreen.reset(new MenuScreen());
+    addAndMakeVisible(currentScreen.get());
+
+    auto menu = dynamic_cast<MenuScreen*>(currentScreen.get());
+    menu->onPureToneClicked = [this] {showPureToneTestScreen();};
+    menu->onSpatialClicked = [this] {showSpatialTestScreen();};
+
+    resized();
+}
+
+void MainComponent::showPureToneTestScreen()
+{
+}
+
+void MainComponent::showSpatialTestScreen()
+{
+}
+
+void MainComponent::showPureToneResultsScreen()
+{
+}
+
 void MainComponent::resized()
 {
     // This is called when the MainContentComponent is resized.
     // If you add any child components, this is where you should
     // update their positions.
 
+    /*
     auto area = getLocalBounds().reduced(40);
     auto buttonHeight = area.getHeight() / 2;
 
     startButton.setBounds(area.removeFromTop(buttonHeight).reduced(10));
     hearToneButton.setBounds(area.reduced(10));
+    */
+    if (currentScreen)
+        currentScreen->setBounds(getLocalBounds());
 }

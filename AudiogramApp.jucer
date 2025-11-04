@@ -3,26 +3,26 @@
 <JUCERPROJECT id="WKUAzk" name="AudiogramApp" projectType="guiapp" useAppConfig="0"
               addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1">
   <MAINGROUP id="lnMh6c" name="AudiogramApp">
-    <GROUP id="{2587C659-6868-9C32-C63C-7B92B0B65E14}" name="Audio">
-      <FILE id="VrR66q" name="Envelope.cpp" compile="1" resource="0" file="Source/Audio/Envelope.cpp"/>
-      <FILE id="O3mHcF" name="Envelope.h" compile="0" resource="0" file="Source/Audio/Envelope.h"/>
-      <FILE id="ONrz2c" name="NoiseGenerator.cpp" compile="1" resource="0"
-            file="Source/Audio/NoiseGenerator.cpp"/>
-      <FILE id="E2UiYz" name="NoiseGenerator.h" compile="0" resource="0"
-            file="Source/Audio/NoiseGenerator.h"/>
-      <FILE id="qIHT1e" name="SoundEngine.cpp" compile="1" resource="0" file="Source/Audio/SoundEngine.cpp"/>
-      <FILE id="grpGAl" name="SoundEngine.h" compile="0" resource="0" file="Source/Audio/SoundEngine.h"/>
-      <FILE id="rP2N3h" name="SoundFilePlayer.cpp" compile="1" resource="0"
-            file="Source/Audio/SoundFilePlayer.cpp"/>
-      <FILE id="N8wAie" name="SoundFilePlayer.h" compile="0" resource="0"
-            file="Source/Audio/SoundFilePlayer.h"/>
-      <FILE id="l74KWx" name="Spatialiser.cpp" compile="1" resource="0" file="Source/Audio/Spatialiser.cpp"/>
-      <FILE id="ywsTTx" name="Spatialiser.h" compile="0" resource="0" file="Source/Audio/Spatialiser.h"/>
-      <FILE id="JnR4Il" name="ToneGenerator.cpp" compile="1" resource="0"
-            file="Source/Audio/ToneGenerator.cpp"/>
-      <FILE id="pccR1Z" name="ToneGenerator.h" compile="0" resource="0" file="Source/Audio/ToneGenerator.h"/>
-    </GROUP>
     <GROUP id="{8ACD6052-F8FD-9BBA-B215-8096667E1970}" name="Source">
+      <GROUP id="{2587C659-6868-9C32-C63C-7B92B0B65E14}" name="Audio">
+        <FILE id="VrR66q" name="Envelope.cpp" compile="1" resource="0" file="Source/Audio/Envelope.cpp"/>
+        <FILE id="O3mHcF" name="Envelope.h" compile="0" resource="0" file="Source/Audio/Envelope.h"/>
+        <FILE id="ONrz2c" name="NoiseGenerator.cpp" compile="1" resource="0"
+              file="Source/Audio/NoiseGenerator.cpp"/>
+        <FILE id="E2UiYz" name="NoiseGenerator.h" compile="0" resource="0"
+              file="Source/Audio/NoiseGenerator.h"/>
+        <FILE id="qIHT1e" name="SoundEngine.cpp" compile="1" resource="0" file="Source/Audio/SoundEngine.cpp"/>
+        <FILE id="grpGAl" name="SoundEngine.h" compile="0" resource="0" file="Source/Audio/SoundEngine.h"/>
+        <FILE id="rP2N3h" name="SoundFilePlayer.cpp" compile="1" resource="0"
+              file="Source/Audio/SoundFilePlayer.cpp"/>
+        <FILE id="N8wAie" name="SoundFilePlayer.h" compile="0" resource="0"
+              file="Source/Audio/SoundFilePlayer.h"/>
+        <FILE id="l74KWx" name="Spatialiser.cpp" compile="1" resource="0" file="Source/Audio/Spatialiser.cpp"/>
+        <FILE id="ywsTTx" name="Spatialiser.h" compile="0" resource="0" file="Source/Audio/Spatialiser.h"/>
+        <FILE id="JnR4Il" name="ToneGenerator.cpp" compile="1" resource="0"
+              file="Source/Audio/ToneGenerator.cpp"/>
+        <FILE id="pccR1Z" name="ToneGenerator.h" compile="0" resource="0" file="Source/Audio/ToneGenerator.h"/>
+      </GROUP>
       <FILE id="T5fwGl" name="TestController.cpp" compile="1" resource="0"
             file="Source/TestController.cpp"/>
       <FILE id="xR0lwZ" name="TestController.h" compile="0" resource="0"
@@ -31,8 +31,18 @@
       <FILE id="yRLOBH" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
       <FILE id="Zx0RZL" name="MainComponent.cpp" compile="1" resource="0"
             file="Source/MainComponent.cpp"/>
-      <GROUP id="{CFFB6F90-01DA-0095-CAE6-9A96FB1489E2}" name="Audio"/>
-      <GROUP id="{8F5E5A1D-8BFE-3270-DA73-9A53E2F30F6B}" name="GUI"/>
+      <GROUP id="{8F5E5A1D-8BFE-3270-DA73-9A53E2F30F6B}" name="GUI">
+        <FILE id="NwuFWI" name="MenuScreen.cpp" compile="1" resource="0" file="Source/GUI/MenuScreen.cpp"/>
+        <FILE id="n96XkO" name="MenuScreen.h" compile="0" resource="0" file="Source/GUI/MenuScreen.h"/>
+        <FILE id="zmR1q5" name="PureToneResultsScreen.cpp" compile="1" resource="0"
+              file="Source/GUI/PureToneResultsScreen.cpp"/>
+        <FILE id="ifPmcF" name="PureToneResultsScreen.h" compile="0" resource="0"
+              file="Source/GUI/PureToneResultsScreen.h"/>
+        <FILE id="ODVjRZ" name="PureToneTestScreen.cpp" compile="1" resource="0"
+              file="Source/GUI/PureToneTestScreen.cpp"/>
+        <FILE id="DdRmVu" name="PureToneTestScreen.h" compile="0" resource="0"
+              file="Source/GUI/PureToneTestScreen.h"/>
+      </GROUP>
       <GROUP id="{7E4C7854-C52A-8E8F-A1C7-D2FCF346D5A2}" name="Database"/>
     </GROUP>
     <FILE id="JgJTIV" name="snd.wav" compile="0" resource="1" file="../../../../Desktop/snd.wav"/>

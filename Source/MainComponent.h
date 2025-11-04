@@ -2,6 +2,9 @@
 
 #include <JuceHeader.h>
 #include "TestController.h"
+#include "GUI/MenuScreen.h"
+#include "GUI/PureToneTestScreen.h"
+#include "GUI/PureToneResultsScreen.h"
 
 //==============================================================================
 /*
@@ -28,6 +31,11 @@ public:
 
     void testEnd();
 
+    void showMenuScreen();
+    void showPureToneTestScreen();
+    void showSpatialTestScreen();
+    void showPureToneResultsScreen();
+
 private:
     //==============================================================================
     // Your private member variables go here...
@@ -38,6 +46,8 @@ private:
     std::unique_ptr<SoundEngine> soundEngine;
 
     bool testStarted = false;
+
+    std::unique_ptr<juce::Component> currentScreen;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
 };
