@@ -27,8 +27,6 @@ public:
     void paint (juce::Graphics& g) override;
     void resized() override;
 
-    void paintOverChildren(juce::Graphics& g) override;
-
     void testEnd();
 
     void showMenuScreen();
