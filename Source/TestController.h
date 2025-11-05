@@ -34,7 +34,7 @@ struct PureToneTestResults {
 
 class TestController : private juce::Timer {
 public:
-    TestController(MainComponent* mainComponentPtr, SoundEngine* soundEnginePtr);
+    TestController(MainComponent& mainComponentPtr, SoundEngine& soundEnginePtr);
     void startTest();
     void buttonPress();
     void cancelTest();
@@ -44,9 +44,9 @@ public:
 private:
     void timerCallback() override;
 
-    SoundEngine* soundEngine;
+    SoundEngine& soundEngine;
 
-    MainComponent* mainComponent;
+    MainComponent& mainComponent;
 
     static float dbToAmplitude(float db);
     void playFirstTone();

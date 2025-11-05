@@ -11,11 +11,9 @@
 #include "TestController.h"
 #include "MainComponent.h"
 
-TestController::TestController(MainComponent* mainComponentPtr, SoundEngine* soundEnginePtr) {
-
-    mainComponent = mainComponentPtr;
-    soundEngine = soundEnginePtr;
-
+TestController::TestController(MainComponent& mainComponentRef, SoundEngine& soundEngineRef)
+    : mainComponent(mainComponentRef), soundEngine(soundEngineRef)
+{
     for (auto tone : testTones) {
         toneThresholds[0][tone] = dbLevelMax;
         toneThresholds[1][tone] = dbLevelMax;
@@ -40,7 +38,7 @@ void TestController::buttonPress() {
 
 void TestController::cancelTest() {
     stopTimer();
-    soundEngine->stop();
+    soundEngine.stop();
 }
 
 /*static*/ float TestController::dbToAmplitude(float db) {
@@ -92,7 +90,7 @@ void TestController::playNextTone() {
     }
 
     if (currentTone < testTones.size()) {
-        soundEngine->playToneMasked(testTones[currentTone], dbToAmplitude(currentThreshold), 1.0f, currentEar);
+        soundEngine.playToneMasked(testTones[currentTone], dbToAmplitude(currentThreshold), 1.0f, currentEar);
 
         currentToneDetected = false;
 
@@ -110,14 +108,14 @@ void TestController::playNextTone() {
         else {
             // Test finished
             DBG("Test finished.");
-            mainComponent->testEnd();
+            mainComponent.testEnd();
         }
     }
 }
 
 void TestController::playFirstTone() {
 
-    soundEngine->playToneMasked(testTones[currentTone], dbToAmplitude(currentThreshold), 1.0f, currentEar);
+    soundEngine.playToneMasked(testTones[currentTone], dbToAmplitude(currentThreshold), 1.0f, currentEar);
 
     currentToneDetected = false;
 

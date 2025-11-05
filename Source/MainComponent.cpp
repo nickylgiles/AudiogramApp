@@ -6,7 +6,7 @@ MainComponent::MainComponent()
 
     soundEngine = std::make_unique<SoundEngine>();
 
-    testController = std::make_unique<TestController>(this, soundEngine.get());
+    testController = std::make_unique<TestController>(*this, *soundEngine);
 
     showMenuScreen();
     // Make sure you set the size of the component after
