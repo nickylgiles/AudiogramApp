@@ -12,7 +12,7 @@
 
 #include <JuceHeader.h>
 
-#include "../TestController.h" // for PureToneTestResults type
+#include "../PureToneTestResults.h" 
 
 class PureToneResultsScreen : public juce::Component {
 public:

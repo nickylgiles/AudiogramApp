@@ -12,25 +12,10 @@
 
 #include <JuceHeader.h>
 #include "Audio/SoundEngine.h"
+#include "PureToneTestResults.h"
 
 class MainComponent;
 
-struct PureToneTestResults {
-    std::map<float, float> left;
-    std::map<float, float> right;
-
-    std::map<float, float>& operator[](size_t index) {
-        if (index == 0) return left;
-        if (index == 1) return right;
-        throw std::out_of_range("Index must be 0 or 1");
-    }
-
-    const std::map<float, float>& operator[](size_t index) const {
-        if (index == 0) return left;
-        if (index == 1) return right;
-        throw std::out_of_range("Index must be 0 or 1");
-    }
-};
 
 class TestController : private juce::Timer {
 public:

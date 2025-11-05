@@ -31,24 +31,6 @@ void PureToneResultsScreen::resized() {
 }
 
 void PureToneResultsScreen::paint(juce::Graphics& g) {
-    /*g.fillAll(getLookAndFeel().findColour(juce::ResizableWindow::backgroundColourId));
-    g.setColour(juce::Colours::black);
-    int y = 20;
-    int lineHeight = 20;
-    juce::String ears[2] = { "Left", "Right" };
-
-    for (int i = 0; i < 2; ++i) {
-        g.drawText(ears[i], 40, y, 300, lineHeight, juce::Justification::left);
-        y += lineHeight;
-        for (const auto& pair : results[i]) {
-            float freq = pair.first;
-            float threshold = pair.second;
-
-            juce::String text = juce::String(freq) + " Hz: " + juce::String(threshold, 1) + " dB";
-            g.drawText(text, 40, y, 300, lineHeight, juce::Justification::left);
-            y += lineHeight;
-        }
-    */
 
     g.fillAll(juce::Colours::white);
     g.setColour(juce::Colours::black);
