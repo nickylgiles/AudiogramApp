@@ -55,6 +55,7 @@ private:
     void scheduleNextTone(int delayMs);
 
     std::vector<float> testTones = { 125.0f, 250.0f, 500.0f, 1000.0f, 2000.0f, 4000.0f, 8000.0f, 16000.0f };
+   // std::vector<float> testTones = { 1000.0f };
 
     float dbLevelMin = -50.0f;
     float dbLevelMax = 0.0f;
