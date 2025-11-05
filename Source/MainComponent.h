@@ -29,7 +29,7 @@ public:
 
     void testEnd();
 
-    void showMenuScreen();
+    void showMenuScreen(); 
     void showPureToneTestScreen();
     void showSpatialTestScreen();
     void showPureToneResultsScreen();
@@ -37,8 +37,6 @@ public:
 private:
     //==============================================================================
     // Your private member variables go here...
-    juce::TextButton startButton{ "Start Test" };
-    juce::TextButton hearToneButton{ "Tone Heard" };
 
     std::unique_ptr<TestController> testController;
     std::unique_ptr<SoundEngine> soundEngine;
