@@ -16,50 +16,17 @@
 
 class MainComponent;
 
-
-class TestController : private juce::Timer {
+class TestController {
 public:
-    TestController(MainComponent& mainComponentRef, SoundEngine& soundEngineRef);
-    void startTest();
-    void buttonPress();
-    void cancelTest();
+    TestController(MainComponent& mainComponentRef, SoundEngine& soundEngineRef)
+        : mainComponent(mainComponentRef), soundEngine(soundEngineRef) {}
 
-    const PureToneTestResults getResults();
-    
-private:
-    void timerCallback() override;
+    virtual ~TestController() = default;
 
-    SoundEngine& soundEngine;
+    virtual void startTest() = 0;
+    virtual void stopTest() = 0;
 
+protected:
     MainComponent& mainComponent;
-
-    static float dbToAmplitude(float db);
-    void playFirstTone();
-    void playNextTone();
-
-    void scheduleNextTone(int delayMs);
-
-    std::vector<float> testTones = { 125.0f, 250.0f, 500.0f, 1000.0f, 2000.0f, 4000.0f, 8000.0f, 16000.0f };
-   // std::vector<float> testTones = { 1000.0f };
-
-    float dbLevelMin = -50.0f;
-    float dbLevelMax = 0.0f;
-    float dbIncrementAscending = 10.0f;
-    float dbIncrementDescending = 5.0f;
-
-    static constexpr bool floatsEqual(float a, float b);
-
-    PureToneTestResults toneThresholds;
-
-
-    int currentTone = 0;
-    int currentEar = 0;
-    float currentThreshold = -20.0f;
-    bool thresholdIncreasing = true;
-
-    
-
-    bool currentToneDetected = false;
-
+    SoundEngine& soundEngine;
 };
-

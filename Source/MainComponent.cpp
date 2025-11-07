@@ -6,7 +6,8 @@ MainComponent::MainComponent()
 
     soundEngine = std::make_unique<SoundEngine>();
 
-    testController = std::make_unique<TestController>(*this, *soundEngine);
+   //  testController = std::make_unique<PureToneTestController>(*this, *soundEngine);
+    testController = nullptr;
 
     showMenuScreen();
     // Make sure you set the size of the component after
@@ -96,7 +97,7 @@ void MainComponent::showMenuScreen() {
 }
 
 void MainComponent::showPureToneTestScreen() {
-    testController.reset(new TestController(*this, *soundEngine));
+    testController.reset(new PureToneTestController(*this, *soundEngine));
     testStarted = true;
     testController->startTest();
     currentScreen.reset(new PureToneTestScreen());
@@ -104,11 +105,12 @@ void MainComponent::showPureToneTestScreen() {
 
     auto screen = dynamic_cast<PureToneTestScreen*>(currentScreen.get());
     screen->onHearClicked = [this] {
-        testController->buttonPress();
+        if(auto ptTestController = dynamic_cast<PureToneTestController*>(testController.get()))
+            ptTestController->buttonPress();
         };
     screen->onStopClicked = [this] {
         testStarted = false;
-        testController->cancelTest();
+        testController->stopTest();
         showMenuScreen();
         };
 
@@ -122,8 +124,9 @@ void MainComponent::showSpatialTestScreen() {
 void MainComponent::showPureToneResultsScreen() {
     currentScreen.reset(new PureToneResultsScreen());
     addAndMakeVisible(currentScreen.get());
+    auto ptTestController = dynamic_cast<PureToneTestController*>(testController.get());
 
-    PureToneTestResults results = testController->getResults();
+    PureToneTestResults results = ptTestController->getResults();
     auto screen = dynamic_cast<PureToneResultsScreen*>(currentScreen.get());
 
     screen->setResults(results);
