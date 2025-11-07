@@ -9,7 +9,7 @@
 */
 
 #include "TestController.h"
-#include "MainComponent.h"
+#include "../MainComponent.h"
 
 TestController::TestController(MainComponent& mainComponentRef, SoundEngine& soundEngineRef)
     : mainComponent(mainComponentRef), soundEngine(soundEngineRef)

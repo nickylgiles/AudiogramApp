@@ -11,15 +11,15 @@
 #pragma once
 
 #include <JuceHeader.h>
-#include "Audio/SoundEngine.h"
-#include "PureToneTestResults.h"
+#include "../Audio/SoundEngine.h"
+#include "../PureToneTestResults.h"
 
 class MainComponent;
 
 
 class TestController : private juce::Timer {
 public:
-    TestController(MainComponent& mainComponentPtr, SoundEngine& soundEnginePtr);
+    TestController(MainComponent& mainComponentRef, SoundEngine& soundEngineRef);
     void startTest();
     void buttonPress();
     void cancelTest();

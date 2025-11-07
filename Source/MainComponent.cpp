@@ -96,6 +96,7 @@ void MainComponent::showMenuScreen() {
 }
 
 void MainComponent::showPureToneTestScreen() {
+    testController.reset(new TestController(*this, *soundEngine));
     testStarted = true;
     testController->startTest();
     currentScreen.reset(new PureToneTestScreen());
@@ -114,8 +115,8 @@ void MainComponent::showPureToneTestScreen() {
     resized();
 }
 
-void MainComponent::showSpatialTestScreen()
-{
+void MainComponent::showSpatialTestScreen() {
+
 }
 
 void MainComponent::showPureToneResultsScreen() {

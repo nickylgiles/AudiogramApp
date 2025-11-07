@@ -1,7 +1,7 @@
 #pragma once
 
 #include <JuceHeader.h>
-#include "TestController.h"
+#include "Control/TestController.h"
 #include "GUI/MenuScreen.h"
 #include "GUI/PureToneTestScreen.h"
 #include "GUI/PureToneResultsScreen.h"

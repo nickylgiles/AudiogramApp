@@ -4,6 +4,20 @@
               addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1">
   <MAINGROUP id="lnMh6c" name="AudiogramApp">
     <GROUP id="{8ACD6052-F8FD-9BBA-B215-8096667E1970}" name="Source">
+      <GROUP id="{943F7013-3B33-5071-AA95-51CCE457EC05}" name="Controller">
+        <FILE id="JPKWyE" name="PureToneTestController.cpp" compile="1" resource="0"
+              file="Source/Control/PureToneTestController.cpp"/>
+        <FILE id="GE1E7n" name="PureToneTestController.h" compile="0" resource="0"
+              file="Source/Control/PureToneTestController.h"/>
+        <FILE id="kPO1EJ" name="SpatialTestController.cpp" compile="1" resource="0"
+              file="Source/Control/SpatialTestController.cpp"/>
+        <FILE id="SvjQMr" name="SpatialTestController.h" compile="0" resource="0"
+              file="Source/Control/SpatialTestController.h"/>
+        <FILE id="nJG2yS" name="TestController.cpp" compile="1" resource="0"
+              file="Source/Control/TestController.cpp"/>
+        <FILE id="SfnrgV" name="TestController.h" compile="0" resource="0"
+              file="Source/Control/TestController.h"/>
+      </GROUP>
       <FILE id="arPsr6" name="PureToneTestResults.h" compile="0" resource="0"
             file="Source/PureToneTestResults.h"/>
       <GROUP id="{2587C659-6868-9C32-C63C-7B92B0B65E14}" name="Audio">
@@ -25,10 +39,6 @@
               file="Source/Audio/ToneGenerator.cpp"/>
         <FILE id="pccR1Z" name="ToneGenerator.h" compile="0" resource="0" file="Source/Audio/ToneGenerator.h"/>
       </GROUP>
-      <FILE id="T5fwGl" name="TestController.cpp" compile="1" resource="0"
-            file="Source/TestController.cpp"/>
-      <FILE id="xR0lwZ" name="TestController.h" compile="0" resource="0"
-            file="Source/TestController.h"/>
       <FILE id="NYP5A5" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
       <FILE id="yRLOBH" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
       <FILE id="Zx0RZL" name="MainComponent.cpp" compile="1" resource="0"
