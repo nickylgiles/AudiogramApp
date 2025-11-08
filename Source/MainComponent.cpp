@@ -86,13 +86,13 @@ void MainComponent::testEnd() {
     showPureToneResultsScreen();
 }
 void MainComponent::showMenuScreen() {
-    currentScreen.reset(new MenuScreen());
-    addAndMakeVisible(currentScreen.get());
+    auto screen = std::make_unique<MenuScreen>();
 
-    auto screen = dynamic_cast<MenuScreen*>(currentScreen.get());
     screen->onPureToneClicked = [this] {showPureToneTestScreen();};
     screen->onSpatialClicked = [this] {showSpatialTestScreen();};
 
+    currentScreen = std::move(screen);
+    addAndMakeVisible(currentScreen.get());
     resized();
 }
 
@@ -100,10 +100,8 @@ void MainComponent::showPureToneTestScreen() {
     testController.reset(new PureToneTestController(*this, *soundEngine));
     testStarted = true;
     testController->startTest();
-    currentScreen.reset(new PureToneTestScreen());
-    addAndMakeVisible(currentScreen.get());
 
-    auto screen = dynamic_cast<PureToneTestScreen*>(currentScreen.get());
+    auto screen = std::make_unique<PureToneTestScreen>();
     screen->onHearClicked = [this] {
         testController->buttonClicked("hearButton");
         };
@@ -113,6 +111,8 @@ void MainComponent::showPureToneTestScreen() {
         showMenuScreen();
         };
 
+    currentScreen = std::move(screen);
+    addAndMakeVisible(currentScreen.get());
     resized();
 }
 
@@ -121,12 +121,13 @@ void MainComponent::showSpatialTestScreen() {
 }
 
 void MainComponent::showPureToneResultsScreen() {
-    currentScreen.reset(new PureToneResultsScreen());
     addAndMakeVisible(currentScreen.get());
     auto ptTestController = dynamic_cast<PureToneTestController*>(testController.get());
-
+    if (!ptTestController) {
+        return;
+    }
     PureToneTestResults results = ptTestController->getResults();
-    auto screen = dynamic_cast<PureToneResultsScreen*>(currentScreen.get());
+    auto screen = std::make_unique<PureToneResultsScreen>();
 
     screen->setResults(results);
     screen->onExportClicked = [this] {
@@ -136,6 +137,8 @@ void MainComponent::showPureToneResultsScreen() {
         showMenuScreen();
         };
 
+    currentScreen = std::move(screen);
+    addAndMakeVisible(currentScreen.get());
     resized();
 }
 
