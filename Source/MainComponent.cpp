@@ -117,11 +117,12 @@ void MainComponent::showPureToneTestScreen() {
 }
 
 void MainComponent::showSpatialTestScreen() {
-
+    testController.reset(new SpatialTestController(*this, *soundEngine));
+    testStarted = true;
+    testController->startTest();
 }
 
 void MainComponent::showPureToneResultsScreen() {
-    addAndMakeVisible(currentScreen.get());
     auto ptTestController = dynamic_cast<PureToneTestController*>(testController.get());
     if (!ptTestController) {
         return;

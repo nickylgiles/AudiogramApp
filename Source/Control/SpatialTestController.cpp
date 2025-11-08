@@ -9,3 +9,20 @@
 */
 
 #include "SpatialTestController.h"
+#include <BinaryData.h>
+
+SpatialTestController::SpatialTestController(MainComponent& mainComponentRef, SoundEngine& soundEngineRef)
+    	: TestController(mainComponentRef, soundEngineRef) {
+
+}
+
+void SpatialTestController::startTest() {
+    
+}
+
+void SpatialTestController::stopTest() {
+    soundEngine.stop();
+}
+void SpatialTestController::timerCallback() {
+    return;
+}

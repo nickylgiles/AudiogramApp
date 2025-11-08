@@ -2,6 +2,7 @@
 
 #include <JuceHeader.h>
 #include "Control/PureToneTestController.h"
+#include "Control/SpatialTestController.h"
 #include "GUI/MenuScreen.h"
 #include "GUI/PureToneTestScreen.h"
 #include "GUI/PureToneResultsScreen.h"
