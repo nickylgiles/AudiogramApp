@@ -16,7 +16,8 @@ public:
     void startTest() override;
     void stopTest() override;
 
-    void buttonPress();
+    void buttonClicked(const juce::String& id) override;
+    void toneHeard();
 
     const PureToneTestResults getResults();
 

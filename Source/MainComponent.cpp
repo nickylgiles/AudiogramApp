@@ -105,12 +105,11 @@ void MainComponent::showPureToneTestScreen() {
 
     auto screen = dynamic_cast<PureToneTestScreen*>(currentScreen.get());
     screen->onHearClicked = [this] {
-        if(auto ptTestController = dynamic_cast<PureToneTestController*>(testController.get()))
-            ptTestController->buttonPress();
+        testController->buttonClicked("hearButton");
         };
     screen->onStopClicked = [this] {
         testStarted = false;
-        testController->stopTest();
+        testController->buttonClicked("stopButton");
         showMenuScreen();
         };
 

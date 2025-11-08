@@ -31,7 +31,18 @@ void PureToneTestController::startTest() {
 
 }
 
-void PureToneTestController::buttonPress() {
+void PureToneTestController::buttonClicked(const juce::String& id) {
+    if (id == "hearButton") {
+        toneHeard();
+        return;
+    }
+    if (id == "stopButton") {
+        stopTest();
+        return;
+    }
+}
+
+void PureToneTestController::toneHeard() {
     currentToneDetected = true;
 }
 

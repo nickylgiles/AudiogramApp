@@ -11,6 +11,7 @@
 #pragma once
 
 #include <JuceHeader.h>
+#include <juce_gui_basics/juce_gui_basics.h>
 #include "../Audio/SoundEngine.h"
 #include "../PureToneTestResults.h"
 
@@ -25,6 +26,8 @@ public:
 
     virtual void startTest() = 0;
     virtual void stopTest() = 0;
+
+    virtual void buttonClicked(const juce::String& id) { return; }
 
 protected:
     MainComponent& mainComponent;
