@@ -24,7 +24,7 @@ public:
     bool soundIsPlaying() const;
     void startPlaying();
     int getLength();
-
+    bool isFinished() const;
 private:
     juce::AudioBuffer<float> buffer;
     juce::AudioFormatManager audioFormatManager;

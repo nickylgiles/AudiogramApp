@@ -122,3 +122,7 @@ int SoundFilePlayer::getLength()
         return 0;
     return totalSamples;
 }
+
+bool SoundFilePlayer::isFinished() const {
+    return fileLoaded && !soundPlaying;
+}

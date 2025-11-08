@@ -59,9 +59,25 @@ void SoundEngine::playSample(const void* data, size_t size) {
     spatialiser.setAzimuth(0.0f);
 }
 
-void SoundEngine::playSampleSpatial(const void* data, size_t size, float azimuth) {
-    playSample(data, size);
-    spatialiser.setAzimuth(azimuth);
+void SoundEngine::playSampleSpatial(const void* data, size_t size, float azimuth, float gain) {
+    //playSample(data, size);
+    //spatialiser.setAzimuth(azimuth);
+    SoundSource source;
+    source.player = std::make_unique<SoundFilePlayer>();
+    source.player->loadBinaryData(data, size);
+    source.player->setSampleRate(sampleRate);
+    source.player->startPlaying();
+
+    source.spatialiser = std::make_unique<Spatialiser>();
+    source.spatialiser->setSampleRate(sampleRate);
+    source.spatialiser->setAzimuth(azimuth);
+
+    source.azimuth = azimuth;
+    source.gain = gain;
+    source.active = true;
+
+    sources.push_back(std::move(source));
+    playing = true;
 }
 
 void SoundEngine::stop()
@@ -147,6 +163,36 @@ void SoundEngine::processBlock(float* outputL, float* outputR, int numSamples) {
             }
         }
         spatialiser.processBlock(soundBuffer.getReadPointer(0), outputL, outputR, numSamples);
+    }
+
+    if (!sources.empty()) {
+        juce::AudioBuffer<float> monoBuffer(1, numSamples);
+        juce::AudioBuffer<float> stereoBuffer(2, numSamples);
+
+        for (auto it = sources.begin(); it != sources.end(); ) {
+            if (it->active && it->player) {
+                float* monoWritePointer = monoBuffer.getWritePointer(0);
+                float* stereoL = stereoBuffer.getWritePointer(0);
+                float* stereoR = stereoBuffer.getWritePointer(1);
+
+                for (int i = 0; i < numSamples; ++i)
+                    monoWritePointer[i] = it->player->nextSample();
+
+                it->spatialiser->processBlock(monoWritePointer, stereoL, stereoR, numSamples);
+
+                for (int i = 0; i < numSamples; ++i) {
+                    outputL[i] += stereoL[i] * it->gain;
+                    outputR[i] += stereoR[i] * it->gain;
+                }
+
+                // Remove finished sources
+                if (it->player->isFinished()) {
+                    it = sources.erase(it);
+                    continue;
+                }
+            }
+            ++it;
+		}
     }
 
 }
