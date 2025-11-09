@@ -25,9 +25,8 @@ private:
     void timerCallback() override;
 
     static float dbToAmplitude(float db);
-    void playFirstTone();
-    void playNextTone();
-
+    
+    void playCurrentTone();
     void scheduleNextTone(int delayMs);
 
     std::vector<float> testTones = { 125.0f, 250.0f, 500.0f, 1000.0f, 2000.0f, 4000.0f, 8000.0f, 16000.0f };
@@ -45,7 +44,16 @@ private:
     int currentTone = 0;
     int currentEar = 0;
     float currentThreshold = -20.0f;
-    bool thresholdIncreasing = true;
-    bool currentToneDetected = false;
 
+    bool currentToneDetected = false;
+    
+    enum class TestState {
+        START,
+        DB_ASCENDING,
+        DB_DESCENDING,
+        NEXT_TONE,
+        END
+    };
+    
+    TestState currentState;
 };

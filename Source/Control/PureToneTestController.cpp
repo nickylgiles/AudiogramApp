@@ -13,6 +13,7 @@
 
 PureToneTestController::PureToneTestController(MainComponent& mainComponentRef, SoundEngine& soundEngineRef)
     : TestController(mainComponentRef, soundEngineRef) {
+    currentState = TestState::END;
     for (auto tone : testTones) {
         toneThresholds[0][tone] = dbLevelMax;
         toneThresholds[1][tone] = dbLevelMax;
@@ -23,12 +24,12 @@ void PureToneTestController::startTest() {
     currentTone = 0;
     currentEar = 0;
     currentThreshold = dbLevelMin;
-    thresholdIncreasing = true;
+    // thresholdIncreasing = true;
 
     currentToneDetected = false;
+    currentState = TestState::START;
 
-    playFirstTone();
-
+    scheduleNextTone(2000);
 }
 
 void PureToneTestController::buttonClicked(const juce::String& id) {
@@ -56,80 +57,88 @@ void PureToneTestController::stopTest() {
     return amplitude;
 }
 
-void PureToneTestController::playNextTone() {
-    if (currentToneDetected) {
-        toneThresholds[currentEar][testTones[currentTone]] = currentThreshold;
-        if (thresholdIncreasing) {
-            if (currentThreshold > dbLevelMin) {
-                currentThreshold -= dbIncrementDescending;
-                thresholdIncreasing = false;
-            }
-            else {
-                currentThreshold = dbLevelMin;
-                currentTone++;
-                thresholdIncreasing = true;
-            }
-        }
-        else {
-            if (currentThreshold <= dbLevelMin || floatsEqual(currentThreshold, dbLevelMin)) {
-                currentThreshold = dbLevelMin;
-                currentTone++;
-                thresholdIncreasing = true;
-            }
-            else {
-                currentThreshold -= dbIncrementDescending;
-            }
-        }
+void PureToneTestController::timerCallback() {
+    stopTimer(); 
 
-    }
-    else {
-        if (floatsEqual(currentThreshold, dbLevelMax) || currentThreshold > dbLevelMax) {
-            currentThreshold = dbLevelMin;
-            currentTone++;
-        }
-        else {
-            if (thresholdIncreasing) {
+    switch (currentState) {
+        case TestState::START:
+            currentState = TestState::DB_ASCENDING;
+            break;
+
+        case TestState::DB_ASCENDING:
+            if (currentToneDetected) {
+                if (currentThreshold > dbLevelMin && !floatsEqual(currentThreshold, dbLevelMin))
+                    currentState = TestState::DB_DESCENDING;
+                else
+                    currentState = TestState::NEXT_TONE;
+                toneThresholds[currentEar][testTones[currentTone]] = currentThreshold;
+            }
+            else {
                 currentThreshold += dbIncrementAscending;
+                if (currentThreshold > dbLevelMax && !floatsEqual(currentThreshold, dbLevelMax)) {
+                    currentState = TestState::NEXT_TONE;
+                }
+            }
+            break;
+
+        case TestState::DB_DESCENDING:
+            if (currentToneDetected) {
+                toneThresholds[currentEar][testTones[currentTone]] = currentThreshold;
+                if (currentThreshold > dbLevelMin && !floatsEqual(currentThreshold, dbLevelMin)) {
+                    currentThreshold -= dbIncrementDescending;
+                }
+                else {
+                    currentState = TestState::NEXT_TONE;
+                }
             }
             else {
-                currentThreshold = dbLevelMin;
-                currentTone++;
-                thresholdIncreasing = true;
+                currentState = TestState::NEXT_TONE;
             }
-        }
+            break;
+
+        case TestState::NEXT_TONE:
+            if (currentTone < (testTones.size() - 1)) {
+                currentTone++;
+                currentState = TestState::DB_ASCENDING;
+                currentThreshold = dbLevelMin;
+            }
+            else {
+                if (currentEar < 1) {
+                    currentEar = 1;
+                    currentState = TestState::DB_ASCENDING;
+                    currentThreshold = dbLevelMin;
+                    currentTone = 0;
+                }
+                else {
+                    currentState = TestState::END;
+                }
+            }
+            break;
+
+        case TestState::END:
+            stopTest();
+            mainComponent.testEnd();
+            return;
     }
 
-    if (currentTone < testTones.size()) {
-        soundEngine.playToneMasked(testTones[currentTone], dbToAmplitude(currentThreshold), 1.0f, currentEar);
-
-        currentToneDetected = false;
-
+    if (currentState == TestState::DB_ASCENDING || currentState == TestState::DB_DESCENDING) {
+        playCurrentTone();
         scheduleNextTone(2000);
     }
-    else {
-        if (currentEar < 1) {
-            // Test other ear
-            currentEar = 1;
-            currentThreshold = dbLevelMin;
-            thresholdIncreasing = true;
-            currentTone = 0;
-            playFirstTone();
-        }
-        else {
-            // Test finished
-            DBG("Test finished.");
-            mainComponent.testEnd();
-        }
+    if (currentState == TestState::NEXT_TONE) {
+        scheduleNextTone(0);
     }
+    if (currentState == TestState::END) {
+        scheduleNextTone(0);
+    }
+
+    
 }
 
-void PureToneTestController::playFirstTone() {
+void PureToneTestController::playCurrentTone() {
 
     soundEngine.playToneMasked(testTones[currentTone], dbToAmplitude(currentThreshold), 1.0f, currentEar);
-
     currentToneDetected = false;
-
-    scheduleNextTone(2000);
 }
 
 /*static*/ constexpr bool PureToneTestController::floatsEqual(float a, float b) {
@@ -143,9 +152,4 @@ PureToneTestResults const PureToneTestController::getResults() {
 void PureToneTestController::scheduleNextTone(int delayMs) {
     stopTimer();
     startTimer(delayMs);
-}
-
-void PureToneTestController::timerCallback() {
-    stopTimer();
-    playNextTone();
 }

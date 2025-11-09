@@ -15,6 +15,8 @@ SoundFilePlayer::SoundFilePlayer() {
     totalSamples = 0;
     sampleRate = 44100.0;
     fileLoaded = false;
+    fileSampleRate = 44100.0;
+    playbackIncrement = 1.0;
     soundPlaying = false;
     audioFormatManager.registerBasicFormats();
 }
@@ -126,3 +128,4 @@ int SoundFilePlayer::getLength()
 bool SoundFilePlayer::isFinished() const {
     return fileLoaded && !soundPlaying;
 }
+
