@@ -4,6 +4,8 @@
               addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1">
   <MAINGROUP id="lnMh6c" name="AudiogramApp">
     <GROUP id="{8ACD6052-F8FD-9BBA-B215-8096667E1970}" name="Source">
+      <FILE id="SRu00A" name="SpatialTestResults.h" compile="0" resource="0"
+            file="Source/SpatialTestResults.h"/>
       <GROUP id="{943F7013-3B33-5071-AA95-51CCE457EC05}" name="Controller">
         <FILE id="JPKWyE" name="PureToneTestController.cpp" compile="1" resource="0"
               file="Source/Control/PureToneTestController.cpp"/>

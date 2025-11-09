@@ -60,8 +60,5 @@ private:
     };
 
     std::vector<SoundSource> sources;
-
-    void addSoundSource(const void* data, size_t size, float azimuth, float gain);
-
 };
 
