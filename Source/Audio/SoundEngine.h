@@ -30,7 +30,6 @@ public:
     bool isPlaying() const;
     void setSampleRate(double newSampleRate);
 
-    std::array<float, 2> nextSample();
     void processBlock(float* outputL, float* outputR, int numSamples);
 
 private:

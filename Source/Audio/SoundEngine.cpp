@@ -103,34 +103,6 @@ void SoundEngine::setSampleRate(double newSampleRate) {
     envelope.setRiseTime(newSampleRate * 0.1);
 }
 
-std::array<float, 2> SoundEngine::nextSample() {
-
-    std::array<float, 2> sample = {0.0f, 0.0f};
-
-    if (!playing) {
-        return sample;
-    }
-
-    float envelopeAmplitude = envelope.nextSample();
-
-    if(tonePlaying)
-        sample[toneChannel] = toneGenerator.nextSample() * envelopeAmplitude;
-
-    if(noisePlaying)
-        sample[noiseChannel] = noiseGenerator.nextSample() * envelopeAmplitude;
-
-    if (soundFilePlaying) {
-        sample[0] = soundFilePlayer.nextSample();
-        sample[1] = sample[0];
-    }
-
-    remainingSamples--;
-    if (remainingSamples <= 0) {
-        stop();
-    }
-
-    return sample;
-}
 
 void SoundEngine::processBlock(float* outputL, float* outputR, int numSamples) {
     if (!playing) {
