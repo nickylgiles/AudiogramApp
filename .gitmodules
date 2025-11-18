@@ -1,0 +1,3 @@
+[submodule "ThirdParty/libmysofa"]
+	path = ThirdParty/libmysofa
+	url = https://github.com/hoene/libmysofa.git
