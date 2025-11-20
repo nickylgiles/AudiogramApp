@@ -17,8 +17,9 @@ public:
     HRTFManager();
     void loadBinaryData();
     void setSampleRate(double newSampleRate);
+    const double getIRSampleRate();
 
-    const juce::AudioBuffer<float>& getIR(float azimuth, int channel);
+    juce::AudioBuffer<float>& getIR(float azimuth, int channel);
 private:
     struct IRPair {
         juce::AudioBuffer<float> left;

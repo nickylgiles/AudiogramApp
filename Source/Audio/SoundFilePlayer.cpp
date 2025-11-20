@@ -129,3 +129,7 @@ bool SoundFilePlayer::isFinished() const {
     return fileLoaded && !soundPlaying;
 }
 
+int SoundFilePlayer::samplesRemaining() {
+    return totalSamples - currentSample;
+}
+

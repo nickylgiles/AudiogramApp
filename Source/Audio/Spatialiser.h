@@ -11,6 +11,7 @@
 #pragma once
 
 #include "HRTFManager.h"
+#include <JuceHeader.h>
 
 class Spatialiser {
 public:
@@ -26,4 +27,13 @@ private:
     float azimuth;
     double sampleRate;
     HRTFManager& hrtfManager;
+
+    /*
+    juce::dsp::Convolution convolutionL;
+    juce::dsp::Convolution convolutionR;
+    */
+    juce::dsp::FIR::Filter<float> firLeft;
+    juce::dsp::FIR::Filter<float> firRight;
+
+    bool irLoaded = false;
 };

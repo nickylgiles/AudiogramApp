@@ -17,7 +17,9 @@ SpatialTestController::SpatialTestController(MainComponent& mainComponentRef, So
 }
 
 void SpatialTestController::startTest() {
-    
+    juce::Random random;
+    float angle = random.nextInt() % 360;
+    soundEngine.playSampleSpatial(BinaryData::snd_wav, BinaryData::snd_wavSize, angle, 1.0f);
 }
 
 void SpatialTestController::stopTest() {

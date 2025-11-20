@@ -103,9 +103,12 @@ void SoundEngine::setSampleRate(double newSampleRate) {
     toneGenerator.setSampleRate(newSampleRate);
     noiseGenerator.setSampleRate(newSampleRate);
     soundFilePlayer.setSampleRate(newSampleRate);
+    hrtfManager.setSampleRate(newSampleRate);
 
     envelope.setFallTime(newSampleRate * 0.1);
     envelope.setRiseTime(newSampleRate * 0.1);
+
+    spatialiser.setSampleRate(newSampleRate);
 }
 
 
@@ -169,7 +172,7 @@ void SoundEngine::processBlock(float* outputL, float* outputR, int numSamples) {
                 }
             }
             ++it;
-		}
+        }
     }
 
 }

@@ -45,13 +45,16 @@ void HRTFManager::loadBinaryData() {
 
 void HRTFManager::setSampleRate(double newSampleRate) {
     sampleRate = newSampleRate;
-    if (sampleRate != irSampleRate) {
-        // resample IRs.
-    }
 }
 
-const juce::AudioBuffer<float>& HRTFManager::getIR(float azimuth, int channel) {
-    
+const double HRTFManager::getIRSampleRate() {
+    return irSampleRate;
+}
+
+juce::AudioBuffer<float>& HRTFManager::getIR(float azimuth, int channel) {
+    while (azimuth < 0.0f) azimuth += 360.0f;
+    while (azimuth >= 360.0f) azimuth -= 360.0f;
+
     int azInt = static_cast<int>(std::round(azimuth));
     auto it = irMap.lower_bound(azInt);
 
@@ -63,6 +66,8 @@ const juce::AudioBuffer<float>& HRTFManager::getIR(float azimuth, int channel) {
         if (std::abs(azimuth - lower) < std::abs(azimuth - upper))
             it = std::prev(it);
     }
+    DBG("Get IR: az = " << azimuth << ". IR az = " << it->first);
+
     if (channel == 0) return it->second.left;
     else return it->second.right;
 }
@@ -92,7 +97,9 @@ bool HRTFManager::loadIR(const juce::String& name, juce::AudioBuffer<float>& des
     DBG("HRIR loaded. Length = " << length << " samples");
 
 
-    double irSampleRate = reader->sampleRate; // resample if different
+    irSampleRate = reader->sampleRate;
+
+    DBG("HRIR sample rate: " << irSampleRate);
 
     return true;
 }
