@@ -10,9 +10,11 @@
 
 #pragma once
 
+#include "HRTFManager.h"
+
 class Spatialiser {
 public:
-    Spatialiser();
+    Spatialiser(HRTFManager& hrtfManagerRef);
     void setSampleRate(double newSampleRate);
     void setAzimuth(float azimuthDegrees);
     void reset();
@@ -23,4 +25,5 @@ public:
 private:
     float azimuth;
     double sampleRate;
+    HRTFManager& hrtfManager;
 };

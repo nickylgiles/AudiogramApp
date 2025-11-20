@@ -15,6 +15,7 @@
 #include "Envelope.h"
 #include "SoundFilePlayer.h"
 #include "Spatialiser.h"
+#include "HRTFManager.h"
 
 
 class SoundEngine {
@@ -60,5 +61,7 @@ private:
     };
 
     std::vector<SoundSource> sources;
+
+    HRTFManager hrtfManager;
 };
 

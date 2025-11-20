@@ -8,11 +8,17 @@
 
 namespace BinaryData
 {
+    extern const char*   HRIR_0_L_wav;
+    const int            HRIR_0_L_wavSize = 12252;
+
+    extern const char*   HRIR_0_R_wav;
+    const int            HRIR_0_R_wavSize = 12252;
+
     extern const char*   snd_wav;
     const int            snd_wavSize = 12252;
 
     // Number of elements in the namedResourceList and originalFileNames arrays.
-    const int namedResourceListSize = 1;
+    const int namedResourceListSize = 3;
 
     // Points to the start of a list of resource names.
     extern const char* namedResourceList[];

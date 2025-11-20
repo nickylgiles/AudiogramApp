@@ -10,12 +10,17 @@
 
 #include "SoundEngine.h"
 
-SoundEngine::SoundEngine() {
+SoundEngine::SoundEngine() 
+    : spatialiser(hrtfManager) 
+{
     toneGenerator.setSampleRate(sampleRate);
     noiseGenerator.setSampleRate(sampleRate);
     soundFilePlayer.setSampleRate(sampleRate);
     toneChannel = 0;
     noiseChannel = 0;
+
+    hrtfManager.setSampleRate(sampleRate);
+    hrtfManager.loadBinaryData();
 }
 
 void SoundEngine::playTone(float frequency, float amplitude, float duration, int channel) {
@@ -68,7 +73,7 @@ void SoundEngine::playSampleSpatial(const void* data, size_t size, float azimuth
     source.player->setSampleRate(sampleRate);
     source.player->startPlaying();
 
-    source.spatialiser = std::make_unique<Spatialiser>();
+    source.spatialiser = std::make_unique<Spatialiser>(hrtfManager);
     source.spatialiser->setSampleRate(sampleRate);
     source.spatialiser->setAzimuth(azimuth);
 

@@ -13,7 +13,7 @@
 
 SpatialTestController::SpatialTestController(MainComponent& mainComponentRef, SoundEngine& soundEngineRef)
     	: TestController(mainComponentRef, soundEngineRef) {
-
+    
 }
 
 void SpatialTestController::startTest() {

@@ -11,7 +11,8 @@
 #include "Spatialiser.h"
 #include <JuceHeader.h>
 
-Spatialiser::Spatialiser() {
+Spatialiser::Spatialiser(HRTFManager& hrtfManagerRef)
+    : hrtfManager(hrtfManagerRef) {
 }
 
 void Spatialiser::setSampleRate(double newSampleRate) {
