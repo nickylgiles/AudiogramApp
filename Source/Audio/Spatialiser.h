@@ -17,7 +17,7 @@ class Spatialiser {
 public:
     Spatialiser(HRTFManager& hrtfManagerRef);
     void setSampleRate(double newSampleRate);
-    void setAzimuth(float azimuthDegrees);
+    void setDirection(float newElevation, float newAzimuth);
     void reset();
 
     void setFFTBlockSize(int newBlockSize);
@@ -25,6 +25,7 @@ public:
     void processBlock(const float* input, float* outputL, float* outputR, int numSamples);
 private:
     float azimuth;
+    float elevation;
     double sampleRate;
     HRTFManager& hrtfManager;
 

@@ -15,8 +15,9 @@ HRTFManager::HRTFManager() {
 }
 
 /*
-    Expects HRIRs with name format HRIR_AZ_C.wav
-    AZ = azimuth, C = Channel (L or R)
+    Expects HRIRs with name format HRIR_EL_AZ_C.wav
+    EL = elevation, AZ = azimuth, C = Channel (L or R)
+    Negative elevations: mXX
 */
 void HRTFManager::loadBinaryData() {
     irMap.clear();
@@ -26,21 +27,32 @@ void HRTFManager::loadBinaryData() {
             continue;
         
         auto tokens = juce::StringArray::fromTokens(name, "_", "");
-        if (tokens.size() < 3)
+        if (tokens.size() < 5)
             continue;
 
-        int azimuth = tokens[1].getIntValue();
-        char channel = tokens[2][0];
+        int elevation = tokens[1].startsWith("m") ?
+            -tokens[1].substring(1).getIntValue() :
+            tokens[1].getIntValue();
+
+        int azimuth = tokens[2].getIntValue();
+
+        
+        char channel = tokens[3][0];
 
         if (channel == 'L') {
-            loadIR(name, irMap[azimuth].left);
+            loadIR(name, irMap[elevation][azimuth].left);
         }
         else {
-            loadIR(name, irMap[azimuth].right);
+            loadIR(name, irMap[elevation][azimuth].right);
         }
 
     }
-    DBG(irMap.size() << " HRIR pairs loaded.");
+
+    int nIRs = 0;
+    for (auto m : irMap) {
+        nIRs += m.second.size();
+    }
+    DBG(nIRs << " HRIR pairs loaded.");
 }
 
 void HRTFManager::setSampleRate(double newSampleRate) {
@@ -51,25 +63,46 @@ const double HRTFManager::getIRSampleRate() {
     return irSampleRate;
 }
 
-juce::AudioBuffer<float>& HRTFManager::getIR(float azimuth, int channel) {
+juce::AudioBuffer<float>& HRTFManager::getIR(float elevation, float azimuth, int channel) {
     while (azimuth < 0.0f) azimuth += 360.0f;
     while (azimuth >= 360.0f) azimuth -= 360.0f;
 
+
+    int elInt = static_cast<int>(std::round(elevation));
     int azInt = static_cast<int>(std::round(azimuth));
-    auto it = irMap.lower_bound(azInt);
+
+
+    // Get closest elevation
+    auto it = irMap.lower_bound(elInt);
 
     if (it == irMap.end())
         it = std::prev(it);
     else if (it != irMap.begin()) {
         int lower = std::prev(it)->first;
         int upper = it->first;
-        if (std::abs(azimuth - lower) < std::abs(azimuth - upper))
+        if (std::abs(elevation - lower) < std::abs(elevation - upper))
             it = std::prev(it);
     }
-    DBG("Get IR: az = " << azimuth << ". IR az = " << it->first);
+    DBG("Get IR: el = " << elevation << ". IR el = " << it->first);
+    int closestEl = it->first;
 
-    if (channel == 0) return it->second.left;
-    else return it->second.right;
+    // Get closest azimuth
+    auto itAz = irMap[closestEl].lower_bound(azInt);
+    if (itAz == irMap[closestEl].end())
+        itAz = std::prev(itAz);
+    else if (itAz != irMap[closestEl].begin()) {
+        int lower = std::prev(itAz)->first;
+        int upper = itAz->first;
+        if (std::abs(azimuth - lower) < std::abs(azimuth - upper))
+            itAz = std::prev(itAz);
+    }
+    DBG("Get IR: az = " << azimuth << ". IR az = " << itAz->first);
+    int closestAz = itAz->first;
+
+    
+    // Return correct channel
+    if (channel == 0) return itAz->second.left;
+    else return itAz->second.right;
 }
 
 bool HRTFManager::loadIR(const juce::String& name, juce::AudioBuffer<float>& dest) {

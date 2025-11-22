@@ -30,12 +30,13 @@ void Spatialiser::setSampleRate(double newSampleRate) {
     DBG("Convolutions prepared. Sample rate = " << sampleRate);
 }
 
-void Spatialiser::setAzimuth(float newAzimuth) {
+void Spatialiser::setDirection(float newElevation, float newAzimuth) {
     azimuth = newAzimuth;
+    elevation = newElevation;
 
     // Load IRs
-    juce::AudioBuffer<float> hrirL = hrtfManager.getIR(azimuth, 0);
-    juce::AudioBuffer<float> hrirR = hrtfManager.getIR(azimuth, 1);
+    juce::AudioBuffer<float> hrirL = hrtfManager.getIR(elevation, azimuth, 0);
+    juce::AudioBuffer<float> hrirR = hrtfManager.getIR(elevation, azimuth, 1);
 
     const float* samplesL = hrirL.getReadPointer(0);
     size_t numTapsL = (size_t)hrirL.getNumSamples();

@@ -1,25 +1,34 @@
 clear; clc;
 
 sofaFile = 'dtf_nh2.sofa';
-outputFolder = 'HRIRs_test';
+outputFolder = 'HRIRs_test_elevation';
 mkdir(outputFolder)
 
 s = sofaread(sofaFile);
 fs = s.SamplingRate;
 
-sel = find(s.SourcePosition(:,2) == 0);
+% sel = find(s.SourcePosition(:,2) == 0);
+sel = 1:size(s.SourcePosition, 1);
 fprintf('Number of indices is %d', length(sel))
 
 for i = 1:length(sel)
     j = sel(i);
     az = round(s.SourcePosition(j, 1));
+    el = round(s.SourcePosition(j, 2));
 
     hL = squeeze(s.Numerator(j, 1, :));
     hR = squeeze(s.Numerator(j, 2, :));
     
-    filenameL = fullfile(outputFolder, sprintf('HRIR_%d_L.wav', az));
-    filenameR = fullfile(outputFolder, sprintf('HRIR_%d_R.wav', az));
 
+    if el < 0
+        filenameL = fullfile(outputFolder, sprintf('HRIR_m%d_%d_L.wav', abs(el), az));
+        filenameR = fullfile(outputFolder, sprintf('HRIR_m%d_%d_R.wav', abs(el), az));
+    else
+        filenameL = fullfile(outputFolder, sprintf('HRIR_%d_%d_L.wav', el, az));
+        filenameR = fullfile(outputFolder, sprintf('HRIR_%d_%d_R.wav', el, az));
+    end
+  
+    
     audiowrite(filenameL, hL, fs);
     audiowrite(filenameR, hR, fs);
 end
@@ -58,8 +67,3 @@ legend('All IRs','Selected IRs','Receiver');
 grid on; axis equal;
 
 rotate3d on
-
-while true
-    camorbit(0.5, 0);   % (azimuth, elevation)
-    drawnow;
-end

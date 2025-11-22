@@ -21,188 +21,6 @@
       <FILE id="arPsr6" name="PureToneTestResults.h" compile="0" resource="0"
             file="Source/PureToneTestResults.h"/>
       <GROUP id="{2587C659-6868-9C32-C63C-7B92B0B65E14}" name="Audio">
-        <GROUP id="{A3CD957D-704B-86A9-D91B-E40E85F5ACDE}" name="HRIRs_test">
-          <FILE id="QhdXJZ" name="HRIR_0_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_0_L.wav"/>
-          <FILE id="Pse8VF" name="HRIR_0_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_0_R.wav"/>
-          <FILE id="qoyQlY" name="HRIR_3_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_3_L.wav"/>
-          <FILE id="eC7lbb" name="HRIR_3_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_3_R.wav"/>
-          <FILE id="R6ptXO" name="HRIR_5_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_5_L.wav"/>
-          <FILE id="zKxo9W" name="HRIR_5_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_5_R.wav"/>
-          <FILE id="IKX7i4" name="HRIR_8_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_8_L.wav"/>
-          <FILE id="tSkKrJ" name="HRIR_8_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_8_R.wav"/>
-          <FILE id="LrJUSa" name="HRIR_10_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_10_L.wav"/>
-          <FILE id="aK0JCw" name="HRIR_10_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_10_R.wav"/>
-          <FILE id="Pf9RYj" name="HRIR_13_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_13_L.wav"/>
-          <FILE id="iYb0Hk" name="HRIR_13_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_13_R.wav"/>
-          <FILE id="QhxEgp" name="HRIR_15_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_15_L.wav"/>
-          <FILE id="LVnvH1" name="HRIR_15_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_15_R.wav"/>
-          <FILE id="OgYHs5" name="HRIR_18_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_18_L.wav"/>
-          <FILE id="yGe6YM" name="HRIR_18_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_18_R.wav"/>
-          <FILE id="JJg5Bp" name="HRIR_20_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_20_L.wav"/>
-          <FILE id="HIBW33" name="HRIR_20_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_20_R.wav"/>
-          <FILE id="nmMxTf" name="HRIR_23_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_23_L.wav"/>
-          <FILE id="XEyyov" name="HRIR_23_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_23_R.wav"/>
-          <FILE id="G6tI07" name="HRIR_25_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_25_L.wav"/>
-          <FILE id="YFIRt7" name="HRIR_25_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_25_R.wav"/>
-          <FILE id="ZdpOQF" name="HRIR_28_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_28_L.wav"/>
-          <FILE id="gQiEzW" name="HRIR_28_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_28_R.wav"/>
-          <FILE id="WF91Nt" name="HRIR_30_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_30_L.wav"/>
-          <FILE id="xfVYon" name="HRIR_30_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_30_R.wav"/>
-          <FILE id="lBDKSK" name="HRIR_33_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_33_L.wav"/>
-          <FILE id="r8Kost" name="HRIR_33_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_33_R.wav"/>
-          <FILE id="Uwmh73" name="HRIR_35_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_35_L.wav"/>
-          <FILE id="UKtcNZ" name="HRIR_35_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_35_R.wav"/>
-          <FILE id="Dsq9gj" name="HRIR_38_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_38_L.wav"/>
-          <FILE id="jv7U9J" name="HRIR_38_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_38_R.wav"/>
-          <FILE id="W8dTzH" name="HRIR_40_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_40_L.wav"/>
-          <FILE id="MUWwLW" name="HRIR_40_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_40_R.wav"/>
-          <FILE id="NVd2vd" name="HRIR_43_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_43_L.wav"/>
-          <FILE id="sm09wE" name="HRIR_43_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_43_R.wav"/>
-          <FILE id="NQcMMb" name="HRIR_45_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_45_L.wav"/>
-          <FILE id="CdpEdV" name="HRIR_45_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_45_R.wav"/>
-          <FILE id="q3X5Fy" name="HRIR_50_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_50_L.wav"/>
-          <FILE id="qc1Mj8" name="HRIR_50_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_50_R.wav"/>
-          <FILE id="Vk1h6O" name="HRIR_55_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_55_L.wav"/>
-          <FILE id="QT6DBm" name="HRIR_55_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_55_R.wav"/>
-          <FILE id="VTtAgJ" name="HRIR_60_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_60_L.wav"/>
-          <FILE id="DHnN5M" name="HRIR_60_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_60_R.wav"/>
-          <FILE id="FEksnJ" name="HRIR_65_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_65_L.wav"/>
-          <FILE id="EwM4z9" name="HRIR_65_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_65_R.wav"/>
-          <FILE id="mFdW5A" name="HRIR_70_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_70_L.wav"/>
-          <FILE id="ILoKmH" name="HRIR_70_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_70_R.wav"/>
-          <FILE id="AUd3nX" name="HRIR_75_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_75_L.wav"/>
-          <FILE id="AYMj7s" name="HRIR_75_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_75_R.wav"/>
-          <FILE id="NdVvwJ" name="HRIR_80_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_80_L.wav"/>
-          <FILE id="zkEsPK" name="HRIR_80_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_80_R.wav"/>
-          <FILE id="XddFu1" name="HRIR_85_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_85_L.wav"/>
-          <FILE id="BWk4NF" name="HRIR_85_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_85_R.wav"/>
-          <FILE id="di8pri" name="HRIR_90_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_90_L.wav"/>
-          <FILE id="dMlyn1" name="HRIR_90_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_90_R.wav"/>
-          <FILE id="mADiwV" name="HRIR_95_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_95_L.wav"/>
-          <FILE id="kaH1QS" name="HRIR_95_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_95_R.wav"/>
-          <FILE id="EWlP7f" name="HRIR_100_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_100_L.wav"/>
-          <FILE id="MvKM70" name="HRIR_100_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_100_R.wav"/>
-          <FILE id="U75rYY" name="HRIR_105_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_105_L.wav"/>
-          <FILE id="plwhsI" name="HRIR_105_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_105_R.wav"/>
-          <FILE id="v9JY3S" name="HRIR_110_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_110_L.wav"/>
-          <FILE id="Am7g87" name="HRIR_110_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_110_R.wav"/>
-          <FILE id="lbm1YQ" name="HRIR_115_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_115_L.wav"/>
-          <FILE id="pqsKpd" name="HRIR_115_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_115_R.wav"/>
-          <FILE id="q6klrT" name="HRIR_120_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_120_L.wav"/>
-          <FILE id="z5BKRN" name="HRIR_120_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_120_R.wav"/>
-          <FILE id="wel6hQ" name="HRIR_125_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_125_L.wav"/>
-          <FILE id="kAWZDW" name="HRIR_125_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_125_R.wav"/>
-          <FILE id="gsY2tR" name="HRIR_130_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_130_L.wav"/>
-          <FILE id="US2lsP" name="HRIR_130_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_130_R.wav"/>
-          <FILE id="YGHt06" name="HRIR_135_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_135_L.wav"/>
-          <FILE id="mpPgx0" name="HRIR_135_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_135_R.wav"/>
-          <FILE id="s3o9Ik" name="HRIR_140_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_140_L.wav"/>
-          <FILE id="JGCzBN" name="HRIR_140_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_140_R.wav"/>
-          <FILE id="PiGmpz" name="HRIR_145_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_145_L.wav"/>
-          <FILE id="YxbFuu" name="HRIR_145_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_145_R.wav"/>
-          <FILE id="w8ADyK" name="HRIR_150_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_150_L.wav"/>
-          <FILE id="bVGV7Y" name="HRIR_150_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_150_R.wav"/>
-          <FILE id="biGYLP" name="HRIR_155_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_155_L.wav"/>
-          <FILE id="tQc46o" name="HRIR_155_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_155_R.wav"/>
-          <FILE id="Ij2eNR" name="HRIR_160_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_160_L.wav"/>
-          <FILE id="XoQqMO" name="HRIR_160_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_160_R.wav"/>
-          <FILE id="AHvegt" name="HRIR_165_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_165_L.wav"/>
-          <FILE id="gctVz3" name="HRIR_165_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_165_R.wav"/>
-          <FILE id="wKCQbF" name="HRIR_170_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_170_L.wav"/>
-          <FILE id="uEukNH" name="HRIR_170_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_170_R.wav"/>
-          <FILE id="sylejW" name="HRIR_175_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_175_L.wav"/>
-          <FILE id="WCE2lm" name="HRIR_175_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_175_R.wav"/>
-          <FILE id="MWDoys" name="HRIR_180_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_180_L.wav"/>
-          <FILE id="WpsE9O" name="HRIR_180_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_180_R.wav"/>
-          <FILE id="qmKYqw" name="HRIR_185_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_185_L.wav"/>
-          <FILE id="z3gWBT" name="HRIR_185_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_185_R.wav"/>
-          <FILE id="hbdQJr" name="HRIR_190_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_190_L.wav"/>
-          <FILE id="LOZaeE" name="HRIR_190_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_190_R.wav"/>
-          <FILE id="sPfEwf" name="HRIR_195_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_195_L.wav"/>
-          <FILE id="vHQIlb" name="HRIR_195_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_195_R.wav"/>
-          <FILE id="uAWB24" name="HRIR_200_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_200_L.wav"/>
-          <FILE id="Ra2uef" name="HRIR_200_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_200_R.wav"/>
-          <FILE id="z178Aw" name="HRIR_205_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_205_L.wav"/>
-          <FILE id="ghVRyo" name="HRIR_205_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_205_R.wav"/>
-          <FILE id="ccPSGE" name="HRIR_210_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_210_L.wav"/>
-          <FILE id="VEhjFt" name="HRIR_210_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_210_R.wav"/>
-          <FILE id="Nom2X7" name="HRIR_215_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_215_L.wav"/>
-          <FILE id="RONflj" name="HRIR_215_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_215_R.wav"/>
-          <FILE id="kIclEH" name="HRIR_220_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_220_L.wav"/>
-          <FILE id="M3B9pT" name="HRIR_220_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_220_R.wav"/>
-          <FILE id="ZXAqBr" name="HRIR_225_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_225_L.wav"/>
-          <FILE id="eHq7tF" name="HRIR_225_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_225_R.wav"/>
-          <FILE id="e6oWsP" name="HRIR_230_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_230_L.wav"/>
-          <FILE id="XXj2Y4" name="HRIR_230_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_230_R.wav"/>
-          <FILE id="GOWjT9" name="HRIR_235_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_235_L.wav"/>
-          <FILE id="o3MC4T" name="HRIR_235_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_235_R.wav"/>
-          <FILE id="qGkZIl" name="HRIR_240_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_240_L.wav"/>
-          <FILE id="CcO9FR" name="HRIR_240_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_240_R.wav"/>
-          <FILE id="IjZJ7G" name="HRIR_245_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_245_L.wav"/>
-          <FILE id="L4uFZ0" name="HRIR_245_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_245_R.wav"/>
-          <FILE id="X91OcD" name="HRIR_250_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_250_L.wav"/>
-          <FILE id="ToCJrg" name="HRIR_250_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_250_R.wav"/>
-          <FILE id="abEN1P" name="HRIR_255_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_255_L.wav"/>
-          <FILE id="MKZGQJ" name="HRIR_255_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_255_R.wav"/>
-          <FILE id="I5pUz4" name="HRIR_260_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_260_L.wav"/>
-          <FILE id="yAtSMP" name="HRIR_260_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_260_R.wav"/>
-          <FILE id="b4SM88" name="HRIR_265_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_265_L.wav"/>
-          <FILE id="mLfSAP" name="HRIR_265_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_265_R.wav"/>
-          <FILE id="wsQivD" name="HRIR_270_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_270_L.wav"/>
-          <FILE id="m9bjdX" name="HRIR_270_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_270_R.wav"/>
-          <FILE id="gNzbNU" name="HRIR_275_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_275_L.wav"/>
-          <FILE id="PNvIAI" name="HRIR_275_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_275_R.wav"/>
-          <FILE id="bhiDxz" name="HRIR_280_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_280_L.wav"/>
-          <FILE id="KWmGGe" name="HRIR_280_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_280_R.wav"/>
-          <FILE id="t4dJ50" name="HRIR_285_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_285_L.wav"/>
-          <FILE id="BI9LR4" name="HRIR_285_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_285_R.wav"/>
-          <FILE id="TjXeQj" name="HRIR_290_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_290_L.wav"/>
-          <FILE id="qw4s5e" name="HRIR_290_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_290_R.wav"/>
-          <FILE id="VC8Tp8" name="HRIR_295_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_295_L.wav"/>
-          <FILE id="KsUOk8" name="HRIR_295_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_295_R.wav"/>
-          <FILE id="h55icv" name="HRIR_300_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_300_L.wav"/>
-          <FILE id="YjxYq6" name="HRIR_300_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_300_R.wav"/>
-          <FILE id="rXBlJQ" name="HRIR_305_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_305_L.wav"/>
-          <FILE id="tF3C6v" name="HRIR_305_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_305_R.wav"/>
-          <FILE id="D9L23j" name="HRIR_310_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_310_L.wav"/>
-          <FILE id="zGIUQY" name="HRIR_310_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_310_R.wav"/>
-          <FILE id="mVVmIv" name="HRIR_315_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_315_L.wav"/>
-          <FILE id="AeqZcQ" name="HRIR_315_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_315_R.wav"/>
-          <FILE id="xJ40mr" name="HRIR_318_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_318_L.wav"/>
-          <FILE id="hcowwU" name="HRIR_318_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_318_R.wav"/>
-          <FILE id="SzR1q1" name="HRIR_320_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_320_L.wav"/>
-          <FILE id="nZyiQI" name="HRIR_320_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_320_R.wav"/>
-          <FILE id="JDtUOC" name="HRIR_323_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_323_L.wav"/>
-          <FILE id="lQOtuU" name="HRIR_323_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_323_R.wav"/>
-          <FILE id="QvSkdz" name="HRIR_325_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_325_L.wav"/>
-          <FILE id="bJUVQ7" name="HRIR_325_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_325_R.wav"/>
-          <FILE id="CmXlGQ" name="HRIR_328_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_328_L.wav"/>
-          <FILE id="cbGQGj" name="HRIR_328_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_328_R.wav"/>
-          <FILE id="RcLZE2" name="HRIR_330_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_330_L.wav"/>
-          <FILE id="v9jl4F" name="HRIR_330_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_330_R.wav"/>
-          <FILE id="WklWiJ" name="HRIR_333_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_333_L.wav"/>
-          <FILE id="q8rv4N" name="HRIR_333_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_333_R.wav"/>
-          <FILE id="KPcLZj" name="HRIR_335_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_335_L.wav"/>
-          <FILE id="hujd2q" name="HRIR_335_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_335_R.wav"/>
-          <FILE id="xDW0N4" name="HRIR_338_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_338_L.wav"/>
-          <FILE id="FZG38h" name="HRIR_338_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_338_R.wav"/>
-          <FILE id="SyWDn5" name="HRIR_340_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_340_L.wav"/>
-          <FILE id="krHd1o" name="HRIR_340_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_340_R.wav"/>
-          <FILE id="YoelOn" name="HRIR_343_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_343_L.wav"/>
-          <FILE id="shweAP" name="HRIR_343_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_343_R.wav"/>
-          <FILE id="o0GiCh" name="HRIR_345_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_345_L.wav"/>
-          <FILE id="vTPsOi" name="HRIR_345_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_345_R.wav"/>
-          <FILE id="gPXhfx" name="HRIR_348_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_348_L.wav"/>
-          <FILE id="GcBRo7" name="HRIR_348_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_348_R.wav"/>
-          <FILE id="V01ioz" name="HRIR_350_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_350_L.wav"/>
-          <FILE id="Ijxhq9" name="HRIR_350_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_350_R.wav"/>
-          <FILE id="hQ4GnC" name="HRIR_353_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_353_L.wav"/>
-          <FILE id="cAub4J" name="HRIR_353_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_353_R.wav"/>
-          <FILE id="JapUGa" name="HRIR_355_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_355_L.wav"/>
-          <FILE id="WKeYuH" name="HRIR_355_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_355_R.wav"/>
-          <FILE id="BcRkXW" name="HRIR_358_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_358_L.wav"/>
-          <FILE id="EzP4hG" name="HRIR_358_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test/HRIR_358_R.wav"/>
-        </GROUP>
         <FILE id="VrR66q" name="Envelope.cpp" compile="1" resource="0" file="Source/Audio/Envelope.cpp"/>
         <FILE id="O3mHcF" name="Envelope.h" compile="0" resource="0" file="Source/Audio/Envelope.h"/>
         <FILE id="JT8Irm" name="HRTFManager.cpp" compile="1" resource="0" file="Source/Audio/HRTFManager.cpp"/>
@@ -241,6 +59,482 @@
       </GROUP>
       <GROUP id="{7E4C7854-C52A-8E8F-A1C7-D2FCF346D5A2}" name="Database"/>
     </GROUP>
+    <FILE id="f0pid7" name="HRIR_45_0_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test_elevation/HRIR_45_0_L.wav"/>
+    <FILE id="BgZal3" name="HRIR_45_0_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test_elevation/HRIR_45_0_R.wav"/>
+    <FILE id="tSE6gd" name="HRIR_45_5_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test_elevation/HRIR_45_5_L.wav"/>
+    <FILE id="LZqKO6" name="HRIR_45_5_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test_elevation/HRIR_45_5_R.wav"/>
+    <FILE id="datgm3" name="HRIR_45_8_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test_elevation/HRIR_45_8_L.wav"/>
+    <FILE id="Mi3fQs" name="HRIR_45_8_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test_elevation/HRIR_45_8_R.wav"/>
+    <FILE id="mmm30Y" name="HRIR_45_13_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_13_L.wav"/>
+    <FILE id="khOFcx" name="HRIR_45_13_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_13_R.wav"/>
+    <FILE id="sA5R5J" name="HRIR_45_15_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_15_L.wav"/>
+    <FILE id="cmUnZS" name="HRIR_45_15_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_15_R.wav"/>
+    <FILE id="pOoqo1" name="HRIR_45_20_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_20_L.wav"/>
+    <FILE id="C8RxcL" name="HRIR_45_20_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_20_R.wav"/>
+    <FILE id="knfNjD" name="HRIR_45_23_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_23_L.wav"/>
+    <FILE id="NB6oS6" name="HRIR_45_23_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_23_R.wav"/>
+    <FILE id="BZqc1f" name="HRIR_45_28_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_28_L.wav"/>
+    <FILE id="wgJMdO" name="HRIR_45_28_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_28_R.wav"/>
+    <FILE id="oYQFdk" name="HRIR_45_30_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_30_L.wav"/>
+    <FILE id="h98ewa" name="HRIR_45_30_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_30_R.wav"/>
+    <FILE id="xUcBzR" name="HRIR_45_35_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_35_L.wav"/>
+    <FILE id="zpwfhB" name="HRIR_45_35_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_35_R.wav"/>
+    <FILE id="xJunos" name="HRIR_45_38_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_38_L.wav"/>
+    <FILE id="hIWKDz" name="HRIR_45_38_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_38_R.wav"/>
+    <FILE id="BAb9zW" name="HRIR_45_43_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_43_L.wav"/>
+    <FILE id="ivRJck" name="HRIR_45_43_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_43_R.wav"/>
+    <FILE id="p9mKDY" name="HRIR_45_45_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_45_L.wav"/>
+    <FILE id="fhePFj" name="HRIR_45_45_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_45_R.wav"/>
+    <FILE id="wDpq83" name="HRIR_45_53_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_53_L.wav"/>
+    <FILE id="ybmOdy" name="HRIR_45_53_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_53_R.wav"/>
+    <FILE id="DuLU7v" name="HRIR_45_60_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_60_L.wav"/>
+    <FILE id="Jmmm2N" name="HRIR_45_60_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_60_R.wav"/>
+    <FILE id="tob6pa" name="HRIR_45_68_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_68_L.wav"/>
+    <FILE id="aHidhK" name="HRIR_45_68_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_68_R.wav"/>
+    <FILE id="y1qPTS" name="HRIR_45_73_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_73_L.wav"/>
+    <FILE id="xmL91X" name="HRIR_45_73_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_73_R.wav"/>
+    <FILE id="jgNPS1" name="HRIR_45_80_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_80_L.wav"/>
+    <FILE id="ZFPesv" name="HRIR_45_80_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_80_R.wav"/>
+    <FILE id="muPire" name="HRIR_45_88_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_88_L.wav"/>
+    <FILE id="JryEae" name="HRIR_45_88_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_88_R.wav"/>
+    <FILE id="XK3e5w" name="HRIR_45_90_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_90_L.wav"/>
+    <FILE id="D0L1tm" name="HRIR_45_90_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_90_R.wav"/>
+    <FILE id="MTTBa7" name="HRIR_45_95_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_95_L.wav"/>
+    <FILE id="QMe6PZ" name="HRIR_45_95_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_95_R.wav"/>
+    <FILE id="HPbhUi" name="HRIR_45_103_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_103_L.wav"/>
+    <FILE id="Ilg27i" name="HRIR_45_103_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_103_R.wav"/>
+    <FILE id="hVZye0" name="HRIR_45_110_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_110_L.wav"/>
+    <FILE id="HUdX4F" name="HRIR_45_110_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_110_R.wav"/>
+    <FILE id="knjp7J" name="HRIR_45_115_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_115_L.wav"/>
+    <FILE id="pR22pZ" name="HRIR_45_115_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_115_R.wav"/>
+    <FILE id="I9CRsI" name="HRIR_45_123_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_123_L.wav"/>
+    <FILE id="qHziK8" name="HRIR_45_123_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_123_R.wav"/>
+    <FILE id="rLwMB7" name="HRIR_45_130_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_130_L.wav"/>
+    <FILE id="tgNgRS" name="HRIR_45_130_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_130_R.wav"/>
+    <FILE id="TwxRen" name="HRIR_45_138_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_138_L.wav"/>
+    <FILE id="kjVUNP" name="HRIR_45_138_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_138_R.wav"/>
+    <FILE id="ziZrE4" name="HRIR_45_145_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_145_L.wav"/>
+    <FILE id="OHGxTz" name="HRIR_45_145_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_145_R.wav"/>
+    <FILE id="MJuWNc" name="HRIR_45_153_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_153_L.wav"/>
+    <FILE id="fGJR1R" name="HRIR_45_153_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_153_R.wav"/>
+    <FILE id="NTBhMQ" name="HRIR_45_158_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_158_L.wav"/>
+    <FILE id="TBapKr" name="HRIR_45_158_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_158_R.wav"/>
+    <FILE id="faiwvI" name="HRIR_45_165_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_165_L.wav"/>
+    <FILE id="Y9WRkS" name="HRIR_45_165_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_165_R.wav"/>
+    <FILE id="vysL9f" name="HRIR_45_173_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_173_L.wav"/>
+    <FILE id="gAMq4n" name="HRIR_45_173_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_173_R.wav"/>
+    <FILE id="sGMtj7" name="HRIR_45_180_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_180_L.wav"/>
+    <FILE id="Y8uVuX" name="HRIR_45_180_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_180_R.wav"/>
+    <FILE id="gOl0h2" name="HRIR_45_188_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_188_L.wav"/>
+    <FILE id="GE9sWR" name="HRIR_45_188_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_188_R.wav"/>
+    <FILE id="SBAH7p" name="HRIR_45_195_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_195_L.wav"/>
+    <FILE id="rgv16t" name="HRIR_45_195_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_195_R.wav"/>
+    <FILE id="cytuJj" name="HRIR_45_203_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_203_L.wav"/>
+    <FILE id="UAZkjI" name="HRIR_45_203_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_203_R.wav"/>
+    <FILE id="MgBXA4" name="HRIR_45_208_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_208_L.wav"/>
+    <FILE id="nJGcBL" name="HRIR_45_208_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_208_R.wav"/>
+    <FILE id="nbpbhe" name="HRIR_45_215_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_215_L.wav"/>
+    <FILE id="PfoEsS" name="HRIR_45_215_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_215_R.wav"/>
+    <FILE id="JMDJmN" name="HRIR_45_223_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_223_L.wav"/>
+    <FILE id="onEuAY" name="HRIR_45_223_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_223_R.wav"/>
+    <FILE id="swmOcc" name="HRIR_45_230_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_230_L.wav"/>
+    <FILE id="I6n651" name="HRIR_45_230_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_230_R.wav"/>
+    <FILE id="z7Bwie" name="HRIR_45_238_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_238_L.wav"/>
+    <FILE id="IZScGu" name="HRIR_45_238_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_238_R.wav"/>
+    <FILE id="FPMTzp" name="HRIR_45_245_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_245_L.wav"/>
+    <FILE id="HD9yDZ" name="HRIR_45_245_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_245_R.wav"/>
+    <FILE id="PmqLvI" name="HRIR_45_250_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_250_L.wav"/>
+    <FILE id="IG8K9N" name="HRIR_45_250_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_250_R.wav"/>
+    <FILE id="PP49ey" name="HRIR_45_258_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_258_L.wav"/>
+    <FILE id="bT5KWk" name="HRIR_45_258_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_258_R.wav"/>
+    <FILE id="tMAhYn" name="HRIR_45_265_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_265_L.wav"/>
+    <FILE id="L684Qr" name="HRIR_45_265_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_265_R.wav"/>
+    <FILE id="iHDGlV" name="HRIR_45_270_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_270_L.wav"/>
+    <FILE id="t0t5Ku" name="HRIR_45_270_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_270_R.wav"/>
+    <FILE id="CQYaIe" name="HRIR_45_273_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_273_L.wav"/>
+    <FILE id="EMwt6a" name="HRIR_45_273_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_273_R.wav"/>
+    <FILE id="OguZ3A" name="HRIR_45_280_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_280_L.wav"/>
+    <FILE id="EnvIel" name="HRIR_45_280_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_280_R.wav"/>
+    <FILE id="GsphvO" name="HRIR_45_288_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_288_L.wav"/>
+    <FILE id="v30BzA" name="HRIR_45_288_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_288_R.wav"/>
+    <FILE id="cNoXHr" name="HRIR_45_293_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_293_L.wav"/>
+    <FILE id="DYnBhb" name="HRIR_45_293_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_293_R.wav"/>
+    <FILE id="CgGD5J" name="HRIR_45_300_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_300_L.wav"/>
+    <FILE id="askcNk" name="HRIR_45_300_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_300_R.wav"/>
+    <FILE id="KrLGfW" name="HRIR_45_308_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_308_L.wav"/>
+    <FILE id="VxPFrn" name="HRIR_45_308_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_308_R.wav"/>
+    <FILE id="tWaF2n" name="HRIR_45_315_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_315_L.wav"/>
+    <FILE id="cQpBEw" name="HRIR_45_315_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_315_R.wav"/>
+    <FILE id="UYgFfJ" name="HRIR_45_320_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_320_L.wav"/>
+    <FILE id="uPpX7g" name="HRIR_45_320_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_320_R.wav"/>
+    <FILE id="PUCj9A" name="HRIR_45_323_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_323_L.wav"/>
+    <FILE id="yudp1p" name="HRIR_45_323_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_323_R.wav"/>
+    <FILE id="ZSW8HO" name="HRIR_45_328_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_328_L.wav"/>
+    <FILE id="KEStgW" name="HRIR_45_328_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_328_R.wav"/>
+    <FILE id="KbrGMz" name="HRIR_45_330_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_330_L.wav"/>
+    <FILE id="BXaVAB" name="HRIR_45_330_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_330_R.wav"/>
+    <FILE id="HC7G6k" name="HRIR_45_335_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_335_L.wav"/>
+    <FILE id="i9fWIJ" name="HRIR_45_335_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_335_R.wav"/>
+    <FILE id="aHmEfe" name="HRIR_45_338_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_338_L.wav"/>
+    <FILE id="JCjIKx" name="HRIR_45_338_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_338_R.wav"/>
+    <FILE id="dWeFSZ" name="HRIR_45_343_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_343_L.wav"/>
+    <FILE id="BTnwK6" name="HRIR_45_343_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_343_R.wav"/>
+    <FILE id="HX0Aof" name="HRIR_45_345_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_345_L.wav"/>
+    <FILE id="nYlxkd" name="HRIR_45_345_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_345_R.wav"/>
+    <FILE id="D1c4IQ" name="HRIR_45_350_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_350_L.wav"/>
+    <FILE id="IIxjQs" name="HRIR_45_350_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_350_R.wav"/>
+    <FILE id="UFnn7N" name="HRIR_45_353_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_353_L.wav"/>
+    <FILE id="txqbhK" name="HRIR_45_353_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_353_R.wav"/>
+    <FILE id="AdagdH" name="HRIR_45_358_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_358_L.wav"/>
+    <FILE id="ONxAlF" name="HRIR_45_358_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_45_358_R.wav"/>
+    <FILE id="sqNSzx" name="HRIR_50_0_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test_elevation/HRIR_50_0_L.wav"/>
+    <FILE id="aTzG7d" name="HRIR_50_0_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test_elevation/HRIR_50_0_R.wav"/>
+    <FILE id="ZvXor1" name="HRIR_50_5_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test_elevation/HRIR_50_5_L.wav"/>
+    <FILE id="WabAGB" name="HRIR_50_5_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test_elevation/HRIR_50_5_R.wav"/>
+    <FILE id="IQYULq" name="HRIR_50_8_L.wav" compile="0" resource="1" file="Matlab/HRIRs_test_elevation/HRIR_50_8_L.wav"/>
+    <FILE id="eY4Tyk" name="HRIR_50_8_R.wav" compile="0" resource="1" file="Matlab/HRIRs_test_elevation/HRIR_50_8_R.wav"/>
+    <FILE id="cAaAwk" name="HRIR_50_13_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_13_L.wav"/>
+    <FILE id="kj0gXE" name="HRIR_50_13_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_13_R.wav"/>
+    <FILE id="brL4ee" name="HRIR_50_18_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_18_L.wav"/>
+    <FILE id="mfuLZI" name="HRIR_50_18_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_18_R.wav"/>
+    <FILE id="F1Nnq9" name="HRIR_50_20_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_20_L.wav"/>
+    <FILE id="mApPfD" name="HRIR_50_20_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_20_R.wav"/>
+    <FILE id="zDYueo" name="HRIR_50_25_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_25_L.wav"/>
+    <FILE id="O55Dkt" name="HRIR_50_25_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_25_R.wav"/>
+    <FILE id="HC9Rwm" name="HRIR_50_28_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_28_L.wav"/>
+    <FILE id="ZcVilT" name="HRIR_50_28_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_28_R.wav"/>
+    <FILE id="b1UZEC" name="HRIR_50_33_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_33_L.wav"/>
+    <FILE id="gZcp3Y" name="HRIR_50_33_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_33_R.wav"/>
+    <FILE id="lgZ28L" name="HRIR_50_38_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_38_L.wav"/>
+    <FILE id="mSotd2" name="HRIR_50_38_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_38_R.wav"/>
+    <FILE id="n593md" name="HRIR_50_40_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_40_L.wav"/>
+    <FILE id="imIESD" name="HRIR_50_40_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_40_R.wav"/>
+    <FILE id="kC7NZj" name="HRIR_50_45_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_45_L.wav"/>
+    <FILE id="Be5PmI" name="HRIR_50_45_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_45_R.wav"/>
+    <FILE id="HKLued" name="HRIR_50_53_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_53_L.wav"/>
+    <FILE id="kdHDLm" name="HRIR_50_53_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_53_R.wav"/>
+    <FILE id="fVz48D" name="HRIR_50_60_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_60_L.wav"/>
+    <FILE id="ESpBnZ" name="HRIR_50_60_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_60_R.wav"/>
+    <FILE id="AUSOwj" name="HRIR_50_70_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_70_L.wav"/>
+    <FILE id="W2rtMa" name="HRIR_50_70_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_70_R.wav"/>
+    <FILE id="dbOVfr" name="HRIR_50_78_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_78_L.wav"/>
+    <FILE id="YJW2Uw" name="HRIR_50_78_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_78_R.wav"/>
+    <FILE id="PYnM5J" name="HRIR_50_85_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_85_L.wav"/>
+    <FILE id="hm4n4f" name="HRIR_50_85_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_85_R.wav"/>
+    <FILE id="LSslUR" name="HRIR_50_90_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_90_L.wav"/>
+    <FILE id="oLQFpo" name="HRIR_50_90_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_90_R.wav"/>
+    <FILE id="T6JwwQ" name="HRIR_50_93_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_93_L.wav"/>
+    <FILE id="cUoMii" name="HRIR_50_93_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_93_R.wav"/>
+    <FILE id="eikWHF" name="HRIR_50_100_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_100_L.wav"/>
+    <FILE id="lr6lry" name="HRIR_50_100_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_100_R.wav"/>
+    <FILE id="qM3c9y" name="HRIR_50_108_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_108_L.wav"/>
+    <FILE id="aEJarA" name="HRIR_50_108_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_108_R.wav"/>
+    <FILE id="WO98WL" name="HRIR_50_118_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_118_L.wav"/>
+    <FILE id="rxE8GI" name="HRIR_50_118_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_118_R.wav"/>
+    <FILE id="DjzHVW" name="HRIR_50_125_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_125_L.wav"/>
+    <FILE id="oJ0Ps6" name="HRIR_50_125_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_125_R.wav"/>
+    <FILE id="NRYsAQ" name="HRIR_50_133_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_133_L.wav"/>
+    <FILE id="E0KSMi" name="HRIR_50_133_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_133_R.wav"/>
+    <FILE id="z5DsNK" name="HRIR_50_140_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_140_L.wav"/>
+    <FILE id="Mp8MNe" name="HRIR_50_140_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_140_R.wav"/>
+    <FILE id="JyZ0iD" name="HRIR_50_148_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_148_L.wav"/>
+    <FILE id="WKEN4H" name="HRIR_50_148_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_148_R.wav"/>
+    <FILE id="xD6rsF" name="HRIR_50_155_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_155_L.wav"/>
+    <FILE id="IQGqDH" name="HRIR_50_155_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_155_R.wav"/>
+    <FILE id="AIEFpX" name="HRIR_50_165_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_165_L.wav"/>
+    <FILE id="fqtvle" name="HRIR_50_165_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_165_R.wav"/>
+    <FILE id="VinX3E" name="HRIR_50_173_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_173_L.wav"/>
+    <FILE id="uDsPQx" name="HRIR_50_173_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_173_R.wav"/>
+    <FILE id="u1c2Zn" name="HRIR_50_180_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_180_L.wav"/>
+    <FILE id="AwJV0S" name="HRIR_50_180_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_180_R.wav"/>
+    <FILE id="xaE21f" name="HRIR_50_188_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_188_L.wav"/>
+    <FILE id="GbIWIj" name="HRIR_50_188_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_188_R.wav"/>
+    <FILE id="jddumx" name="HRIR_50_195_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_195_L.wav"/>
+    <FILE id="Ppmk45" name="HRIR_50_195_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_195_R.wav"/>
+    <FILE id="RKFk3A" name="HRIR_50_205_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_205_L.wav"/>
+    <FILE id="wVZLm1" name="HRIR_50_205_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_205_R.wav"/>
+    <FILE id="BE57qP" name="HRIR_50_213_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_213_L.wav"/>
+    <FILE id="R3R6Ba" name="HRIR_50_213_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_213_R.wav"/>
+    <FILE id="mLvkqb" name="HRIR_50_220_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_220_L.wav"/>
+    <FILE id="XJJWCH" name="HRIR_50_220_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_220_R.wav"/>
+    <FILE id="vDHoLS" name="HRIR_50_228_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_228_L.wav"/>
+    <FILE id="Kx245w" name="HRIR_50_228_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_228_R.wav"/>
+    <FILE id="y1zGRN" name="HRIR_50_235_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_235_L.wav"/>
+    <FILE id="XRoxlH" name="HRIR_50_235_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_235_R.wav"/>
+    <FILE id="vM6bx7" name="HRIR_50_243_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_243_L.wav"/>
+    <FILE id="wCFqy9" name="HRIR_50_243_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_243_R.wav"/>
+    <FILE id="ABJXdI" name="HRIR_50_253_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_253_L.wav"/>
+    <FILE id="zaodTB" name="HRIR_50_253_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_253_R.wav"/>
+    <FILE id="xHBMrJ" name="HRIR_50_260_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_260_L.wav"/>
+    <FILE id="npAQJd" name="HRIR_50_260_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_260_R.wav"/>
+    <FILE id="oqlUNj" name="HRIR_50_268_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_268_L.wav"/>
+    <FILE id="KwfAyT" name="HRIR_50_268_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_268_R.wav"/>
+    <FILE id="rViXGL" name="HRIR_50_270_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_270_L.wav"/>
+    <FILE id="MWOoqA" name="HRIR_50_270_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_270_R.wav"/>
+    <FILE id="TlN5nU" name="HRIR_50_275_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_275_L.wav"/>
+    <FILE id="PhWZkB" name="HRIR_50_275_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_275_R.wav"/>
+    <FILE id="wFrtDc" name="HRIR_50_283_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_283_L.wav"/>
+    <FILE id="jweOeA" name="HRIR_50_283_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_283_R.wav"/>
+    <FILE id="AMDQ2y" name="HRIR_50_290_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_290_L.wav"/>
+    <FILE id="wakhnJ" name="HRIR_50_290_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_290_R.wav"/>
+    <FILE id="aIg4xo" name="HRIR_50_300_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_300_L.wav"/>
+    <FILE id="h4wXIw" name="HRIR_50_300_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_300_R.wav"/>
+    <FILE id="RzNPpU" name="HRIR_50_308_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_308_L.wav"/>
+    <FILE id="g8Y4Px" name="HRIR_50_308_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_308_R.wav"/>
+    <FILE id="orC6YQ" name="HRIR_50_315_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_315_L.wav"/>
+    <FILE id="vynUMk" name="HRIR_50_315_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_315_R.wav"/>
+    <FILE id="prEWiE" name="HRIR_50_320_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_320_L.wav"/>
+    <FILE id="jTQxiG" name="HRIR_50_320_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_320_R.wav"/>
+    <FILE id="A4RzMj" name="HRIR_50_323_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_323_L.wav"/>
+    <FILE id="Uf9ud7" name="HRIR_50_323_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_323_R.wav"/>
+    <FILE id="cZEMj0" name="HRIR_50_328_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_328_L.wav"/>
+    <FILE id="mO13Wv" name="HRIR_50_328_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_328_R.wav"/>
+    <FILE id="sLpVkP" name="HRIR_50_333_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_333_L.wav"/>
+    <FILE id="oB7YNI" name="HRIR_50_333_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_333_R.wav"/>
+    <FILE id="KMaQmL" name="HRIR_50_335_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_335_L.wav"/>
+    <FILE id="QTfyAw" name="HRIR_50_335_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_335_R.wav"/>
+    <FILE id="o5VhqK" name="HRIR_50_340_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_340_L.wav"/>
+    <FILE id="qdV1JP" name="HRIR_50_340_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_340_R.wav"/>
+    <FILE id="dPSikz" name="HRIR_50_343_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_343_L.wav"/>
+    <FILE id="mvYbJk" name="HRIR_50_343_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_343_R.wav"/>
+    <FILE id="a3f73v" name="HRIR_50_348_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_348_L.wav"/>
+    <FILE id="eJGSaG" name="HRIR_50_348_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_348_R.wav"/>
+    <FILE id="O8o8Gm" name="HRIR_50_353_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_353_L.wav"/>
+    <FILE id="mVcrge" name="HRIR_50_353_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_353_R.wav"/>
+    <FILE id="kRSSMB" name="HRIR_50_355_L.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_355_L.wav"/>
+    <FILE id="Bsdype" name="HRIR_50_355_R.wav" compile="0" resource="1"
+          file="Matlab/HRIRs_test_elevation/HRIR_50_355_R.wav"/>
     <FILE id="JgJTIV" name="snd.wav" compile="0" resource="1" file="../../../../Desktop/snd.wav"/>
     <FILE id="GcoRC0" name="speech_15.wav" compile="0" resource="1" file="../../5C1/lab3a/speech_15.wav"/>
   </MAINGROUP>

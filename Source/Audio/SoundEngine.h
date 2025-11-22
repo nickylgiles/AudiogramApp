@@ -25,7 +25,7 @@ public:
     void playToneMasked(float frequency, float amplitude, float duration, int channel);
 
     void playSample(const void* data, size_t size);
-    void playSampleSpatial(const void* data, size_t size, float azimuth, float gain);
+    void playSampleSpatial(const void* data, size_t size, float elevation, float azimuth, float gain);
 
     void stop();
     bool isPlaying() const;
@@ -55,6 +55,7 @@ private:
     struct SoundSource {
         std::unique_ptr<SoundFilePlayer> player;
         std::unique_ptr<Spatialiser> spatialiser;
+        float elevation = 0.0f;
         float azimuth = 0.0f;
         float gain = 1.0f;
         bool active = false;

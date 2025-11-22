@@ -61,10 +61,10 @@ void SoundEngine::playSample(const void* data, size_t size) {
         soundFilePlaying = false;
         return;
     }
-    spatialiser.setAzimuth(0.0f);
+    spatialiser.setDirection(0.0f, 0.0f);
 }
 
-void SoundEngine::playSampleSpatial(const void* data, size_t size, float azimuth, float gain) {
+void SoundEngine::playSampleSpatial(const void* data, size_t size, float elevation, float azimuth, float gain) {
     //playSample(data, size);
     //spatialiser.setAzimuth(azimuth);
     SoundSource source;
@@ -75,9 +75,10 @@ void SoundEngine::playSampleSpatial(const void* data, size_t size, float azimuth
 
     source.spatialiser = std::make_unique<Spatialiser>(hrtfManager);
     source.spatialiser->setSampleRate(sampleRate);
-    source.spatialiser->setAzimuth(azimuth);
+    source.spatialiser->setDirection(elevation, azimuth);
 
     source.azimuth = azimuth;
+    source.elevation = elevation;
     source.gain = gain;
     source.active = true;
 

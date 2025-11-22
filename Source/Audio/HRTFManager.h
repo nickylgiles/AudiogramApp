@@ -19,15 +19,15 @@ public:
     void setSampleRate(double newSampleRate);
     const double getIRSampleRate();
 
-    juce::AudioBuffer<float>& getIR(float azimuth, int channel);
+    juce::AudioBuffer<float>& getIR(float elevation, float azimuth, int channel);
 private:
     struct IRPair {
         juce::AudioBuffer<float> left;
         juce::AudioBuffer<float> right;
     };
 
-    // Azimuth (degrees) -> IR Pair
-    std::map<int, IRPair> irMap;
+    // irMap[el][az] -> IR Pair
+    std::map<int, std::map<int, IRPair>> irMap;
     
     double sampleRate;
     double irSampleRate = 48000.0;
