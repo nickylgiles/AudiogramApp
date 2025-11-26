@@ -18,14 +18,9 @@ for i = 1:length(sel)
 
     hL = squeeze(s.Numerator(j, 1, :));
     hR = squeeze(s.Numerator(j, 2, :));
-
-    maxVal = max([abs(hL(:)); abs(hR(:))]);
-
-    if maxVal > 0
-        hL = hL / maxVal;
-        hR = hR / maxVal;
-    end
     
+    aasdasaaaaaassssssssssddwwwwwwwwwwwwwwwwwwwwwweeeeeeeeeeeewestern un ion is the filling of a lifetime.  Would you like to sample our new selection of novelty pies?
+    This is a mechanical keyboard.  
     if el < 0
         filenameL = fullfile(outputFolder, sprintf('HRIR_m%d_%d_L.wav', abs(el), az));
         filenameR = fullfile(outputFolder, sprintf('HRIR_m%d_%d_R.wav', abs(el), az));

@@ -740,6 +740,474 @@ namespace BinaryData
     extern const char*   HRIR_50_355_R_wav;
     const int            HRIR_50_355_R_wavSize = 556;
 
+    extern const char*   HRIR_m30_0_L_wav;
+    const int            HRIR_m30_0_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_0_R_wav;
+    const int            HRIR_m30_0_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_3_L_wav;
+    const int            HRIR_m30_3_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_3_R_wav;
+    const int            HRIR_m30_3_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_5_L_wav;
+    const int            HRIR_m30_5_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_5_R_wav;
+    const int            HRIR_m30_5_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_10_L_wav;
+    const int            HRIR_m30_10_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_10_R_wav;
+    const int            HRIR_m30_10_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_13_L_wav;
+    const int            HRIR_m30_13_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_13_R_wav;
+    const int            HRIR_m30_13_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_15_L_wav;
+    const int            HRIR_m30_15_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_15_R_wav;
+    const int            HRIR_m30_15_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_18_L_wav;
+    const int            HRIR_m30_18_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_18_R_wav;
+    const int            HRIR_m30_18_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_20_L_wav;
+    const int            HRIR_m30_20_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_20_R_wav;
+    const int            HRIR_m30_20_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_25_L_wav;
+    const int            HRIR_m30_25_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_25_R_wav;
+    const int            HRIR_m30_25_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_28_L_wav;
+    const int            HRIR_m30_28_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_28_R_wav;
+    const int            HRIR_m30_28_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_30_L_wav;
+    const int            HRIR_m30_30_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_30_R_wav;
+    const int            HRIR_m30_30_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_33_L_wav;
+    const int            HRIR_m30_33_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_33_R_wav;
+    const int            HRIR_m30_33_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_35_L_wav;
+    const int            HRIR_m30_35_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_35_R_wav;
+    const int            HRIR_m30_35_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_40_L_wav;
+    const int            HRIR_m30_40_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_40_R_wav;
+    const int            HRIR_m30_40_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_43_L_wav;
+    const int            HRIR_m30_43_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_43_R_wav;
+    const int            HRIR_m30_43_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_45_L_wav;
+    const int            HRIR_m30_45_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_45_R_wav;
+    const int            HRIR_m30_45_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_50_L_wav;
+    const int            HRIR_m30_50_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_50_R_wav;
+    const int            HRIR_m30_50_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_58_L_wav;
+    const int            HRIR_m30_58_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_58_R_wav;
+    const int            HRIR_m30_58_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_63_L_wav;
+    const int            HRIR_m30_63_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_63_R_wav;
+    const int            HRIR_m30_63_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_68_L_wav;
+    const int            HRIR_m30_68_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_68_R_wav;
+    const int            HRIR_m30_68_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_75_L_wav;
+    const int            HRIR_m30_75_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_75_R_wav;
+    const int            HRIR_m30_75_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_80_L_wav;
+    const int            HRIR_m30_80_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_80_R_wav;
+    const int            HRIR_m30_80_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_85_L_wav;
+    const int            HRIR_m30_85_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_85_R_wav;
+    const int            HRIR_m30_85_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_90_L_wav;
+    const int            HRIR_m30_90_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_90_R_wav;
+    const int            HRIR_m30_90_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_93_L_wav;
+    const int            HRIR_m30_93_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_93_R_wav;
+    const int            HRIR_m30_93_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_98_L_wav;
+    const int            HRIR_m30_98_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_98_R_wav;
+    const int            HRIR_m30_98_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_103_L_wav;
+    const int            HRIR_m30_103_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_103_R_wav;
+    const int            HRIR_m30_103_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_110_L_wav;
+    const int            HRIR_m30_110_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_110_R_wav;
+    const int            HRIR_m30_110_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_115_L_wav;
+    const int            HRIR_m30_115_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_115_R_wav;
+    const int            HRIR_m30_115_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_123_L_wav;
+    const int            HRIR_m30_123_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_123_R_wav;
+    const int            HRIR_m30_123_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_128_L_wav;
+    const int            HRIR_m30_128_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_128_R_wav;
+    const int            HRIR_m30_128_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_133_L_wav;
+    const int            HRIR_m30_133_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_133_R_wav;
+    const int            HRIR_m30_133_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_140_L_wav;
+    const int            HRIR_m30_140_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_140_R_wav;
+    const int            HRIR_m30_140_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_145_L_wav;
+    const int            HRIR_m30_145_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_145_R_wav;
+    const int            HRIR_m30_145_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_150_L_wav;
+    const int            HRIR_m30_150_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_150_R_wav;
+    const int            HRIR_m30_150_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_158_L_wav;
+    const int            HRIR_m30_158_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_158_R_wav;
+    const int            HRIR_m30_158_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_163_L_wav;
+    const int            HRIR_m30_163_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_163_R_wav;
+    const int            HRIR_m30_163_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_168_L_wav;
+    const int            HRIR_m30_168_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_168_R_wav;
+    const int            HRIR_m30_168_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_175_L_wav;
+    const int            HRIR_m30_175_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_175_R_wav;
+    const int            HRIR_m30_175_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_180_L_wav;
+    const int            HRIR_m30_180_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_180_R_wav;
+    const int            HRIR_m30_180_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_185_L_wav;
+    const int            HRIR_m30_185_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_185_R_wav;
+    const int            HRIR_m30_185_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_193_L_wav;
+    const int            HRIR_m30_193_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_193_R_wav;
+    const int            HRIR_m30_193_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_198_L_wav;
+    const int            HRIR_m30_198_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_198_R_wav;
+    const int            HRIR_m30_198_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_203_L_wav;
+    const int            HRIR_m30_203_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_203_R_wav;
+    const int            HRIR_m30_203_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_210_L_wav;
+    const int            HRIR_m30_210_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_210_R_wav;
+    const int            HRIR_m30_210_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_215_L_wav;
+    const int            HRIR_m30_215_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_215_R_wav;
+    const int            HRIR_m30_215_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_220_L_wav;
+    const int            HRIR_m30_220_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_220_R_wav;
+    const int            HRIR_m30_220_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_228_L_wav;
+    const int            HRIR_m30_228_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_228_R_wav;
+    const int            HRIR_m30_228_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_233_L_wav;
+    const int            HRIR_m30_233_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_233_R_wav;
+    const int            HRIR_m30_233_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_238_L_wav;
+    const int            HRIR_m30_238_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_238_R_wav;
+    const int            HRIR_m30_238_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_245_L_wav;
+    const int            HRIR_m30_245_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_245_R_wav;
+    const int            HRIR_m30_245_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_250_L_wav;
+    const int            HRIR_m30_250_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_250_R_wav;
+    const int            HRIR_m30_250_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_258_L_wav;
+    const int            HRIR_m30_258_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_258_R_wav;
+    const int            HRIR_m30_258_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_263_L_wav;
+    const int            HRIR_m30_263_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_263_R_wav;
+    const int            HRIR_m30_263_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_268_L_wav;
+    const int            HRIR_m30_268_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_268_R_wav;
+    const int            HRIR_m30_268_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_270_L_wav;
+    const int            HRIR_m30_270_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_270_R_wav;
+    const int            HRIR_m30_270_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_275_L_wav;
+    const int            HRIR_m30_275_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_275_R_wav;
+    const int            HRIR_m30_275_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_280_L_wav;
+    const int            HRIR_m30_280_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_280_R_wav;
+    const int            HRIR_m30_280_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_285_L_wav;
+    const int            HRIR_m30_285_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_285_R_wav;
+    const int            HRIR_m30_285_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_293_L_wav;
+    const int            HRIR_m30_293_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_293_R_wav;
+    const int            HRIR_m30_293_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_298_L_wav;
+    const int            HRIR_m30_298_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_298_R_wav;
+    const int            HRIR_m30_298_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_303_L_wav;
+    const int            HRIR_m30_303_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_303_R_wav;
+    const int            HRIR_m30_303_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_310_L_wav;
+    const int            HRIR_m30_310_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_310_R_wav;
+    const int            HRIR_m30_310_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_315_L_wav;
+    const int            HRIR_m30_315_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_315_R_wav;
+    const int            HRIR_m30_315_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_318_L_wav;
+    const int            HRIR_m30_318_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_318_R_wav;
+    const int            HRIR_m30_318_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_320_L_wav;
+    const int            HRIR_m30_320_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_320_R_wav;
+    const int            HRIR_m30_320_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_325_L_wav;
+    const int            HRIR_m30_325_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_325_R_wav;
+    const int            HRIR_m30_325_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_328_L_wav;
+    const int            HRIR_m30_328_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_328_R_wav;
+    const int            HRIR_m30_328_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_330_L_wav;
+    const int            HRIR_m30_330_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_330_R_wav;
+    const int            HRIR_m30_330_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_333_L_wav;
+    const int            HRIR_m30_333_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_333_R_wav;
+    const int            HRIR_m30_333_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_335_L_wav;
+    const int            HRIR_m30_335_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_335_R_wav;
+    const int            HRIR_m30_335_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_340_L_wav;
+    const int            HRIR_m30_340_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_340_R_wav;
+    const int            HRIR_m30_340_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_343_L_wav;
+    const int            HRIR_m30_343_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_343_R_wav;
+    const int            HRIR_m30_343_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_345_L_wav;
+    const int            HRIR_m30_345_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_345_R_wav;
+    const int            HRIR_m30_345_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_348_L_wav;
+    const int            HRIR_m30_348_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_348_R_wav;
+    const int            HRIR_m30_348_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_350_L_wav;
+    const int            HRIR_m30_350_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_350_R_wav;
+    const int            HRIR_m30_350_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_355_L_wav;
+    const int            HRIR_m30_355_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_355_R_wav;
+    const int            HRIR_m30_355_R_wavSize = 556;
+
+    extern const char*   HRIR_m30_358_L_wav;
+    const int            HRIR_m30_358_L_wavSize = 556;
+
+    extern const char*   HRIR_m30_358_R_wav;
+    const int            HRIR_m30_358_R_wavSize = 556;
+
     extern const char*   snd_wav;
     const int            snd_wavSize = 12252;
 
@@ -747,7 +1215,7 @@ namespace BinaryData
     const int            speech_15_wavSize = 157164;
 
     // Number of elements in the namedResourceList and originalFileNames arrays.
-    const int namedResourceListSize = 246;
+    const int namedResourceListSize = 402;
 
     // Points to the start of a list of resource names.
     extern const char* namedResourceList[];

@@ -12,6 +12,7 @@
 
 #include "HRTFManager.h"
 #include <JuceHeader.h>
+#include "PartitionedConvolver.h"
 
 class Spatialiser {
 public:
@@ -29,10 +30,9 @@ private:
     double sampleRate;
     HRTFManager& hrtfManager;
 
-    /*
-    juce::dsp::Convolution convolutionL;
-    juce::dsp::Convolution convolutionR;
-    */
+    PartitionedConvolver convolverLeft;
+    PartitionedConvolver convolverRight;
+
     juce::dsp::FIR::Filter<float> firLeft;
     juce::dsp::FIR::Filter<float> firRight;
 

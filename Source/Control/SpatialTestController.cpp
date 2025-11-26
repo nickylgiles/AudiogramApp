@@ -17,7 +17,7 @@ SpatialTestController::SpatialTestController(MainComponent& mainComponentRef, So
 }
 
 void SpatialTestController::startTest() {
-    soundEngine.playSampleSpatial(BinaryData::snd_wav, BinaryData::snd_wavSize, 0.0f, -75.0f, 1.0f); 
+    soundEngine.playSampleSpatial(BinaryData::snd_wav, BinaryData::snd_wavSize, -85.0f, 180.0f, 1.0f);
 }
 
 void SpatialTestController::stopTest() {
