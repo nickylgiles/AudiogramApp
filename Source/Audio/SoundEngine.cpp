@@ -16,29 +16,30 @@ SoundEngine::SoundEngine() {
 }
 
 void SoundEngine::playTone(float frequency, float amplitude, float duration, int channel) {
-    sources.push_back(std::make_unique<ToneSource>(sampleRate, frequency, amplitude, duration, channel));
+    addSource(std::make_unique<ToneSource>(sampleRate, frequency, amplitude, duration, channel));
 }
 
 void SoundEngine::playToneMasked(float frequency, float amplitude, float duration, int channel) {
     sources.push_back(std::make_unique<ToneSource>(sampleRate, frequency, amplitude, duration, channel));
     int noiseChannel = (channel == 0 ? 1 : 0);
-    sources.push_back(std::make_unique<NoiseSource>(sampleRate, frequency, amplitude, duration, noiseChannel));
+    addSource(std::make_unique<NoiseSource>(sampleRate, frequency, amplitude, duration, noiseChannel));
 }
 
 void SoundEngine::playSampleSpatial(const void* data, size_t size, float elevation, float azimuth, float gain) {
-    sources.push_back(std::make_unique<SpatialisedSoundFileSource>(
+    addSource(std::make_unique<SpatialisedSoundFileSource>(
         sampleRate, data, size, hrtfManager, elevation, azimuth, gain));
 
 }
 
 void SoundEngine::playNoiseSpatial(float amplitude, float duration, float elevation, float azimuth) {
-    sources.push_back(std::make_unique<SpatialisedNoiseSource>(
+    addSource(std::make_unique<SpatialisedNoiseSource>(
         sampleRate, amplitude, duration, hrtfManager, elevation, azimuth
     ));
 
 }
 
 void SoundEngine::stop() {
+    juce::SpinLock::ScopedLockType lock(sourceLock);
     sources.clear();
 }
 
@@ -66,6 +67,8 @@ void SoundEngine::processBlock(float* outputL, float* outputR, int numSamples) {
     float* tempL = leftBuf.getWritePointer(0);
     float* tempR = rightBuf.getWritePointer(0);
 
+    const juce::SpinLock::ScopedLockType lock(sourceLock);
+
     for (auto it = sources.begin(); it != sources.end(); ) {
         (*it)->process(tempL, tempR, numSamples);
 
@@ -83,5 +86,10 @@ void SoundEngine::processBlock(float* outputL, float* outputR, int numSamples) {
     }
 
 
+}
+
+void SoundEngine::addSource(std::unique_ptr<SoundSource> source) {
+    juce::SpinLock::ScopedLockType lock(sourceLock);
+    sources.push_back(std::move(source));
 }
 

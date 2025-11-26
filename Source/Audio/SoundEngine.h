@@ -10,11 +10,7 @@
 
 #pragma once
 
-#include "Utilities/ToneGenerator.h"
-#include "Utilities/NoiseGenerator.h"
-#include "Utilities/Envelope.h"
-#include "Utilities/SoundFilePlayer.h"
-#include "Spatial/Spatialiser.h"
+
 #include "Spatial/HRTFManager.h"
 #include "SoundSources/SoundSource.h"
 #include "SoundSources/ToneSource.h"
@@ -39,9 +35,12 @@ public:
     void processBlock(float* outputL, float* outputR, int numSamples);
 
 private:
+    void addSource(std::unique_ptr<SoundSource> source);
+
     double sampleRate;
 
     std::vector<std::unique_ptr<SoundSource>> sources;
+    juce::SpinLock sourceLock;
 
     HRTFManager hrtfManager;
 };
