@@ -4,6 +4,50 @@
               addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1">
   <MAINGROUP id="lnMh6c" name="AudiogramApp">
     <GROUP id="{8ACD6052-F8FD-9BBA-B215-8096667E1970}" name="Source">
+      <GROUP id="{ABE302EF-2999-A2B1-B4F2-0A68B6276078}" name="Audio">
+        <GROUP id="{25E8A2C2-3BBE-B93A-8D2C-19601D65050C}" name="SoundSources">
+          <FILE id="zlrTTB" name="NoiseSource.cpp" compile="1" resource="0" file="Source/Audio/SoundSources/NoiseSource.cpp"/>
+          <FILE id="nyn5Qi" name="NoiseSource.h" compile="0" resource="0" file="Source/Audio/SoundSources/NoiseSource.h"/>
+          <FILE id="T7RUp8" name="SoundSource.h" compile="0" resource="0" file="Source/Audio/SoundSources/SoundSource.h"/>
+          <FILE id="DO55Qz" name="SpatialisedNoiseSource.cpp" compile="1" resource="0"
+                file="Source/Audio/SoundSources/SpatialisedNoiseSource.cpp"/>
+          <FILE id="VTCc7d" name="SpatialisedNoiseSource.h" compile="0" resource="0"
+                file="Source/Audio/SoundSources/SpatialisedNoiseSource.h"/>
+          <FILE id="HKfRuC" name="SpatialisedSoundFileSource.cpp" compile="1"
+                resource="0" file="Source/Audio/SoundSources/SpatialisedSoundFileSource.cpp"/>
+          <FILE id="k5Wjxg" name="SpatialisedSoundFileSource.h" compile="0" resource="0"
+                file="Source/Audio/SoundSources/SpatialisedSoundFileSource.h"/>
+          <FILE id="IPJkL2" name="ToneSource.cpp" compile="1" resource="0" file="Source/Audio/SoundSources/ToneSource.cpp"/>
+          <FILE id="N7aLaP" name="ToneSource.h" compile="0" resource="0" file="Source/Audio/SoundSources/ToneSource.h"/>
+        </GROUP>
+        <GROUP id="{623C6C77-7D0A-0BA2-5636-14FAEFE288F6}" name="Spatial">
+          <FILE id="zGqibE" name="HRTFManager.cpp" compile="1" resource="0" file="Source/Audio/Spatial/HRTFManager.cpp"/>
+          <FILE id="wMf874" name="HRTFManager.h" compile="0" resource="0" file="Source/Audio/Spatial/HRTFManager.h"/>
+          <FILE id="qkpIzf" name="PartitionedConvolver.cpp" compile="1" resource="0"
+                file="Source/Audio/Spatial/PartitionedConvolver.cpp"/>
+          <FILE id="HSjRKB" name="PartitionedConvolver.h" compile="0" resource="0"
+                file="Source/Audio/Spatial/PartitionedConvolver.h"/>
+          <FILE id="w0Ns8S" name="Spatialiser.cpp" compile="1" resource="0" file="Source/Audio/Spatial/Spatialiser.cpp"/>
+          <FILE id="jWw4Y2" name="Spatialiser.h" compile="0" resource="0" file="Source/Audio/Spatial/Spatialiser.h"/>
+        </GROUP>
+        <GROUP id="{4377AC33-95B7-E435-0CC3-DDF08C42C87F}" name="Utilities">
+          <FILE id="fpbiOX" name="Envelope.cpp" compile="1" resource="0" file="Source/Audio/Utilities/Envelope.cpp"/>
+          <FILE id="XOUaja" name="Envelope.h" compile="0" resource="0" file="Source/Audio/Utilities/Envelope.h"/>
+          <FILE id="CGl98K" name="NoiseGenerator.cpp" compile="1" resource="0"
+                file="Source/Audio/Utilities/NoiseGenerator.cpp"/>
+          <FILE id="w38ORP" name="NoiseGenerator.h" compile="0" resource="0"
+                file="Source/Audio/Utilities/NoiseGenerator.h"/>
+          <FILE id="mgJZWf" name="SoundFilePlayer.cpp" compile="1" resource="0"
+                file="Source/Audio/Utilities/SoundFilePlayer.cpp"/>
+          <FILE id="k8U9Qg" name="SoundFilePlayer.h" compile="0" resource="0"
+                file="Source/Audio/Utilities/SoundFilePlayer.h"/>
+          <FILE id="KVgMl7" name="ToneGenerator.cpp" compile="1" resource="0"
+                file="Source/Audio/Utilities/ToneGenerator.cpp"/>
+          <FILE id="Po32M6" name="ToneGenerator.h" compile="0" resource="0" file="Source/Audio/Utilities/ToneGenerator.h"/>
+        </GROUP>
+        <FILE id="cJw2la" name="SoundEngine.cpp" compile="1" resource="0" file="Source/Audio/SoundEngine.cpp"/>
+        <FILE id="p9ATjb" name="SoundEngine.h" compile="0" resource="0" file="Source/Audio/SoundEngine.h"/>
+      </GROUP>
       <FILE id="SRu00A" name="SpatialTestResults.h" compile="0" resource="0"
             file="Source/SpatialTestResults.h"/>
       <GROUP id="{943F7013-3B33-5071-AA95-51CCE457EC05}" name="Controller">
@@ -20,31 +64,6 @@
       </GROUP>
       <FILE id="arPsr6" name="PureToneTestResults.h" compile="0" resource="0"
             file="Source/PureToneTestResults.h"/>
-      <GROUP id="{2587C659-6868-9C32-C63C-7B92B0B65E14}" name="Audio">
-        <FILE id="VrR66q" name="Envelope.cpp" compile="1" resource="0" file="Source/Audio/Envelope.cpp"/>
-        <FILE id="O3mHcF" name="Envelope.h" compile="0" resource="0" file="Source/Audio/Envelope.h"/>
-        <FILE id="JT8Irm" name="HRTFManager.cpp" compile="1" resource="0" file="Source/Audio/HRTFManager.cpp"/>
-        <FILE id="RSlLny" name="HRTFManager.h" compile="0" resource="0" file="Source/Audio/HRTFManager.h"/>
-        <FILE id="ONrz2c" name="NoiseGenerator.cpp" compile="1" resource="0"
-              file="Source/Audio/NoiseGenerator.cpp"/>
-        <FILE id="E2UiYz" name="NoiseGenerator.h" compile="0" resource="0"
-              file="Source/Audio/NoiseGenerator.h"/>
-        <FILE id="FEktmf" name="PartitionedConvolver.cpp" compile="1" resource="0"
-              file="Source/Audio/PartitionedConvolver.cpp"/>
-        <FILE id="fpfkN1" name="PartitionedConvolver.h" compile="0" resource="0"
-              file="Source/Audio/PartitionedConvolver.h"/>
-        <FILE id="qIHT1e" name="SoundEngine.cpp" compile="1" resource="0" file="Source/Audio/SoundEngine.cpp"/>
-        <FILE id="grpGAl" name="SoundEngine.h" compile="0" resource="0" file="Source/Audio/SoundEngine.h"/>
-        <FILE id="rP2N3h" name="SoundFilePlayer.cpp" compile="1" resource="0"
-              file="Source/Audio/SoundFilePlayer.cpp"/>
-        <FILE id="N8wAie" name="SoundFilePlayer.h" compile="0" resource="0"
-              file="Source/Audio/SoundFilePlayer.h"/>
-        <FILE id="l74KWx" name="Spatialiser.cpp" compile="1" resource="0" file="Source/Audio/Spatialiser.cpp"/>
-        <FILE id="ywsTTx" name="Spatialiser.h" compile="0" resource="0" file="Source/Audio/Spatialiser.h"/>
-        <FILE id="JnR4Il" name="ToneGenerator.cpp" compile="1" resource="0"
-              file="Source/Audio/ToneGenerator.cpp"/>
-        <FILE id="pccR1Z" name="ToneGenerator.h" compile="0" resource="0" file="Source/Audio/ToneGenerator.h"/>
-      </GROUP>
       <FILE id="NYP5A5" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
       <FILE id="yRLOBH" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
       <FILE id="Zx0RZL" name="MainComponent.cpp" compile="1" resource="0"

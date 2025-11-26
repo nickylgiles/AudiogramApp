@@ -10,171 +10,75 @@
 
 #include "SoundEngine.h"
 
-SoundEngine::SoundEngine() 
-    : spatialiser(hrtfManager) 
-{
-    toneGenerator.setSampleRate(sampleRate);
-    noiseGenerator.setSampleRate(sampleRate);
-    soundFilePlayer.setSampleRate(sampleRate);
-    toneChannel = 0;
-    noiseChannel = 0;
-
+SoundEngine::SoundEngine() {
     hrtfManager.setSampleRate(sampleRate);
     hrtfManager.loadBinaryData();
 }
 
 void SoundEngine::playTone(float frequency, float amplitude, float duration, int channel) {
-
-    tonePlaying = true;
-    playing = true;
-
-    toneGenerator.reset();
-
-    toneGenerator.setAmplitude(amplitude);
-    toneGenerator.setFrequency(frequency);
-    toneChannel = channel;
-
-    samplesToPlay = duration * sampleRate;
-    remainingSamples = samplesToPlay;
-
-    envelope.start(samplesToPlay);
+    sources.push_back(std::make_unique<ToneSource>(sampleRate, frequency, amplitude, duration, channel));
 }
 
 void SoundEngine::playToneMasked(float frequency, float amplitude, float duration, int channel) {
-    playTone(frequency, amplitude, duration, channel);
-    noiseChannel = (channel == 0) ? 1 : 0;
-    noisePlaying = true;
-    noiseGenerator.setAmplitude(amplitude);
-    noiseGenerator.setFrequency(frequency, 0.5f);
-}
-
-void SoundEngine::playSample(const void* data, size_t size) {
-    bool fileLoaded = soundFilePlayer.loadBinaryData(data, size);
-    if (fileLoaded) {
-        soundFilePlayer.startPlaying();
-        soundFilePlaying = true;
-        samplesToPlay = soundFilePlayer.getLength();
-        remainingSamples = samplesToPlay;
-        playing = true;
-    }
-    else {
-        soundFilePlaying = false;
-        return;
-    }
-    spatialiser.setDirection(0.0f, 0.0f);
+    sources.push_back(std::make_unique<ToneSource>(sampleRate, frequency, amplitude, duration, channel));
+    int noiseChannel = (channel == 0 ? 1 : 0);
+    sources.push_back(std::make_unique<NoiseSource>(sampleRate, frequency, amplitude, duration, noiseChannel));
 }
 
 void SoundEngine::playSampleSpatial(const void* data, size_t size, float elevation, float azimuth, float gain) {
-    //playSample(data, size);
-    //spatialiser.setAzimuth(azimuth);
-    SoundSource source;
-    source.player = std::make_unique<SoundFilePlayer>();
-    source.player->loadBinaryData(data, size);
-    source.player->setSampleRate(sampleRate);
-    source.player->startPlaying();
+    sources.push_back(std::make_unique<SpatialisedSoundFileSource>(
+        sampleRate, data, size, hrtfManager, elevation, azimuth, gain));
 
-    source.spatialiser = std::make_unique<Spatialiser>(hrtfManager);
-    source.spatialiser->setSampleRate(sampleRate);
-    source.spatialiser->setDirection(elevation, azimuth);
-
-    source.azimuth = azimuth;
-    source.elevation = elevation;
-    source.gain = gain;
-    source.active = true;
-
-    sources.push_back(std::move(source));
-    playing = true;
 }
 
-void SoundEngine::stop()
-{
-    playing = false;
-    noisePlaying = false;
-    tonePlaying = false;
-    soundFilePlaying = false;
+void SoundEngine::playNoiseSpatial(int length, float elevation, float azimuth, float gain) {
+    return;
 }
 
-bool SoundEngine::isPlaying() const
-{
-    return playing;
+void SoundEngine::stop() {
+    sources.clear();
+}
+
+bool SoundEngine::isPlaying() const {
+    return sources.size() > 0;
 }
 
 void SoundEngine::setSampleRate(double newSampleRate) {
     sampleRate = newSampleRate;
-    toneGenerator.setSampleRate(newSampleRate);
-    noiseGenerator.setSampleRate(newSampleRate);
-    soundFilePlayer.setSampleRate(newSampleRate);
     hrtfManager.setSampleRate(newSampleRate);
-
-    envelope.setFallTime(newSampleRate * 0.1);
-    envelope.setRiseTime(newSampleRate * 0.1);
-
-    spatialiser.setSampleRate(newSampleRate);
+    stop();
 }
 
 
 void SoundEngine::processBlock(float* outputL, float* outputR, int numSamples) {
-    if (!playing) {
-        return;
+ 
+    for (int i = 0; i < numSamples; ++i) {
+        outputL[i] = 0.0f;
+        outputR[i] = 0.0f;
     }
+    
+    juce::AudioBuffer<float> leftBuf(1, numSamples);
+    juce::AudioBuffer<float> rightBuf(1, numSamples);
 
-    if (tonePlaying) {
-        float* toneBuffer = (toneChannel == 0 ? outputL : outputR);
-        float* noiseBuffer = (toneChannel == 0 ? outputR : outputL);
+    float* tempL = leftBuf.getWritePointer(0);
+    float* tempR = rightBuf.getWritePointer(0);
+
+    for (auto it = sources.begin(); it != sources.end(); ) {
+        (*it)->process(tempL, tempR, numSamples);
 
         for (int i = 0; i < numSamples; ++i) {
-            float env = envelope.nextSample();
-            toneBuffer[i] = toneGenerator.nextSample() * env;
-            noiseBuffer[i] = noiseGenerator.nextSample() * env;
-            remainingSamples--;
-            if (remainingSamples <= 0) {
-                stop();
-            }
+            outputL[i] += tempL[i];
+            outputR[i] += tempR[i];
         }
+
+        if ((*it)->isFinished()) {
+            it = sources.erase(it);
+            continue;
+        }
+
+        ++it;
     }
 
-    if (soundFilePlaying) {
-        juce::AudioBuffer<float> soundBuffer(1, numSamples);
-        float* soundBufferWritePointer = soundBuffer.getWritePointer(0);
-        for (int i = 0; i < numSamples; ++i) {
-            soundBufferWritePointer[i] = soundFilePlayer.nextSample();
-            remainingSamples--;
-            if (remainingSamples <= 0) {
-                stop();
-            }
-        }
-        spatialiser.processBlock(soundBuffer.getReadPointer(0), outputL, outputR, numSamples);
-    }
-
-    if (!sources.empty()) {
-        juce::AudioBuffer<float> monoBuffer(1, numSamples);
-        juce::AudioBuffer<float> stereoBuffer(2, numSamples);
-
-        for (auto it = sources.begin(); it != sources.end(); ) {
-            if (it->active && it->player) {
-                float* monoWritePointer = monoBuffer.getWritePointer(0);
-                float* stereoL = stereoBuffer.getWritePointer(0);
-                float* stereoR = stereoBuffer.getWritePointer(1);
-
-                for (int i = 0; i < numSamples; ++i)
-                    monoWritePointer[i] = it->player->nextSample();
-
-                it->spatialiser->processBlock(monoWritePointer, stereoL, stereoR, numSamples);
-
-                for (int i = 0; i < numSamples; ++i) {
-                    outputL[i] += stereoL[i] * it->gain;
-                    outputR[i] += stereoR[i] * it->gain;
-                }
-
-                // Remove finished sources
-                if (it->player->isFinished()) {
-                    it = sources.erase(it);
-                    continue;
-                }
-            }
-            ++it;
-        }
-    }
 
 }
 

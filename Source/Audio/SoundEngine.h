@@ -10,12 +10,17 @@
 
 #pragma once
 
-#include "ToneGenerator.h"
-#include "NoiseGenerator.h"
-#include "Envelope.h"
-#include "SoundFilePlayer.h"
-#include "Spatialiser.h"
-#include "HRTFManager.h"
+#include "Utilities/ToneGenerator.h"
+#include "Utilities/NoiseGenerator.h"
+#include "Utilities/Envelope.h"
+#include "Utilities/SoundFilePlayer.h"
+#include "Spatial/Spatialiser.h"
+#include "Spatial/HRTFManager.h"
+#include "SoundSources/SoundSource.h"
+#include "SoundSources/ToneSource.h"
+#include "SoundSources/NoiseSource.h"
+#include "SoundSources/SpatialisedSoundFileSource.h"
+#include "SoundSources/SpatialisedNoiseSource.h"
 
 
 class SoundEngine {
@@ -24,8 +29,8 @@ public:
     void playTone(float frequency, float amplitude, float duration, int channel);
     void playToneMasked(float frequency, float amplitude, float duration, int channel);
 
-    void playSample(const void* data, size_t size);
     void playSampleSpatial(const void* data, size_t size, float elevation, float azimuth, float gain);
+    void playNoiseSpatial(int length, float elevation, float azimuth, float gain);
 
     void stop();
     bool isPlaying() const;
@@ -34,34 +39,9 @@ public:
     void processBlock(float* outputL, float* outputR, int numSamples);
 
 private:
-    ToneGenerator toneGenerator;
-    NoiseGenerator noiseGenerator;
-    Envelope envelope;
-    SoundFilePlayer soundFilePlayer;
-    Spatialiser spatialiser;
-
     double sampleRate;
-    int toneChannel = 0;
-    int noiseChannel = 1;
 
-    bool playing = false;
-    bool noisePlaying = false;
-    bool tonePlaying = false;
-    bool soundFilePlaying = false;
-
-    int remainingSamples = 0;
-    int samplesToPlay = 0;
-
-    struct SoundSource {
-        std::unique_ptr<SoundFilePlayer> player;
-        std::unique_ptr<Spatialiser> spatialiser;
-        float elevation = 0.0f;
-        float azimuth = 0.0f;
-        float gain = 1.0f;
-        bool active = false;
-    };
-
-    std::vector<SoundSource> sources;
+    std::vector<std::unique_ptr<SoundSource>> sources;
 
     HRTFManager hrtfManager;
 };

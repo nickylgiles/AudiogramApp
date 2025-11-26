@@ -17,6 +17,8 @@ public:
     SoundFilePlayer();
     bool loadFile(const juce::File& file);
     bool loadBinaryData(const void* data, size_t size);
+    bool loadNoise(int length);
+    bool loadNoise(int length, juce::dsp::IIR::Coefficients<float> filterCoeffs);
     void setSampleRate(double newSampleRate);
     void reset();
     float nextSample();

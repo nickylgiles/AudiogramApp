@@ -72,6 +72,43 @@ bool SoundFilePlayer::loadBinaryData(const void* data, size_t size) {
 
 }
 
+bool SoundFilePlayer::loadNoise(int length) {
+    juce::Random random = juce::Random();
+    buffer.setSize(1, length);
+    auto* bufferWritePtr = buffer.getWritePointer(0);
+
+    for (int i = 0; i < length; ++i) {
+        bufferWritePtr[i] = random.nextFloat() * 2.0f - 1.0f;
+    }
+
+    fileLoaded = true;
+    soundPlaying = false;
+    currentSample = 0.0;
+    totalSamples = length;
+
+    return true;
+}
+
+bool SoundFilePlayer::loadNoise(int length, juce::dsp::IIR::Coefficients<float> filterCoeffs) {
+    if (!loadNoise(length)) 
+       return false;
+
+    juce::dsp::IIR::Filter<float> iirFilter;
+    iirFilter.coefficients = filterCoeffs;
+
+    juce::dsp::ProcessSpec spec;
+    spec.sampleRate = sampleRate;
+    spec.maximumBlockSize = length;
+    spec.numChannels = 1;
+    iirFilter.prepare(spec);
+
+    juce::dsp::AudioBlock<float> block(buffer);
+    juce::dsp::ProcessContextReplacing<float> context(block);
+    iirFilter.process(context);
+
+    return true;
+}
+
 void SoundFilePlayer::setSampleRate(double newSampleRate) {
     sampleRate = newSampleRate;
     if (fileLoaded)
