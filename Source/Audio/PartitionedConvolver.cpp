@@ -24,6 +24,8 @@ PartitionedConvolver::PartitionedConvolver(int partitionSize)
 
     irPartitions.clear();
     numPartitions = 0;
+
+    DBG("PartitionedConvolver: partitionSize=" << partitionSize << " fftSize=" << fftSize);
 }
 
 void PartitionedConvolver::loadIR(const juce::AudioBuffer<float>& irBuffer) {
@@ -37,14 +39,15 @@ void PartitionedConvolver::loadIR(const juce::AudioBuffer<float>& irBuffer) {
     std::vector<juce::dsp::Complex<float>> fftData(fftSize);
 
     for (int p = 0; p < numPartitions; ++p) {
-        for (int i = 0; i < fftSize; ++i) {
-            int sampleIndex = p * partitionSize + i;
-            if (sampleIndex < irLength) {
-                fftData[i] = juce::dsp::Complex<float>(readPointer[sampleIndex], 0.0f);
-            }
-            else {
-                fftData[i] = juce::dsp::Complex<float>(0.0f, 0.0f);
-            }
+        int offset = p * partitionSize;
+        for (int i = 0; i < partitionSize; ++i) {
+            if (offset + i < irLength)
+                fftData[i] = { readPointer[offset + i], 0.0f };
+            else
+                fftData[i] = { 0.0f, 0.0f };
+        }
+        for (int i = partitionSize; i < fftSize; ++i) {
+            fftData[i] = { 0.0f, 0.0f };
         }
 
         fft.perform(fftData.data(), fftData.data(), false);
@@ -57,6 +60,8 @@ void PartitionedConvolver::loadIR(const juce::AudioBuffer<float>& irBuffer) {
     
     overlapBuffer.setSize(1, fftSize);
     overlapBuffer.clear();
+
+    DBG("PartitionedConvolver: loaded IR - partitions=" << numPartitions);
 }
 
 void PartitionedConvolver::processBlock(const float* input, float* output, int numSamples) {
@@ -72,6 +77,7 @@ void PartitionedConvolver::processBlock(const float* input, float* output, int n
 
         // Process FFT once enough samples are in buffer
         if (inputBufferPos == partitionSize) {
+            DBG("Processing partition");
             processPartition();
             inputBufferPos = 0;
         }
@@ -84,7 +90,8 @@ void PartitionedConvolver::processBlock(const float* input, float* output, int n
 
         // Shift overlap buffer by samplesToCopy
         auto* overlapWritePtr = overlapBuffer.getWritePointer(0);
-        juce::FloatVectorOperations::copy(overlapWritePtr, overlapWritePtr + samplesToCopy, fftSize - samplesToCopy);
+        int remaining = fftSize - samplesToCopy;
+        std::memmove(overlapWritePtr, overlapWritePtr + samplesToCopy, remaining * sizeof(float));
         overlapBuffer.clear(0, fftSize - samplesToCopy, samplesToCopy);
 
         samplesProcessed += samplesToCopy;

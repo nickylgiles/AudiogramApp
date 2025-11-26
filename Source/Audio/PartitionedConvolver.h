@@ -39,4 +39,6 @@ private:
 
     juce::dsp::FFT fft;
 
+    int processedPartitions = 0;
+
 };

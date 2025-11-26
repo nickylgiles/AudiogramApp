@@ -55,9 +55,11 @@ void Spatialiser::setDirection(float newElevation, float newAzimuth) {
     firRight.coefficients = coeffsR;
     firRight.reset();
 
-
+    /*
     convolverLeft.loadIR(hrirL);
     convolverRight.loadIR(hrirR);
+    */
+
 
     irLoaded = true;
 }
@@ -70,9 +72,7 @@ void Spatialiser::setFFTBlockSize(int newBlockSize) {
     return;
 }
 
-/*
-    Todo - implement partitioned convulution with HRTFs
-*/
+
 void Spatialiser::processBlock(const float* input, float* outputL, float* outputR, int numSamples) {
     if(!irLoaded) {
         float pan = (azimuth + 90.0f) / 180.0f;
@@ -85,17 +85,18 @@ void Spatialiser::processBlock(const float* input, float* outputL, float* output
         }
         return;
     }
-    /*
+    
     for (int i = 0; i < numSamples; ++i) {
         float inSample = input[i];
 
         outputL[i] = firLeft.processSample(inSample);
         outputR[i] = firRight.processSample(inSample);
     }
-    */
+    
+    /*
     convolverLeft.processBlock(input, outputL, numSamples);
     convolverRight.processBlock(input, outputR, numSamples);
-
+    */
 
 }
 
