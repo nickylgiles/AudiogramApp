@@ -30,7 +30,7 @@ public:
     void playToneMasked(float frequency, float amplitude, float duration, int channel);
 
     void playSampleSpatial(const void* data, size_t size, float elevation, float azimuth, float gain);
-    void playNoiseSpatial(int length, float elevation, float azimuth, float gain);
+    void playNoiseSpatial(float amplitude, float duration, float elevation, float azimuth);
 
     void stop();
     bool isPlaying() const;

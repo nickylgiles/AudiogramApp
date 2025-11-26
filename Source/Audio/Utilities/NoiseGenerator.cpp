@@ -10,8 +10,9 @@
 
 #include "NoiseGenerator.h"
 
-NoiseGenerator::NoiseGenerator()
+NoiseGenerator::NoiseGenerator(bool bandPassFilterNoise)
 {
+    filterNoise = bandPassFilterNoise;
     amplitude = 0.0f;
     centreFrequency = 0.0f;
     sampleRate = 44100.0;
@@ -22,6 +23,8 @@ NoiseGenerator::NoiseGenerator()
 float NoiseGenerator::nextSample()
 {
     float whiteNoise = random.nextFloat() * 2.0f - 1.0f;
+    if (!filterNoise) return whiteNoise;
+
     float filteredSample = bandPassFilter.processSample(whiteNoise);
     return filteredSample * amplitude;
 }

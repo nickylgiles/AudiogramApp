@@ -31,8 +31,11 @@ void SoundEngine::playSampleSpatial(const void* data, size_t size, float elevati
 
 }
 
-void SoundEngine::playNoiseSpatial(int length, float elevation, float azimuth, float gain) {
-    return;
+void SoundEngine::playNoiseSpatial(float amplitude, float duration, float elevation, float azimuth) {
+    sources.push_back(std::make_unique<SpatialisedNoiseSource>(
+        sampleRate, amplitude, duration, hrtfManager, elevation, azimuth
+    ));
+
 }
 
 void SoundEngine::stop() {

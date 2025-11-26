@@ -14,7 +14,7 @@
 
 class NoiseGenerator {
 public:
-    NoiseGenerator();
+    NoiseGenerator(bool bandPassFilterNoise = true);
     float nextSample();
     void setFrequency(float frequency, float bandwidthOctaves);
     void setAmplitude(float newAmplitude);
@@ -28,4 +28,6 @@ private:
     double sampleRate;
     juce::dsp::IIR::Filter<float> bandPassFilter;
     juce::Random random;
+
+    bool filterNoise = false;
 };

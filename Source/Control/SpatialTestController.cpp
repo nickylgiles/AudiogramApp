@@ -17,12 +17,15 @@ SpatialTestController::SpatialTestController(MainComponent& mainComponentRef, So
 }
 
 void SpatialTestController::startTest() {
-    soundEngine.playSampleSpatial(BinaryData::snd_wav, BinaryData::snd_wavSize, -85.0f, -90.0f, 1.0f);
+   // soundEngine.playSampleSpatial(BinaryData::snd_wav, BinaryData::snd_wavSize, -85.0f, -90.0f, 1.0f);
+    soundEngine.playNoiseSpatial(1.0f, 20.0f, 0.0f, 45.0f);
+    soundEngine.playNoiseSpatial(1.0f, 20.0f, 0.0f, -45.0f);
 }
 
 void SpatialTestController::stopTest() {
     soundEngine.stop();
 }
+
 void SpatialTestController::timerCallback() {
     return;
 }
