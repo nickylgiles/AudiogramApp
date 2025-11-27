@@ -107,7 +107,7 @@ void PartitionedConvolver::processPartition() {
     for (int i = 0; i < partitionSize; ++i) {
         inputFFT[i] = juce::dsp::Complex<float>(inputReadPtr[i], 0.0f);
     }
-    // Zero-pad input to partition size
+    // Zero-pad input to fft size
     for (int i = partitionSize; i < fftSize; ++i) {
         inputFFT[i] = juce::dsp::Complex<float>(0.0f, 0.0f);
     }
