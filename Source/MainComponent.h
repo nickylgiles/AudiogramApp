@@ -3,12 +3,16 @@
 #include <JuceHeader.h>
 #include "Control/PureToneTestController.h"
 #include "Control/SpatialTestController.h"
+
 #include "GUI/MenuScreen.h"
+
 #include "GUI/PureToneTestScreen.h"
 #include "GUI/PureToneResultsScreen.h"
+
 #include "GUI/Spatial/SpatialTestScreen.h"
 #include "GUI/Spatial/SpatialResultsScreen.h"
 
+#include "Results/ResultsLogger.h"
 
 //==============================================================================
 /*

@@ -5,8 +5,6 @@ MainComponent::MainComponent()
 {
 
     soundEngine = std::make_unique<SoundEngine>();
-
-   //  testController = std::make_unique<PureToneTestController>(*this, *soundEngine);
     testController = nullptr;
 
     showMenuScreen();
