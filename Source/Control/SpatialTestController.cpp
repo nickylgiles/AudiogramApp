@@ -9,23 +9,142 @@
 */
 
 #include "SpatialTestController.h"
+#include "../MainComponent.h"
 #include <BinaryData.h>
 
 SpatialTestController::SpatialTestController(MainComponent& mainComponentRef, SoundEngine& soundEngineRef)
     	: TestController(mainComponentRef, soundEngineRef) {
-    
+    currentState = TestState::END;
+
 }
 
 void SpatialTestController::startTest() {
-   // soundEngine.playSampleSpatial(BinaryData::snd_wav, BinaryData::snd_wavSize, -85.0f, -90.0f, 1.0f);
-    soundEngine.playNoiseSpatial(1.0f, 20.0f, 0.0f, 45.0f);
-    soundEngine.playNoiseSpatial(1.0f, 20.0f, 0.0f, -45.0f);
+    currentState = TestState::START;
+    currentTrial = 0;
+    scheduleNextState(2000);
 }
 
 void SpatialTestController::stopTest() {
+    stopTimer();
     soundEngine.stop();
 }
 
+void SpatialTestController::buttonClicked(const juce::String& id) {
+    if (id == "stopButton") {
+        stopTest();
+        return;
+    }
+    if (currentState == TestState::AWAIT_RESPONSE) {
+        userResponded = true;
+        responseLeft = (id == "leftButton");
+        if (responseLeft == moveLeft) {
+            DBG("Correct response");
+            
+        }
+        else {
+            DBG("Incorrect response");
+        }
+
+        SpatialTestResponse response;
+        response.referenceAzimuth = firstAzimuth;
+        response.targetAzimuth = secondAzimuth;
+        response.spatialCorrect = (responseLeft == moveLeft);
+        results.responses.push_back(response);
+
+        currentState = TestState::NEXT_TRIAL;
+        scheduleNextState(interTrialDelay * 1000);
+    }
+}
+
+const SpatialTestResults SpatialTestController::getResults() {
+    return results;
+}
+
 void SpatialTestController::timerCallback() {
-    return;
+    stopTimer();
+
+    switch (currentState) {
+        case TestState::START:
+            currentTrial = 1;
+            currentState = TestState::TRIAL_START;
+            playMaskingNoise();
+            scheduleNextState(preSignalDelay * 1000);
+            break;
+
+        case TestState::TRIAL_START:
+            playFirstSound();
+            scheduleNextState(signalDuration * 1000);
+            currentState = TestState::FIRST_SOUND;
+            break;
+
+        case TestState::FIRST_SOUND:
+            currentState = TestState::WAIT_BETWEEN_SOUNDS;
+            scheduleNextState(interSignalDelay * 1000);
+            break;
+
+        case TestState::WAIT_BETWEEN_SOUNDS:
+            currentState = TestState::SECOND_SOUND;
+            playSecondSound();
+            scheduleNextState(signalDuration * 1000);
+            break;
+
+        case TestState::SECOND_SOUND:
+            currentState = TestState::AWAIT_RESPONSE;
+            userResponded = false;
+            break;
+
+        case TestState::AWAIT_RESPONSE:
+            break;
+
+        case TestState::NEXT_TRIAL:
+            if (currentTrial < numTrials) {
+                currentTrial++;
+                currentState = TestState::TRIAL_START;
+                playMaskingNoise();
+                scheduleNextState(preSignalDelay * 1000);
+            }
+            else {
+                currentState = TestState::END;
+                scheduleNextState(1);
+            }
+            break;
+        case TestState::END:
+            mainComponent.showSpatialResultsScreen();
+            stopTest();
+            break;
+    }
+}
+
+void SpatialTestController::scheduleNextState(int delayMs) {
+    stopTimer();
+    startTimer(delayMs);
+}
+
+void SpatialTestController::playFirstSound() {
+    firstAzimuth = testAzimuths[random.nextInt(testAzimuths.size())];
+    soundEngine.playNoiseSpatial(signalAmplitude, signalDuration, 0.0f, firstAzimuth);
+
+}
+
+void SpatialTestController::playSecondSound() {
+    // Choose direction to move
+    if (firstAzimuth >= 90.0f) {
+        moveLeft = false;
+    }
+    else if (firstAzimuth <= -90.0f) {
+        moveLeft = true;
+    }
+    else {
+        moveLeft = random.nextBool();
+    }
+
+    secondAzimuth = moveLeft ? firstAzimuth + 15.0f : firstAzimuth - 15.0f;
+
+    soundEngine.playNoiseSpatial(signalAmplitude, signalDuration, 0.0f, secondAzimuth);
+
+}
+
+void SpatialTestController::playMaskingNoise() {
+    float maskingDuration = preSignalDelay + 2.0f * signalDuration + interSignalDelay + postSignalMasking;
+    soundEngine.playNoiseSpatial(maskingAmplitude, maskingDuration, 0.0f, 0.0f);
 }

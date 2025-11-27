@@ -6,6 +6,9 @@
 #include "GUI/MenuScreen.h"
 #include "GUI/PureToneTestScreen.h"
 #include "GUI/PureToneResultsScreen.h"
+#include "GUI/Spatial/SpatialTestScreen.h"
+#include "GUI/Spatial/SpatialResultsScreen.h"
+
 
 //==============================================================================
 /*
@@ -32,8 +35,10 @@ public:
 
     void showMenuScreen(); 
     void showPureToneTestScreen();
-    void showSpatialTestScreen();
     void showPureToneResultsScreen();
+
+    void showSpatialTestScreen();
+    void showSpatialResultsScreen();
 
 private:
     //==============================================================================

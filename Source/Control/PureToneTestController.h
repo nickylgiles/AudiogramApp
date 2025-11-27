@@ -8,6 +8,7 @@
   ==============================================================================
 */
 #include "TestController.h"
+#include "../PureToneTestResults.h"
 #pragma once
 
 class PureToneTestController : public TestController, private juce::Timer {
@@ -17,12 +18,12 @@ public:
     void stopTest() override;
 
     void buttonClicked(const juce::String& id) override;
-    void toneHeard();
 
     const PureToneTestResults getResults();
 
 private:
     void timerCallback() override;
+    void toneHeard();
 
     static float dbToAmplitude(float db);
     
@@ -55,5 +56,5 @@ private:
         END
     };
     
-    TestState currentState;
+    TestState currentState{ TestState::END };
 };

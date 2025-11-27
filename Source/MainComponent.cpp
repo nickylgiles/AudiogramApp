@@ -120,6 +120,44 @@ void MainComponent::showSpatialTestScreen() {
     testController.reset(new SpatialTestController(*this, *soundEngine));
     testStarted = true;
     testController->startTest();
+
+    auto screen = std::make_unique<SpatialTestScreen>();
+    screen->onLeftClicked = [this] {
+        testController->buttonClicked("leftButton");
+        };
+    screen->onRightClicked = [this] {
+        testController->buttonClicked("rightButton");
+        };
+    screen->onStopClicked = [this] {
+        testStarted = false;
+        testController->buttonClicked("stopButton");
+        showMenuScreen();
+        };
+
+    currentScreen = std::move(screen);
+    addAndMakeVisible(currentScreen.get());
+    resized();
+}
+
+void MainComponent::showSpatialResultsScreen() {
+    auto spaTestController = dynamic_cast<SpatialTestController*>(testController.get());
+    if (!spaTestController) {
+        return;
+    }
+    SpatialTestResults results = spaTestController->getResults();
+    auto screen = std::make_unique<SpatialResultsScreen>();
+
+    screen->setResults(results);
+    screen->onExportClicked = [this] {
+        // export
+        };
+    screen->onMenuClicked = [this] {
+        showMenuScreen();
+        };
+
+    currentScreen = std::move(screen);
+    addAndMakeVisible(currentScreen.get());
+    resized();
 }
 
 void MainComponent::showPureToneResultsScreen() {

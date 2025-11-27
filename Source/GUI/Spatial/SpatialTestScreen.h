@@ -1,0 +1,34 @@
+/*
+  ==============================================================================
+
+    SpatialTestScreen.h
+    Created: 26 Nov 2025 11:40:40pm
+    Author:  nicky_hgjk9m6
+
+  ==============================================================================
+*/
+
+#pragma once
+
+#include <JuceHeader.h>
+
+class SpatialTestScreen : public juce::Component {
+public:
+    SpatialTestScreen();
+    ~SpatialTestScreen() override = default;
+
+    // Callbacks set in MainComponent
+    std::function<void()> onLeftClicked;
+    std::function<void()> onRightClicked;
+    std::function<void()> onStopClicked;
+
+    void resized() override;
+    void paint(juce::Graphics& g) override;
+
+private:
+    juce::TextButton leftButton{ "Left" };
+    juce::TextButton rightButton{ "Right" };
+    juce::TextButton stopButton{ "Stop Test" };
+
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(SpatialTestScreen)
+};

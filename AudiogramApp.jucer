@@ -69,16 +69,30 @@
       <FILE id="Zx0RZL" name="MainComponent.cpp" compile="1" resource="0"
             file="Source/MainComponent.cpp"/>
       <GROUP id="{8F5E5A1D-8BFE-3270-DA73-9A53E2F30F6B}" name="GUI">
+        <GROUP id="{4B763882-CE80-2599-5B95-5D10F38F4471}" name="DualTask"/>
+        <GROUP id="{38458A30-AD0D-CBC1-DEF6-90933964B2BB}" name="SpeechInNoise"/>
+        <GROUP id="{C1F03415-6B2D-F8D5-76D7-4D3BA798964B}" name="Spatial">
+          <FILE id="K7QR8X" name="SpatialResultsScreen.cpp" compile="1" resource="0"
+                file="Source/GUI/Spatial/SpatialResultsScreen.cpp"/>
+          <FILE id="cIXoSj" name="SpatialResultsScreen.h" compile="0" resource="0"
+                file="Source/GUI/Spatial/SpatialResultsScreen.h"/>
+          <FILE id="dg1x4s" name="SpatialTestScreen.cpp" compile="1" resource="0"
+                file="Source/GUI/Spatial/SpatialTestScreen.cpp"/>
+          <FILE id="f03ueU" name="SpatialTestScreen.h" compile="0" resource="0"
+                file="Source/GUI/Spatial/SpatialTestScreen.h"/>
+        </GROUP>
+        <GROUP id="{98B309EA-E71D-4EC8-9703-2919D5DEA9BF}" name="PureTone">
+          <FILE id="zmR1q5" name="PureToneResultsScreen.cpp" compile="1" resource="0"
+                file="Source/GUI/PureToneResultsScreen.cpp"/>
+          <FILE id="ifPmcF" name="PureToneResultsScreen.h" compile="0" resource="0"
+                file="Source/GUI/PureToneResultsScreen.h"/>
+          <FILE id="ODVjRZ" name="PureToneTestScreen.cpp" compile="1" resource="0"
+                file="Source/GUI/PureToneTestScreen.cpp"/>
+          <FILE id="DdRmVu" name="PureToneTestScreen.h" compile="0" resource="0"
+                file="Source/GUI/PureToneTestScreen.h"/>
+        </GROUP>
         <FILE id="NwuFWI" name="MenuScreen.cpp" compile="1" resource="0" file="Source/GUI/MenuScreen.cpp"/>
         <FILE id="n96XkO" name="MenuScreen.h" compile="0" resource="0" file="Source/GUI/MenuScreen.h"/>
-        <FILE id="zmR1q5" name="PureToneResultsScreen.cpp" compile="1" resource="0"
-              file="Source/GUI/PureToneResultsScreen.cpp"/>
-        <FILE id="ifPmcF" name="PureToneResultsScreen.h" compile="0" resource="0"
-              file="Source/GUI/PureToneResultsScreen.h"/>
-        <FILE id="ODVjRZ" name="PureToneTestScreen.cpp" compile="1" resource="0"
-              file="Source/GUI/PureToneTestScreen.cpp"/>
-        <FILE id="DdRmVu" name="PureToneTestScreen.h" compile="0" resource="0"
-              file="Source/GUI/PureToneTestScreen.h"/>
       </GROUP>
       <GROUP id="{7E4C7854-C52A-8E8F-A1C7-D2FCF346D5A2}" name="Database"/>
     </GROUP>

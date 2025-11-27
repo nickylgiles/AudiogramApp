@@ -24,7 +24,6 @@ void PureToneTestController::startTest() {
     currentTone = 0;
     currentEar = 0;
     currentThreshold = dbLevelMin;
-    // thresholdIncreasing = true;
 
     currentToneDetected = false;
     currentState = TestState::START;
@@ -117,7 +116,7 @@ void PureToneTestController::timerCallback() {
 
         case TestState::END:
             stopTest();
-            mainComponent.testEnd();
+            mainComponent.showPureToneResultsScreen();
             return;
     }
 

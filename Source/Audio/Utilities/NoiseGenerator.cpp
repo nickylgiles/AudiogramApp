@@ -23,7 +23,7 @@ NoiseGenerator::NoiseGenerator(bool bandPassFilterNoise)
 float NoiseGenerator::nextSample()
 {
     float whiteNoise = random.nextFloat() * 2.0f - 1.0f;
-    if (!filterNoise) return whiteNoise;
+    if (!filterNoise) return whiteNoise * amplitude;
 
     float filteredSample = bandPassFilter.processSample(whiteNoise);
     return filteredSample * amplitude;
