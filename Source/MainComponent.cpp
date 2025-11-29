@@ -88,6 +88,7 @@ void MainComponent::showMenuScreen() {
 
     screen->onPureToneClicked = [this] {showPureToneTestScreen();};
     screen->onSpatialClicked = [this] {showSpatialTestScreen();};
+    screen->onSpeechInNoiseClicked = [this] {showSpeechInNoiseTestScreen();};
 
     currentScreen = std::move(screen);
     addAndMakeVisible(currentScreen.get());
@@ -156,6 +157,15 @@ void MainComponent::showSpatialResultsScreen() {
     currentScreen = std::move(screen);
     addAndMakeVisible(currentScreen.get());
     resized();
+}
+
+void MainComponent::showSpeechInNoiseTestScreen() {
+    testController.reset(new SpeechInNoiseController(*this, *soundEngine));
+    testStarted = true;
+    testController->startTest();
+}
+
+void MainComponent::showSpeechInNoiseResultsScreen() {
 }
 
 void MainComponent::showPureToneResultsScreen() {

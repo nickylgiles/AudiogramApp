@@ -8,6 +8,36 @@
 
 namespace BinaryData
 {
+    extern const char*   speech_0_wav;
+    const int            speech_0_wavSize = 126190;
+
+    extern const char*   speech_1_wav;
+    const int            speech_1_wavSize = 125890;
+
+    extern const char*   speech_2_wav;
+    const int            speech_2_wavSize = 103510;
+
+    extern const char*   speech_3_wav;
+    const int            speech_3_wavSize = 118786;
+
+    extern const char*   speech_4_wav;
+    const int            speech_4_wavSize = 102694;
+
+    extern const char*   speech_5_wav;
+    const int            speech_5_wavSize = 133494;
+
+    extern const char*   speech_6_wav;
+    const int            speech_6_wavSize = 133758;
+
+    extern const char*   speech_7_wav;
+    const int            speech_7_wavSize = 139558;
+
+    extern const char*   speech_8_wav;
+    const int            speech_8_wavSize = 106270;
+
+    extern const char*   speech_9_wav;
+    const int            speech_9_wavSize = 132284;
+
     extern const char*   HRIR_0_0_L_wav;
     const int            HRIR_0_0_L_wavSize = 556;
 
@@ -555,7 +585,7 @@ namespace BinaryData
     const int            speech_15_wavSize = 157164;
 
     // Number of elements in the namedResourceList and originalFileNames arrays.
-    const int namedResourceListSize = 182;
+    const int namedResourceListSize = 192;
 
     // Points to the start of a list of resource names.
     extern const char* namedResourceList[];

@@ -3,6 +3,20 @@
 <JUCERPROJECT id="WKUAzk" name="AudiogramApp" projectType="guiapp" useAppConfig="0"
               addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1">
   <MAINGROUP id="lnMh6c" name="AudiogramApp">
+    <GROUP id="{46B42F38-5DC4-96AB-47E8-1842A2EF02B4}" name="Resources">
+      <GROUP id="{5442CB66-3BAD-C3E9-2257-95FB1F20DC62}" name="Digits">
+        <FILE id="ODUExG" name="speech_0.wav" compile="0" resource="1" file="Resources/Digits/speech_0.wav"/>
+        <FILE id="EYQ94S" name="speech_1.wav" compile="0" resource="1" file="Resources/Digits/speech_1.wav"/>
+        <FILE id="wvsHej" name="speech_2.wav" compile="0" resource="1" file="Resources/Digits/speech_2.wav"/>
+        <FILE id="fxuyUq" name="speech_3.wav" compile="0" resource="1" file="Resources/Digits/speech_3.wav"/>
+        <FILE id="f6lSRh" name="speech_4.wav" compile="0" resource="1" file="Resources/Digits/speech_4.wav"/>
+        <FILE id="CexXMx" name="speech_5.wav" compile="0" resource="1" file="Resources/Digits/speech_5.wav"/>
+        <FILE id="vYjzjs" name="speech_6.wav" compile="0" resource="1" file="Resources/Digits/speech_6.wav"/>
+        <FILE id="sSuGzp" name="speech_7.wav" compile="0" resource="1" file="Resources/Digits/speech_7.wav"/>
+        <FILE id="zSScaq" name="speech_8.wav" compile="0" resource="1" file="Resources/Digits/speech_8.wav"/>
+        <FILE id="LDgxLR" name="speech_9.wav" compile="0" resource="1" file="Resources/Digits/speech_9.wav"/>
+      </GROUP>
+    </GROUP>
     <GROUP id="{BE7360D8-37BE-173C-6169-F7E52B912C7E}" name="ThirdParty">
       <GROUP id="{16EE81A1-E620-8F15-63AE-6A488B3ADDA1}" name="libBasicSOFA"/>
     </GROUP>
@@ -312,9 +326,19 @@
     </GROUP>
     <GROUP id="{8ACD6052-F8FD-9BBA-B215-8096667E1970}" name="Source">
       <GROUP id="{ABE302EF-2999-A2B1-B4F2-0A68B6276078}" name="Audio">
+        <GROUP id="{8C2632EB-A318-E1FE-07D4-30C71CC7F6E0}" name="Speech">
+          <FILE id="YqRL2f" name="SpeechFileManager.cpp" compile="1" resource="0"
+                file="Source/Audio/Speech/SpeechFileManager.cpp"/>
+          <FILE id="UrnbBS" name="SpeechFileManager.h" compile="0" resource="0"
+                file="Source/Audio/Speech/SpeechFileManager.h"/>
+        </GROUP>
         <GROUP id="{25E8A2C2-3BBE-B93A-8D2C-19601D65050C}" name="SoundSources">
           <FILE id="zlrTTB" name="NoiseSource.cpp" compile="1" resource="0" file="Source/Audio/SoundSources/NoiseSource.cpp"/>
           <FILE id="nyn5Qi" name="NoiseSource.h" compile="0" resource="0" file="Source/Audio/SoundSources/NoiseSource.h"/>
+          <FILE id="gtnj6p" name="SoundFileSource.cpp" compile="1" resource="0"
+                file="Source/Audio/SoundSources/SoundFileSource.cpp"/>
+          <FILE id="UzdzSm" name="SoundFileSource.h" compile="0" resource="0"
+                file="Source/Audio/SoundSources/SoundFileSource.h"/>
           <FILE id="T7RUp8" name="SoundSource.h" compile="0" resource="0" file="Source/Audio/SoundSources/SoundSource.h"/>
           <FILE id="DO55Qz" name="SpatialisedNoiseSource.cpp" compile="1" resource="0"
                 file="Source/Audio/SoundSources/SpatialisedNoiseSource.cpp"/>
@@ -355,8 +379,6 @@
         <FILE id="cJw2la" name="SoundEngine.cpp" compile="1" resource="0" file="Source/Audio/SoundEngine.cpp"/>
         <FILE id="p9ATjb" name="SoundEngine.h" compile="0" resource="0" file="Source/Audio/SoundEngine.h"/>
       </GROUP>
-      <FILE id="SRu00A" name="SpatialTestResults.h" compile="0" resource="0"
-            file="Source/SpatialTestResults.h"/>
       <GROUP id="{943F7013-3B33-5071-AA95-51CCE457EC05}" name="Controller">
         <FILE id="JPKWyE" name="PureToneTestController.cpp" compile="1" resource="0"
               file="Source/Control/PureToneTestController.cpp"/>
@@ -366,18 +388,29 @@
               file="Source/Control/SpatialTestController.cpp"/>
         <FILE id="SvjQMr" name="SpatialTestController.h" compile="0" resource="0"
               file="Source/Control/SpatialTestController.h"/>
+        <FILE id="HcZt0y" name="SpeechInNoiseController.cpp" compile="1" resource="0"
+              file="Source/Control/SpeechInNoiseController.cpp"/>
+        <FILE id="eCZOn6" name="SpeechInNoiseController.h" compile="0" resource="0"
+              file="Source/Control/SpeechInNoiseController.h"/>
         <FILE id="SfnrgV" name="TestController.h" compile="0" resource="0"
               file="Source/Control/TestController.h"/>
       </GROUP>
-      <FILE id="arPsr6" name="PureToneTestResults.h" compile="0" resource="0"
-            file="Source/PureToneTestResults.h"/>
       <FILE id="NYP5A5" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
       <FILE id="yRLOBH" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
       <FILE id="Zx0RZL" name="MainComponent.cpp" compile="1" resource="0"
             file="Source/MainComponent.cpp"/>
       <GROUP id="{8F5E5A1D-8BFE-3270-DA73-9A53E2F30F6B}" name="GUI">
         <GROUP id="{4B763882-CE80-2599-5B95-5D10F38F4471}" name="DualTask"/>
-        <GROUP id="{38458A30-AD0D-CBC1-DEF6-90933964B2BB}" name="SpeechInNoise"/>
+        <GROUP id="{38458A30-AD0D-CBC1-DEF6-90933964B2BB}" name="SpeechInNoise">
+          <FILE id="Sfcxji" name="SpeechInNoiseResultsScreen.cpp" compile="1"
+                resource="0" file="Source/GUI/SpeechInNoise/SpeechInNoiseResultsScreen.cpp"/>
+          <FILE id="MpJ2VI" name="SpeechInNoiseResultsScreen.h" compile="0" resource="0"
+                file="Source/GUI/SpeechInNoise/SpeechInNoiseResultsScreen.h"/>
+          <FILE id="aRe7hO" name="SpeechInNoiseTestScreen.cpp" compile="1" resource="0"
+                file="Source/GUI/SpeechInNoise/SpeechInNoiseTestScreen.cpp"/>
+          <FILE id="ZpHM5y" name="SpeechInNoiseTestScreen.h" compile="0" resource="0"
+                file="Source/GUI/SpeechInNoise/SpeechInNoiseTestScreen.h"/>
+        </GROUP>
         <GROUP id="{C1F03415-6B2D-F8D5-76D7-4D3BA798964B}" name="Spatial">
           <FILE id="K7QR8X" name="SpatialResultsScreen.cpp" compile="1" resource="0"
                 file="Source/GUI/Spatial/SpatialResultsScreen.cpp"/>
@@ -404,9 +437,13 @@
       <GROUP id="{7E4C7854-C52A-8E8F-A1C7-D2FCF346D5A2}" name="Database">
         <FILE id="l2aSHW" name="Database.cpp" compile="1" resource="0" file="Source/Results/Database.cpp"/>
         <FILE id="LyU3e7" name="Database.h" compile="0" resource="0" file="Source/Results/Database.h"/>
+        <FILE id="znDsoO" name="PureToneTestResults.h" compile="0" resource="0"
+              file="Source/Results/PureToneTestResults.h"/>
         <FILE id="LHeNif" name="ResultsLogger.cpp" compile="1" resource="0"
               file="Source/Results/ResultsLogger.cpp"/>
         <FILE id="mtWplc" name="ResultsLogger.h" compile="0" resource="0" file="Source/Results/ResultsLogger.h"/>
+        <FILE id="kFMjXM" name="SpatialTestResults.h" compile="0" resource="0"
+              file="Source/Results/SpatialTestResults.h"/>
         <FILE id="C3C8gR" name="sqlite3.c" compile="1" resource="0" file="ThirdParty/sqlite-amalgamation-3510000/sqlite3.c"/>
         <FILE id="cV3Bi6" name="sqlite3.h" compile="0" resource="0" file="ThirdParty/sqlite-amalgamation-3510000/sqlite3.h"/>
       </GROUP>
@@ -450,10 +487,12 @@
         <MODULEPATH id="juce_gui_extra" path="../../../JUCE/modules"/>
       </MODULEPATHS>
     </ANDROIDSTUDIO>
-    <VS2022 targetFolder="Builds/VisualStudio2022" externalLibraries="hdf5">
+    <VS2022 targetFolder="Builds/VisualStudio2022">
       <CONFIGURATIONS>
-        <CONFIGURATION isDebug="1" name="Debug" targetName="AudiogramApp" libraryPath="C:\HDF5\lib"/>
-        <CONFIGURATION isDebug="0" name="Release" targetName="AudiogramApp" libraryPath="C:\HDF5\lib"/>
+        <CONFIGURATION isDebug="1" name="Debug" targetName="AudiogramApp" headerPath="..\ThirdParty\HDF5\include"
+                       libraryPath="..\ThirdParty\HDF5\lib"/>
+        <CONFIGURATION isDebug="0" name="Release" targetName="AudiogramApp" libraryPath="..\ThirdParty\HDF5\lib"
+                       headerPath="..\ThirdParty\HDF5\include"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
         <MODULEPATH id="juce_audio_basics" path="../../../JUCE/modules"/>

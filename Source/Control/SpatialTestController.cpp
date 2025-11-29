@@ -13,9 +13,14 @@
 #include <BinaryData.h>
 
 SpatialTestController::SpatialTestController(MainComponent& mainComponentRef, SoundEngine& soundEngineRef)
-    	: TestController(mainComponentRef, soundEngineRef) {
+    	: TestController(mainComponentRef, soundEngineRef) 
+{
     currentState = TestState::END;
 
+    firstAzimuth = 0.0f;
+    secondAzimuth = 0.0f;
+    moveLeft = false;
+    responseLeft = false;
 }
 
 void SpatialTestController::startTest() {
@@ -146,5 +151,6 @@ void SpatialTestController::playSecondSound() {
 
 void SpatialTestController::playMaskingNoise() {
     float maskingDuration = preSignalDelay + 2.0f * signalDuration + interSignalDelay + postSignalMasking;
-    soundEngine.playNoiseSpatial(maskingAmplitude, maskingDuration, 0.0f, 0.0f);
+    for(float az : maskingAzimuths)
+        soundEngine.playNoiseSpatial(maskingAmplitude / maskingAzimuths.size(), maskingDuration, 0.0f, az);
 }

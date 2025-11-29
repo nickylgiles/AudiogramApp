@@ -9,6 +9,7 @@
 */
 
 #include "SpatialisedSoundFileSource.h"
+#include "SoundFileSource.h"
 
 SpatialisedSoundFileSource::SpatialisedSoundFileSource(double sampleRate, const void* data, size_t size, HRTFManager& hrtfManager, float elevation, float azimuth, float newGain)
     : spatialiser(hrtfManager)

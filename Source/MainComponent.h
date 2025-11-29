@@ -1,8 +1,10 @@
 #pragma once
 
 #include <JuceHeader.h>
+
 #include "Control/PureToneTestController.h"
 #include "Control/SpatialTestController.h"
+#include "Control/SpeechInNoiseController.h"
 
 #include "GUI/MenuScreen.h"
 
@@ -38,11 +40,15 @@ public:
     void testEnd();
 
     void showMenuScreen(); 
+
     void showPureToneTestScreen();
     void showPureToneResultsScreen();
 
     void showSpatialTestScreen();
     void showSpatialResultsScreen();
+
+    void showSpeechInNoiseTestScreen();
+    void showSpeechInNoiseResultsScreen();
 
 private:
     //==============================================================================

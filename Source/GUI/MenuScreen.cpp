@@ -16,14 +16,26 @@ MenuScreen::MenuScreen() {
 
     addAndMakeVisible(spatialButton);
     spatialButton.onClick = [this] {if (onSpatialClicked) onSpatialClicked(); };
+
+    addAndMakeVisible(speechInNoiseButton);
+    speechInNoiseButton.onClick = [this] {if (onSpeechInNoiseClicked) onSpeechInNoiseClicked(); };
+
+    addAndMakeVisible(dualTaskButton);
+    dualTaskButton.onClick = [this] {if (onDualTaskClicked) onDualTaskClicked(); };
 }
 
 void MenuScreen::resized() {
     auto area = getLocalBounds().reduced(40);
     auto buttonHeight = area.getHeight() / 2;
 
-    pureToneButton.setBounds(area.removeFromTop(buttonHeight).reduced(10));
-    spatialButton.setBounds(area.reduced(10));
+    auto leftColumn = area.removeFromLeft(area.getWidth() / 2);
+    auto rightColumn = area;
+
+    pureToneButton.setBounds(leftColumn.removeFromTop(buttonHeight).reduced(10));
+    spatialButton.setBounds(leftColumn.reduced(10));
+
+    speechInNoiseButton.setBounds(rightColumn.removeFromTop(buttonHeight).reduced(10));
+    dualTaskButton.setBounds(rightColumn.reduced(10));
 }
 
 void MenuScreen::paint(juce::Graphics& g) {

@@ -12,7 +12,7 @@
 
 #include <JuceHeader.h>
 
-#include "../../SpatialTestResults.h" 
+#include "../../Results/SpatialTestResults.h"
 
 class SpatialResultsScreen : public juce::Component {
 public:

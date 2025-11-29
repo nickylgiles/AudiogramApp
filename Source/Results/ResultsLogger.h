@@ -11,8 +11,8 @@
 #pragma once
 
 #include "Database.h"
-#include "../SpatialTestResults.h"
-#include "../PureToneTestResults.h"
+#include "SpatialTestResults.h"
+#include "PureToneTestResults.h"
 
 class ResultsLogger {
 public:

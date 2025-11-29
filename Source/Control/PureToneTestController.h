@@ -8,7 +8,7 @@
   ==============================================================================
 */
 #include "TestController.h"
-#include "../PureToneTestResults.h"
+#include "../Results/PureToneTestResults.h"
 #pragma once
 
 class PureToneTestController : public TestController, private juce::Timer {

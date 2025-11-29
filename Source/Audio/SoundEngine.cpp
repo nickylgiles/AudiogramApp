@@ -25,6 +25,10 @@ void SoundEngine::playToneMasked(float frequency, float amplitude, float duratio
     addSource(std::make_unique<NoiseSource>(sampleRate, frequency, amplitude, duration, noiseChannel));
 }
 
+void SoundEngine::playSample(const void* data, size_t size, float gain) {
+    sources.push_back(std::make_unique<SoundFileSource>(sampleRate, data, size, gain));
+}
+
 void SoundEngine::playSampleSpatial(const void* data, size_t size, float elevation, float azimuth, float gain) {
     addSource(std::make_unique<SpatialisedSoundFileSource>(
         sampleRate, data, size, hrtfManager, elevation, azimuth, gain));

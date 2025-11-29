@@ -15,6 +15,7 @@
 #include "SoundSources/SoundSource.h"
 #include "SoundSources/ToneSource.h"
 #include "SoundSources/NoiseSource.h"
+#include "SoundSources/SoundFileSource.h"
 #include "SoundSources/SpatialisedSoundFileSource.h"
 #include "SoundSources/SpatialisedNoiseSource.h"
 
@@ -25,6 +26,7 @@ public:
     void playTone(float frequency, float amplitude, float duration, int channel);
     void playToneMasked(float frequency, float amplitude, float duration, int channel);
 
+    void playSample(const void* data, size_t size, float gain);
     void playSampleSpatial(const void* data, size_t size, float elevation, float azimuth, float gain);
     void playNoiseSpatial(float amplitude, float duration, float elevation, float azimuth);
 

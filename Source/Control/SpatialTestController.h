@@ -11,7 +11,7 @@
 #pragma once
 
 #include "TestController.h"
-#include "../SpatialTestResults.h"
+#include "../Results/SpatialTestResults.h"
 
 class SpatialTestController : public TestController, private juce::Timer {
 public:
@@ -46,6 +46,8 @@ private:
 	void playMaskingNoise();
 
 	std::vector<float> testAzimuths = { -90.0f, -75.0f, -60.0f, -45.0f, -30.0f, -15.0f, 0.0f, 15.0f, 30.0f, 45.0f, 60.0f, 75.0f, 90.0f };
+
+	std::vector<float> maskingAzimuths = { -90.0f, -30.0f, 30.0f, 90.0f };
 
 	int currentTrial = 0;
 	int numTrials = 10;
