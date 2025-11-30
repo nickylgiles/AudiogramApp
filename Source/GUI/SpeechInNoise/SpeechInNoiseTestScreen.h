@@ -9,3 +9,27 @@
 */
 
 #pragma once
+
+#include <JuceHeader.h>
+
+class SpeechInNoiseTestScreen : public juce::Component {
+public:
+    SpeechInNoiseTestScreen();
+    ~SpeechInNoiseTestScreen() override = default;
+
+    // Callbacks set in MainComponent
+    std::function<void()> onStopClicked;
+    std::function<void(int)> onDigitClicked;
+
+    void setDigitsEnabled(bool enable);
+    void resized() override;
+    void paint(juce::Graphics& g) override;
+
+private:
+    std::vector<std::unique_ptr<juce::TextButton>> digitButtons;
+    juce::TextButton stopButton{ "Stop Test" };
+
+    bool digitsEnabled = false;
+
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(SpeechInNoiseTestScreen)
+};

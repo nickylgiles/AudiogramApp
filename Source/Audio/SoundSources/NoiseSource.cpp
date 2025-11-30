@@ -10,12 +10,16 @@
 
 #include "NoiseSource.h"
 
-NoiseSource::NoiseSource(double sampleRate, float centreFrequency, float gain, float durationSeconds, int ch) {
-    noiseGenerator = NoiseGenerator();
+NoiseSource::NoiseSource(double sampleRate, float gain, float durationSeconds, int ch, bool filterNoise, float centreFrequency) {
+    noiseGenerator = NoiseGenerator(filterNoise);
     noiseGenerator.setSampleRate(sampleRate);
     noiseGenerator.setAmplitude(gain);
-    noiseGenerator.setFrequency(centreFrequency, 0.5f);
-    noiseGenerator.prepareFilter();
+
+    if (filterNoise) {
+        noiseGenerator.setFrequency(centreFrequency, 0.5f);
+        noiseGenerator.prepareFilter();
+    }
+
 
     envelope = Envelope();
     envelope.setRiseTime(sampleRate * 0.1f);

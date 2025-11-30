@@ -28,6 +28,8 @@ public:
 
     void playSample(const void* data, size_t size, float gain);
     void playSampleSpatial(const void* data, size_t size, float elevation, float azimuth, float gain);
+
+    void playNoise(float amplitude, float duration, int channel);
     void playNoiseSpatial(float amplitude, float duration, float elevation, float azimuth);
 
     void stop();

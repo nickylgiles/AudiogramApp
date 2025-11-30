@@ -51,10 +51,7 @@ void PureToneTestController::stopTest() {
     soundEngine.stop();
 }
 
-/*static*/ float PureToneTestController::dbToAmplitude(float db) {
-    float amplitude = std::pow(10.0, db / 20.0);
-    return amplitude;
-}
+
 
 void PureToneTestController::timerCallback() {
     stopTimer(); 

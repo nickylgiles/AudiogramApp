@@ -163,6 +163,34 @@ void MainComponent::showSpeechInNoiseTestScreen() {
     testController.reset(new SpeechInNoiseController(*this, *soundEngine));
     testStarted = true;
     testController->startTest();
+
+    auto screen = std::make_unique<SpeechInNoiseTestScreen>();
+
+    screen->onStopClicked = [this] {
+        testStarted = false;
+        testController->buttonClicked("stopButton");
+        showMenuScreen();
+    };
+
+    screen->onDigitClicked = [this](int digit) {
+        testController->buttonClicked(juce::String(digit));
+    };
+
+
+    // Get inputsEnabled() from SpeechInNoiseController
+    if (auto* sin = dynamic_cast<SpeechInNoiseController*>(testController.get())) {
+        if (auto* scr = dynamic_cast<SpeechInNoiseTestScreen*>(screen.get())) {
+            sin->setInputsEnabled = [scr](bool enabled) {
+                juce::MessageManager::callAsync([scr, enabled] {
+                    scr->setDigitsEnabled(enabled);
+                    });
+                };
+        }
+    }
+    
+    currentScreen = std::move(screen);
+    addAndMakeVisible(currentScreen.get());
+    resized();
 }
 
 void MainComponent::showSpeechInNoiseResultsScreen() {

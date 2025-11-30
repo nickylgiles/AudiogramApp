@@ -14,6 +14,9 @@
 #include "GUI/Spatial/SpatialTestScreen.h"
 #include "GUI/Spatial/SpatialResultsScreen.h"
 
+#include "GUI/SpeechInNoise/SpeechInNoiseTestScreen.h"
+#include "GUI/SpeechInNoise/SpeechInNoiseResultsScreen.h"
+
 #include "Results/ResultsLogger.h"
 
 //==============================================================================

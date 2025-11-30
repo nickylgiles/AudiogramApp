@@ -24,8 +24,6 @@ public:
 private:
     void timerCallback() override;
     void toneHeard();
-
-    static float dbToAmplitude(float db);
     
     void playCurrentTone();
     void scheduleNextTone(int delayMs);

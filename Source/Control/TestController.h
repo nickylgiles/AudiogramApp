@@ -28,6 +28,11 @@ public:
 
     virtual void buttonClicked(const juce::String& id) { return; }
 
+    static float dbToAmplitude(float db) {
+        float amplitude = std::pow(10.0, db / 20.0);
+        return amplitude;
+    }
+
 protected:
     MainComponent& mainComponent;
     SoundEngine& soundEngine;

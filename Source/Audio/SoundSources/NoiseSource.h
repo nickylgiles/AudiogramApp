@@ -16,7 +16,7 @@
 
 class NoiseSource : public SoundSource {
 public:
-    NoiseSource(double sampleRate, float centreFrequency, float gain, float durationSeconds, int channel);
+    NoiseSource(double sampleRate, float gain, float durationSeconds, int channel, bool filterNoise=false, float centreFrequency=1000.0f);
     void process(float* outputL, float* outputR, int numSamples) override;
     bool isFinished() const override;
 private:
